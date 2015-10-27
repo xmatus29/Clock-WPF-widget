@@ -1,6 +1,6 @@
 # HOURS-WPF
 
 # Author
-Filip Jezovica
-Filip Gulan
+Filip Jezovica  
+Filip Gulan  
 Lubomir Matuska
