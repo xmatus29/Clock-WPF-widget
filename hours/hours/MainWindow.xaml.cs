@@ -23,6 +23,7 @@ namespace hours
         public MainWindow()
         {
             InitializeComponent();
+            System.Console.WriteLine("~app started");
         }
     }
 }
