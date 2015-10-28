@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace hours
 {
     /// <summary>
@@ -24,6 +25,7 @@ namespace hours
         {
             InitializeComponent();
             System.Console.WriteLine("~app started!");
+            Info informacie = new Info();
         }
     }
 }
