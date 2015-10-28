@@ -21,11 +21,34 @@ namespace hours
     /// </summary>
     public partial class MainWindow : Window
     {
+        /*
+            pouzito z INFO
+        */
+        private System.Windows.Threading.DispatcherTimer timerCas;
+
         public MainWindow()
         {
             InitializeComponent();
             System.Console.WriteLine("~app started!");
             Info informacie = new Info();
+
+            /*
+             Pouzito z INFO ...  nedarilo se mi k te tride dostat ...
+            */
+            this.timerCas = new System.Windows.Threading.DispatcherTimer();
+            this.timerCas.Tick += new EventHandler(nastavCas);
+            this.timerCas.Interval = new TimeSpan(0, 0, 1); //1 sekunda
+            this.timerCas.Start();
+            
+
+        }
+
+        private void nastavCas(object sender, EventArgs e)
+        {
+            sekunda.Angle = DateTime.Now.Second * 6;
+            minuta.Angle = DateTime.Now.Minute * 6;
+            hodina.Angle = DateTime.Now.Minute * 0.5 + DateTime.Now.Hour * 30;
+            //Console.WriteLine(this.sekunda);
         }
     }
 }
