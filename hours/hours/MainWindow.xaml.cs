@@ -30,6 +30,7 @@ namespace hours
         {
             InitializeComponent();
             System.Console.WriteLine("~app started!");
+            this.ShowInTaskbar = false;
             Info informacie = new Info();
 
             /*

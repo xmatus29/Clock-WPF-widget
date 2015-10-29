@@ -25,25 +25,14 @@ namespace hours
         public String tlak;
         public String viditelnost;
         public String vlhkost;
-        public String cas;
-        public String hodina;
-        public String sekunda;
-        public String minuta;
 
         private System.Windows.Threading.DispatcherTimer timerPocasie;
-        private System.Windows.Threading.DispatcherTimer timerCas;
 
         /*
          * Konstruktor triedy
          */
         public Info()
         {
-            //Nastavenie Casovacu pre ziskavanie casu kazdu sekundu
-            this.timerCas = new System.Windows.Threading.DispatcherTimer();
-            this.timerCas.Tick += new EventHandler(ziskajCas);
-            this.timerCas.Interval = new TimeSpan(0, 0, 1); //1 sekunda
-            this.timerCas.Start();
-
             //Nastavenie casovacu pre ziskavanie pocasia kazdu hodinu
             this.timerPocasie = new System.Windows.Threading.DispatcherTimer();
             this.timerPocasie.Tick += new EventHandler(ziskajPocasieTimer);
@@ -89,18 +78,5 @@ namespace hours
                 //Console.WriteLine(this.vlhkost);
             }
          }
-
-        /*
-         * Metoda na periodicke ziskavanie casu
-         */
-        private void ziskajCas(object sender, EventArgs e)
-        {
-            DateTime time = DateTime.Now;
-            this.cas = time.ToString("hh:mm:ss");
-            this.hodina = time.ToString("hh");
-            this.minuta = time.ToString("mm");
-            this.sekunda = time.ToString("ss");
-            //Console.WriteLine(this.sekunda);
-        }
     }
 }
