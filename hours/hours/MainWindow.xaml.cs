@@ -42,7 +42,16 @@ namespace hours
             this.timerCas.Tick += new EventHandler(nastavCas);
             this.timerCas.Interval = new TimeSpan(0, 0, 1); //1 sekunda
             this.timerCas.Start();
+            okno.Width = okno.Height = 400;
+            kolecko.Width = okno.Width - 50;
+            kolecko.Height = okno.Height - 50;
+            sekundaRucicka.Height = (kolecko.Height/2) - (kolecko.Height/16);
+            minutaRucicka.Height = (kolecko.Height/2) - (kolecko.Height/8);
+            hodinaRucicka.Height = (kolecko.Height/2) - (kolecko.Height/4);
             
+            //System.Console.WriteLine(sekundaRucicka.Margin);
+            //minutaRucicka.Height = kolecko.Height - 40;
+            //hodinaRucicka.Height = kolecko.Height - 60;
 
         }
 
@@ -51,6 +60,9 @@ namespace hours
             sekunda.Angle = DateTime.Now.Second * 6;
             minuta.Angle = DateTime.Now.Minute * 6;
             hodina.Angle = DateTime.Now.Minute * 0.5 + DateTime.Now.Hour * 30;
+
+            digitalTime.Content = DateTime.Now.Hour.ToString() + "h " + DateTime.Now.Minute.ToString() + "m " + DateTime.Now.Second.ToString() + "s";
+            datum.Content = DateTime.Now.DayOfWeek + "  " + DateTime.Now.Day + ". " + DateTime.Now.Month + ". " + DateTime.Now.Year;
             //Console.WriteLine(this.sekunda);
         }
 
