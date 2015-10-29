@@ -18,15 +18,19 @@
             </Ellipse.Effect>
         </Ellipse>
 
-        <Label x:Name="digitalTime" Content="Label" HorizontalAlignment="Left" Margin="91,230,0,0" VerticalAlignment="Top" Height="46" Width="235" FontSize="26.667" FontFamily="Rockwell Extra Bold">
+        <Label x:Name="digitalTime" Content="xxh xxm xxs" HorizontalAlignment="Left" Margin="91,230,0,0" VerticalAlignment="Top" Height="46" Width="235" FontSize="26.667" FontFamily="Rockwell Extra Bold">
             <Label.Effect>
-                <DropShadowEffect Color="#FF818583" BlurRadius="10"/>
+                <BlurEffect Radius="2"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="datum" Content="Label" HorizontalAlignment="Left" Margin="106,276,0,0" VerticalAlignment="Top" Height="46" Width="182" FontSize="16" FontFamily="Transformers Movie"/>
+        <Label x:Name="datum" Content="Mondey dd. mm. yyyy" HorizontalAlignment="Left" Margin="102,276,0,0" VerticalAlignment="Top" Height="46" Width="182" FontSize="16" FontFamily="Transformers Movie">
+            <Label.Effect>
+                <BlurEffect Radius="2"/>
+            </Label.Effect>
+        </Label>
 
 
-        <Rectangle x:Name="sekundaRucicka" Fill="#FFCDCD28" Opacity="0.8" HorizontalAlignment="Center" VerticalAlignment="Center" Height="150" Width="10" Margin="190,35,190,185" RenderTransformOrigin="0.5,1">
+        <Rectangle x:Name="sekundaRucicka" Fill="#FFCDCD28" Opacity="0.8" HorizontalAlignment="Center" VerticalAlignment="Center" Height="150" Width="10" Margin="190,35,190,185" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
             <Rectangle.RenderTransform>
                 <RotateTransform x:Name="sekunda" Angle="0"/>
             </Rectangle.RenderTransform>
@@ -34,19 +38,21 @@
 
 
 
-        <Rectangle x:Name="minutaRucicka" Visibility="Visible" Fill="#FF27C52F" Opacity="0.8" HorizontalAlignment="Center" VerticalAlignment="Center" Height="121" Width="15" Margin="190,64,190,185" RenderTransformOrigin="0.5,1">
+        <Rectangle x:Name="minutaRucicka" Visibility="Visible" Fill="#FF27C52F" Opacity="0.8" HorizontalAlignment="Center" VerticalAlignment="Center" Height="121" Width="10" Margin="190,64,190,185" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
             <Rectangle.RenderTransform>
                 <RotateTransform x:Name="minuta" Angle="0"/>
             </Rectangle.RenderTransform>
         </Rectangle>
 
 
-        <Rectangle x:Name="hodinaRucicka" Visibility="Visible" Fill="#FFCD5528" Opacity="0.8" HorizontalAlignment="Center" VerticalAlignment="Center" Height="75" Width="20" Margin="190,110,190,185" RenderTransformOrigin="0.5,1">
+        <Rectangle x:Name="hodinaRucicka" Visibility="Visible" Fill="#FFCD5528" Opacity="0.8" HorizontalAlignment="Center" VerticalAlignment="Center" Height="75" Width="10" Margin="190,110,190,185" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
             <Rectangle.RenderTransform>
                 <RotateTransform x:Name="hodina" Angle="0"/>
             </Rectangle.RenderTransform>
         </Rectangle>
         <Ellipse x:Name="stred" Fill="#FFCD3028" HorizontalAlignment="Center" VerticalAlignment="Center"  Height="50" Width="50"/>
+        <Label x:Name="teplota" Content="xx °C" HorizontalAlignment="Left" Margin="189,99,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="lokace" Content="Lokace&#xD;&#xA;" HorizontalAlignment="Left" Margin="175,74,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.472,-1.115" Height="37" Width="62" FontWeight="Bold" FontSize="16"/>
 
     </Grid>
 </Window>
