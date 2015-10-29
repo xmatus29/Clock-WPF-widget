@@ -64,9 +64,7 @@ namespace hours
             catch
             {
                 Console.WriteLine("Problem s pripojenim!");
-            }
-            if (doc != null)
-            {
+            } /* bylo by treba osetrit, kdyz se nepodari stahnout pocasi */
                 this.lokacia = doc.SelectSingleNode("//city").InnerText;
                 this.teplota = doc.SelectSingleNode("//temp_c").InnerText;
                 this.epochCas = doc.SelectSingleNode("//local_epoch").InnerText;
@@ -76,8 +74,7 @@ namespace hours
                 this.tlak = doc.SelectSingleNode("//pressure_mb").InnerText;
                 this.viditelnost = doc.SelectSingleNode("//visibility_km").InnerText;
                 this.vlhkost = doc.SelectSingleNode("//relative_humidity").InnerText;
-                Console.WriteLine(this.teplota);
-            }
+                //Console.WriteLine(this.teplota);
          }
     }
 }

@@ -21,10 +21,9 @@ namespace hours
     /// </summary>
     public partial class MainWindow : Window
     {
-        /*
-            pouzito z INFO
-        */
+        
         private System.Windows.Threading.DispatcherTimer timerCas;
+       
 
         public MainWindow()
         {
@@ -35,9 +34,8 @@ namespace hours
             this.Top = 0;
             Info informacie = new Info();
 
-            /* treba pozdeji zmenit :) pocasi se nacte az pozdeji po spusteni */
+            /* treba pozdeji zmenit :) pocasi se nacte az pozdeji po spusteni, pokud to bude narusovat chod programu klidne zakomentovat... */
             while (informacie.teplota == null) {; }
-           
 
             /*
              Casovac
@@ -47,20 +45,23 @@ namespace hours
             this.timerCas.Interval = new TimeSpan(0, 0, 1); //1 sekunda
             this.timerCas.Start();
 
-            /* pokus */
-            okno.Width = okno.Height = 400;
-            kolecko.Width = okno.Width - 50;
-            kolecko.Height = okno.Height - 50;
-            sekundaRucicka.Height = (kolecko.Height/2) - (kolecko.Height/16);
-            minutaRucicka.Height = (kolecko.Height/2) - (kolecko.Height/8);
-            hodinaRucicka.Height = (kolecko.Height/2) - (kolecko.Height/4);
+
 
             /* sekce pocasi */
             teplota.Content = informacie.teplota + " °C";
             lokace.Content = informacie.lokacia;
-            System.Console.WriteLine(informacie.obrazokURL);
-            //obrazekPocasi.Source = http://www.icons.wxug.com/i/c/k/cloudy.gif;
+
+            /* neco takoveho by bylo treba provest ... ale nelze */
+            //sekundaRucicka.Margin.Bottom = okno.Width/2;
+            //minutaRucicka.Margin.Bottom = okno.Width/2;
+            //hodinaRucicka.Margin.Bottom = okno.Width/2;
+
+            //teplota.Content = "9 °C";
+            //lokace.Content = "Brno";
         }
+
+
+
 
         private void nastavCas(object sender, EventArgs e)
         {
