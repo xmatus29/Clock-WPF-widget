@@ -31,6 +31,8 @@ namespace hours
             InitializeComponent();
             System.Console.WriteLine("~app started!");
             this.ShowInTaskbar = false;
+            this.Left = SystemParameters.PrimaryScreenWidth - this.Width;
+            this.Top = 0;
             Info informacie = new Info();
 
             /*
@@ -50,6 +52,26 @@ namespace hours
             minuta.Angle = DateTime.Now.Minute * 6;
             hodina.Angle = DateTime.Now.Minute * 0.5 + DateTime.Now.Hour * 30;
             //Console.WriteLine(this.sekunda);
+        }
+
+        /*
+         * Metoda, ktora sa stara aby sa dalo drag and drop pohybovat okno
+         */
+        private void dragAndDropAplikacie(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
+
+        /*
+         * Metoda, tkora sa stara aby bolo okno stale navrchu vsetkeho
+         */
+        private void staleNavrchu(object sender, EventArgs e)
+        {
+            Window window = (Window)sender;
+            window.Topmost = true;
         }
     }
 }
