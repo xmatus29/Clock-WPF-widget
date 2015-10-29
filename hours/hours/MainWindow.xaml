@@ -8,22 +8,22 @@
         Title="MainWindow" Height="400" Width="400" MinHeight="400" MinWidth="400">
     <Grid>
         <Ellipse Fill="#FF4762D8" HorizontalAlignment="Center" VerticalAlignment="Center" Height="300" Width="300"/>
-        <Rectangle Fill="#FFCDCD28" HorizontalAlignment="Center" VerticalAlignment="Center" Height="150" Width="12" Margin="184,35,184,185" RenderTransformOrigin="0.5,1">
+        <Rectangle Fill="#FFCDCD28" HorizontalAlignment="Center" VerticalAlignment="Center" Height="150" Width="10" Margin="190,35,190,185" RenderTransformOrigin="0.5,1">
             <Rectangle.RenderTransform>
                 <RotateTransform x:Name="sekunda" Angle="0"/>
             </Rectangle.RenderTransform>
         </Rectangle>
-     
-        
-        
-        <Rectangle Fill="#FF27C52F" HorizontalAlignment="Center" VerticalAlignment="Center" Height="121" Width="12" Margin="190,64,190,185" RenderTransformOrigin="0.5,1">
+
+
+
+        <Rectangle Visibility="Visible" Fill="#FF27C52F" HorizontalAlignment="Center" VerticalAlignment="Center" Height="121" Width="10" Margin="190,64,190,185" RenderTransformOrigin="0.5,1">
             <Rectangle.RenderTransform>
                 <RotateTransform x:Name="minuta" Angle="0"/>
             </Rectangle.RenderTransform>
         </Rectangle>
-        
-        
-        <Rectangle Fill="#FFCD5528" HorizontalAlignment="Center" VerticalAlignment="Center" Height="75" Width="12" Margin="190,110,190,185" RenderTransformOrigin="0.5,1">
+
+
+        <Rectangle Visibility="Visible" Fill="#FFCD5528" HorizontalAlignment="Center" VerticalAlignment="Center" Height="75" Width="10" Margin="190,110,190,185" RenderTransformOrigin="0.5,1">
             <Rectangle.RenderTransform>
                 <RotateTransform x:Name="hodina" Angle="0"/>
             </Rectangle.RenderTransform>

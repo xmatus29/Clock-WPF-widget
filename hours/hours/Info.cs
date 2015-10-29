@@ -76,17 +76,19 @@ namespace hours
             {
                 Console.WriteLine("Problem s pripojenim!");
             }
-            this.lokacia = doc.SelectSingleNode("//city").InnerText;
-            this.teplota = doc.SelectSingleNode("//temp_c").InnerText;
-            this.epochCas = doc.SelectSingleNode("//local_epoch").InnerText;
-            this.pocasie = doc.SelectSingleNode("//weather").InnerText;
-            this.rychlostVetra = doc.SelectSingleNode("//wind_mph").InnerText;
-            this.obrazokURL = doc.SelectSingleNode("//icon_url").InnerText;
-            this.tlak = doc.SelectSingleNode("//pressure_mb").InnerText;
-            this.viditelnost = doc.SelectSingleNode("//visibility_km").InnerText;
-            this.vlhkost = doc.SelectSingleNode("//relative_humidity").InnerText;
-            //Console.WriteLine(this.vlhkost);
-        }
+            {
+                if (this.lokacia != null) this.lokacia = doc.SelectSingleNode("//city").InnerText;
+                if (this.teplota != null) this.teplota = doc.SelectSingleNode("//temp_c").InnerText;
+                if (this.epochCas != null) this.epochCas = doc.SelectSingleNode("//local_epoch").InnerText;
+                if (this.pocasie != null) this.pocasie = doc.SelectSingleNode("//weather").InnerText;
+                if (this.rychlostVetra != null) this.rychlostVetra = doc.SelectSingleNode("//wind_mph").InnerText;
+                if (this.obrazokURL != null) this.obrazokURL = doc.SelectSingleNode("//icon_url").InnerText;
+                if (this.tlak != null) this.tlak = doc.SelectSingleNode("//pressure_mb").InnerText;
+                if (this.viditelnost != null) this.viditelnost = doc.SelectSingleNode("//visibility_km").InnerText;
+                if (this.vlhkost != null) this.vlhkost = doc.SelectSingleNode("//relative_humidity").InnerText;
+                //Console.WriteLine(this.vlhkost);
+            }
+         }
 
         /*
          * Metoda na periodicke ziskavanie casu
