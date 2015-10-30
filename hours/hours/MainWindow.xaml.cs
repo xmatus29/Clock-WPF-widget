@@ -35,7 +35,7 @@ namespace hours
             Info informacie = new Info();
 
             /* treba pozdeji zmenit :) pocasi se nacte az pozdeji po spusteni, pokud to bude narusovat chod programu klidne zakomentovat... */
-            while (informacie.teplota == null) {; }
+            //while (informacie.teplota == null) {; }
 
             /*
              Casovac
@@ -47,15 +47,26 @@ namespace hours
 
 
 
-            /* sekce pocasi */
+            /* sekce pocasi  zobrazeni momentalne skryto*/
             teplota.Content = informacie.teplota + " °C";
             lokace.Content = informacie.lokacia;
 
-            /* neco takoveho by bylo treba provest ... ale nelze */
-            //sekundaRucicka.Margin.Bottom = okno.Width/2;
-            //minutaRucicka.Margin.Bottom = okno.Width/2;
-            //hodinaRucicka.Margin.Bottom = okno.Width/2;
-
+            /* zde lze nastavit velikost okna, ostatni se automaticky upravi na prijatelnou velikost 
+             - pozdeji by bylo fajn (az bude mozne modifikovat velikost okna za behu programu) vlozit nasledici radky do reakce na zmenu velikosti okna
+            */
+            okno.Width = okno.Height = 400; /* nastav velikost okna 200 az INFINITY  */
+            kolecko.Width = kolecko.Height = okno.Width - 50; 
+            sekundaRucicka.Height = okno.Width/2;
+            sekundaRucicka.Width = okno.Width / 40;
+            minutaRucicka.Height = okno.Width/2;
+            minutaRucicka.Width = okno.Width / 30;
+            hodinaRucicka.Height = okno.Width/2;
+            hodinaRucicka.Width = okno.Width / 20;
+            digitalTime.Height = okno.Width / 2;
+            digitalTime.FontSize = okno.Width / 10;
+            datum.Height = okno.Width / 4;
+            datum.FontSize = okno.Width / 20;
+            stred.Width = stred.Height = okno.Width / 10;
             //teplota.Content = "9 °C";
             //lokace.Content = "Brno";
         }

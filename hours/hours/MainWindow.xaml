@@ -8,29 +8,29 @@
         MouseDown="dragAndDropAplikacie"
         Deactivated="staleNavrchu"
         x:Name="okno"
-        Title="MainWindow" Height="400" Width="400" MinHeight="400" MinWidth="400" WindowStyle="None" Background="Transparent" AllowsTransparency="True" WindowStartupLocation="Manual">
+        Title="MainWindow" Height="400" Width="400" MinHeight="200" MinWidth="200" WindowStyle="None" Background="Transparent" AllowsTransparency="True" WindowStartupLocation="Manual">
 
 
     <Grid>
-        <Ellipse x:Name="kolecko" Fill="RoyalBlue" Opacity="0.35" Margin="50">
+        <Ellipse x:Name="kolecko" Fill="RoyalBlue" Opacity="0.35" Width="350" Height="350">
             <Ellipse.Effect>
                 <BlurEffect Radius="50"/>
             </Ellipse.Effect>
         </Ellipse>
 
-        <Label x:Name="digitalTime" Content="xxh xxm xxs" HorizontalAlignment="Left" Margin="91,230,0,0" VerticalAlignment="Top" Height="46" Width="235" FontSize="26.667" FontFamily="Rockwell Extra Bold">
+        <Label x:Name="digitalTime" Content="xxh xxm xxs" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200"   FontSize="40" FontFamily="Rockwell Extra Bold">
             <Label.Effect>
                 <BlurEffect Radius="2"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="datum" Content="Monday dd. mm. yyyy" HorizontalAlignment="Left" Margin="102,276,0,0" VerticalAlignment="Top" Height="46" Width="182" FontSize="16" FontFamily="Transformers Movie">
+        <Label x:Name="datum" Content="Monday dd. mm. yyyy"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="100"  FontSize="20" FontFamily="Transformers Movie">
             <Label.Effect>
                 <BlurEffect Radius="2"/>
             </Label.Effect>
         </Label>
 
 
-        <Rectangle x:Name="sekundaRucicka" Fill="Yellow" Width="10"  Opacity="0.8" Margin="195,60,195,200" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
+        <Rectangle x:Name="sekundaRucicka" Fill="Yellow"  Opacity="0.8" HorizontalAlignment="Center" VerticalAlignment="Top" Width="10" Height="200" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
             <Rectangle.RenderTransform>
                 <RotateTransform x:Name="sekunda" Angle="0"/>
             </Rectangle.RenderTransform>
@@ -38,21 +38,21 @@
 
 
 
-        <Rectangle x:Name="minutaRucicka" Visibility="Visible" Fill="Green" Opacity="0.8"  Width="10" Margin="190,90,190,200" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
+        <Rectangle x:Name="minutaRucicka" Visibility="Visible" Fill="Green" Opacity="0.8"  Width="15" HorizontalAlignment="Center" VerticalAlignment="Top" Height="200" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
             <Rectangle.RenderTransform>
                 <RotateTransform x:Name="minuta" Angle="0"/>
             </Rectangle.RenderTransform>
         </Rectangle>
 
 
-        <Rectangle x:Name="hodinaRucicka" Visibility="Visible"  Fill="Red" Opacity="0.8" Width="10" Margin="190,120,190,200" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
+        <Rectangle x:Name="hodinaRucicka" Visibility="Visible"  Fill="Red" Opacity="0.8" Width="20" HorizontalAlignment="Center" VerticalAlignment="Top" Height="200" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
             <Rectangle.RenderTransform>
                 <RotateTransform x:Name="hodina" Angle="0"/>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Ellipse x:Name="stred" Opacity="0.5" Fill="Coral" HorizontalAlignment="Center" VerticalAlignment="Center"  Height="20" Width="20"/>
-        <Label x:Name="teplota" Content="xx °C"  Margin="228,190,107,175" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.361,2.39"/>
-        <Label x:Name="lokace" Content="Lokace;" Margin="123,188,215,175"  Height="37" Width="62" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="teplota" Visibility="Hidden" Content="xx °C"  Margin="228,190,107,175" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.361,2.39"/>
+        <Label x:Name="lokace" Visibility="Hidden" Content="Lokace;" Margin="123,188,215,175"  Height="37" Width="62" FontWeight="Bold" FontSize="16"/>
+        <Ellipse x:Name="stred" Opacity="0.9" Fill="Coral" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="20" Height="20"/>
 
     </Grid>
 </Window>

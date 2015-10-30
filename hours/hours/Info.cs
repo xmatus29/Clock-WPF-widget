@@ -74,6 +74,7 @@ namespace hours
                 this.tlak = doc.SelectSingleNode("//pressure_mb").InnerText;
                 this.viditelnost = doc.SelectSingleNode("//visibility_km").InnerText;
                 this.vlhkost = doc.SelectSingleNode("//relative_humidity").InnerText;
+                
                 //Console.WriteLine(this.teplota);
          }
     }
