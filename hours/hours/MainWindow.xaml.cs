@@ -166,6 +166,8 @@ namespace hours
         */
         private void Settings(object sender, RoutedEventArgs e)
         {
+            Settings nastavenia = new Settings();
+            nastavenia.Show();
             System.Console.WriteLine("Settings: blalalall");
         }
 
