@@ -8,11 +8,11 @@
         MouseDown="dragAndDropAplikacie"
         Deactivated="staleNavrchu"
         x:Name="okno"
-        Title="MainWindow" Height="400" Width="400" MinHeight="200" MinWidth="200" WindowStyle="None" Background="Transparent" AllowsTransparency="True" WindowStartupLocation="Manual">
+        Title="MainWindow" Height="400" Width="400" MinHeight="200" MinWidth="200" MaxHeight="1000" MaxWidth="1000" WindowStyle="None" Background="Transparent" AllowsTransparency="True" WindowStartupLocation="Manual">
 
 
     <Grid>
-        <Ellipse x:Name="kolecko" Fill="RoyalBlue" Opacity="0.35" Width="350" Height="350">
+        <Ellipse x:Name="kolecko" Visibility="Visible" Fill="#FFB5EC22" Opacity="0.35" Width="350" Height="350">
             <Ellipse.Effect>
                 <BlurEffect Radius="50"/>
             </Ellipse.Effect>
@@ -50,9 +50,12 @@
                 <RotateTransform x:Name="hodina" Angle="0"/>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label x:Name="teplota" Visibility="Hidden" Content="xx °C"  Margin="228,190,107,175" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.361,2.39"/>
-        <Label x:Name="lokace" Visibility="Hidden" Content="Lokace;" Margin="123,188,215,175"  Height="37" Width="62" FontWeight="Bold" FontSize="16"/>
+        <Image x:Name="pocasi_obr" Source="http://icons.wxug.com/i/c/k/hazy.gif" Opacity="0.5" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="200"></Image>
+        <Label x:Name="teplota" Visibility="Visible" Content="xx °C"  VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="150" Width="70" FontWeight="Bold" FontSize="20" FontFamily="Transformers Movie"/>
+        <Label x:Name="lokace" Visibility="Visible" Content="Lokace" VerticalAlignment="Bottom" HorizontalAlignment="Center"   Height="200" Width="120" FontWeight="Bold" FontSize="25" FontFamily="Snap ITC"/>
+        <Label x:Name="pocasi" Visibility="Hidden" Content="Posasi" VerticalAlignment="Bottom" HorizontalAlignment="Center"   Height="175" Width="120" FontWeight="Bold" FontSize="25" FontFamily="Willamette SF"/>
         <Ellipse x:Name="stred" Opacity="0.9" Fill="Coral" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="20" Height="20"/>
+        
 
     </Grid>
 </Window>

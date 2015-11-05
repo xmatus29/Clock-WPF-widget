@@ -23,7 +23,7 @@ namespace hours
     {
         
         private System.Windows.Threading.DispatcherTimer timerCas;
-       
+
 
         public MainWindow()
         {
@@ -35,7 +35,7 @@ namespace hours
             Info informacie = new Info();
 
             /* treba pozdeji zmenit :) pocasi se nacte az pozdeji po spusteni, pokud to bude narusovat chod programu klidne zakomentovat... */
-            //while (informacie.teplota == null) {; }
+            while (informacie.teplota == null) {; }
 
             /*
              Casovac
@@ -47,9 +47,12 @@ namespace hours
 
 
 
-            /* sekce pocasi  zobrazeni momentalne skryto*/
+            /* sekce pocasi */
             teplota.Content = informacie.teplota + " °C";
             lokace.Content = informacie.lokacia;
+            pocasi.Content = informacie.pocasie;
+            pocasi_obr.Source = (ImageSource) new ImageSourceConverter().ConvertFromString(informacie.obrazokURL);
+            //System.Console.WriteLine(informacie.obrazokURL);
 
             /* zde lze nastavit velikost okna, ostatni se automaticky upravi na prijatelnou velikost 
              - pozdeji by bylo fajn (az bude mozne modifikovat velikost okna za behu programu) vlozit nasledici radky do reakce na zmenu velikosti okna
@@ -67,6 +70,17 @@ namespace hours
             datum.Height = okno.Width / 4;
             datum.FontSize = okno.Width / 20;
             stred.Width = stred.Height = okno.Width / 10;
+            teplota.Height = okno.Height/3;
+            teplota.FontSize = okno.Width/20;
+            teplota.Width = okno.Width / 5.7;
+            lokace.Height = okno.Height/2.5;
+            lokace.FontSize = okno.Height/16;
+            lokace.Width = okno.Width / 3.33;
+            pocasi.Height = okno.Width / 2.2;
+            pocasi.FontSize = okno.Width / 16;
+            pocasi.Width = okno.Width / 3.33;
+            pocasi_obr.Width = pocasi_obr.Height = okno.Width/2;
+
             //teplota.Content = "9 °C";
             //lokace.Content = "Brno";
         }
