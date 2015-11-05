@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Net;
 
 
 
@@ -27,7 +28,7 @@ namespace hours
         public String vlhkost;
 
         private System.Windows.Threading.DispatcherTimer timerPocasie;
-
+        public bool pripojen_k_internetu;
         /*
          * Konstruktor triedy
          */
@@ -38,6 +39,7 @@ namespace hours
             this.timerPocasie.Tick += new EventHandler(ziskajPocasieTimer);
             this.timerPocasie.Interval = new TimeSpan(1, 0, 0); //1 hodina
             this.timerPocasie.Start();
+            pripojen_k_internetu = CheckConnection("https://www.google.cz"); //overeni pripojeni k internetu
 
             Thread thread = new Thread(ziskajPocasie); //prve spustenie na zaciatku ziskanie pocasie asynchrone
             thread.Start();
@@ -64,7 +66,9 @@ namespace hours
             catch
             {
                 Console.WriteLine("Problem s pripojenim!");
-            } /* bylo by treba osetrit, kdyz se nepodari stahnout pocasi */
+            }
+            if (pripojen_k_internetu)
+            {
                 this.lokacia = doc.SelectSingleNode("//city").InnerText;
                 this.teplota = doc.SelectSingleNode("//temp_c").InnerText;
                 this.epochCas = doc.SelectSingleNode("//local_epoch").InnerText;
@@ -74,8 +78,29 @@ namespace hours
                 this.tlak = doc.SelectSingleNode("//pressure_mb").InnerText;
                 this.viditelnost = doc.SelectSingleNode("//visibility_km").InnerText;
                 this.vlhkost = doc.SelectSingleNode("//relative_humidity").InnerText;
-                
+            }
                 //Console.WriteLine(this.teplota);
          }
+
+        /*
+            Overeni pripojeni k internetu
+        */
+        private bool CheckConnection(String URL)
+        {
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(URL);
+                request.Timeout = 5000;
+                request.Credentials = CredentialCache.DefaultNetworkCredentials;
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+                if (response.StatusCode == HttpStatusCode.OK) return true;
+                else return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
