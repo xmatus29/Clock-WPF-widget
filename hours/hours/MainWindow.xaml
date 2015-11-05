@@ -58,4 +58,11 @@
         
 
     </Grid>
+    <Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="Settings" />
+            <MenuItem Header="Credits" />
+            <MenuItem Header="Exit" Click="Ukoncit" />
+        </ContextMenu>
+    </Window.ContextMenu>
 </Window>

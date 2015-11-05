@@ -118,5 +118,13 @@ namespace hours
             Window window = (Window)sender;
             window.Topmost = true;
         }
+
+        /*
+         * Ukonci aplikaciu
+         */
+        private void Ukoncit(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
