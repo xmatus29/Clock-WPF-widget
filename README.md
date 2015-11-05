@@ -1,4 +1,4 @@
-# HOURS-WPF
+# ClockWidget-WPF
 
 # Author
 Filip Jezovica  
