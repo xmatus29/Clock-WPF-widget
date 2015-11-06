@@ -1,19 +1,28 @@
 ﻿<Window x:Class="hours.Settings"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Setings" Height="300" Width="300">
-    <Grid>
+        Title="Setings" Height="400" Width="300">
+    <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.25*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         
-        <ComboBox x:Name="SkinBox" SelectionChanged="vyber" Grid.Row="0" >
-           
-        </ComboBox>
-        <Image  x:Name="nahlad" Source="MyImage.jpg" Grid.Row="1"/>
+        <ComboBox x:Name="SkinBox" SelectionChanged="vyber" Grid.Row="0" />
+        <!--Calendar Grid.Row="2"></-->
+        <TextBox Grid.Row="2" Text="Opacity slider" VerticalAlignment="Center" HorizontalAlignment="Center" Background="LightCyan"></TextBox>
+        <Slider x:Name="opacity" Grid.Row="3" ValueChanged="change_opacity" Background="CadetBlue" Value="5" />
+        <TextBox Grid.Row="4" Text="Size slider" VerticalAlignment="Center" HorizontalAlignment="Center" Background="LightGray"></TextBox>
+        <Slider x:Name="size" Grid.Row="5" Background="GreenYellow" Value="5" ValueChanged="change_size"/>
+        
+
+            <Image  x:Name="nahlad" Source="MyImage.jpg" Grid.Row="1"/>
     </Grid>
 </Window>

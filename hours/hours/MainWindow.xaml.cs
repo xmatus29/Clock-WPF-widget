@@ -27,7 +27,6 @@ namespace hours
         
         private System.Windows.Threading.DispatcherTimer timerCas;
 
-
         public MainWindow()
         {
             InitializeComponent();
@@ -36,7 +35,7 @@ namespace hours
             this.Left = SystemParameters.PrimaryScreenWidth - this.Width;
             this.Top = 0;
             Info informacie = new Info();
-   
+
             /* treba pozdeji zmenit :) pocasi se nacte az pozdeji po spusteni, pokud to bude narusovat chod programu klidne zakomentovat... */
 
             if (informacie.pripojen_k_internetu)
@@ -47,6 +46,7 @@ namespace hours
                     ;
                 }
             }
+
             /*
              Casovac
             */
@@ -104,10 +104,8 @@ namespace hours
                 pocasi_obr.Width = pocasi_obr.Height = okno.Width / 2;
             }
             //kolecko.Fill = "Red";
-             
-
-
-        }
+            
+    }
 
 
         /*
@@ -121,7 +119,9 @@ namespace hours
 
             digitalTime.Content = DateTime.Now.Hour.ToString() + "h " + DateTime.Now.Minute.ToString() + "m " + DateTime.Now.Second.ToString() + "s";
             datum.Content = DateTime.Now.DayOfWeek + "  " + DateTime.Now.Day + ". " + DateTime.Now.Month + ". " + DateTime.Now.Year;
+
         }
+
 
 
         /*
@@ -168,8 +168,21 @@ namespace hours
         {
             Settings nastavenia = new Settings();
             nastavenia.Show();
+            /* nastaveni pozice podle umisteni hodin */
+            if (okno.Left > SystemParameters.PrimaryScreenWidth / 2.0)
+            {
+                nastavenia.Left = okno.Left - 0.75*okno.Width;
+            }
+            else
+            {
+                nastavenia.Left = okno.Left + okno.Width;
+            }
+            nastavenia.Top = okno.Top;
             System.Console.WriteLine("Settings: blalalall");
+            //kolecko.Opacity = nastavenia.opacity.Value / 10.0;
+
         }
+
 
 
     }
