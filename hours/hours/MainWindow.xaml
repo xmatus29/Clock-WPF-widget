@@ -45,7 +45,7 @@
         </Rectangle>
 
     
-        <Rectangle x:Name="sekundaRucicka" Fill="Yellow"  Opacity="0.8" HorizontalAlignment="Center" VerticalAlignment="Top" Width="10" Height="200" RenderTransformOrigin="1.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
+        <Rectangle x:Name="sekundaRucicka" Fill="Yellow"  Opacity="0.8" HorizontalAlignment="Center" VerticalAlignment="Top" Width="10" Height="200" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
             <Rectangle.RenderTransform>
                 <RotateTransform x:Name="sekunda" Angle="0"/>
             </Rectangle.RenderTransform>
