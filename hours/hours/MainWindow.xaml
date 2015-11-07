@@ -12,6 +12,7 @@
 
 
     <Grid>
+        
         <Ellipse x:Name="kolecko" Visibility="Visible" Fill="#FF2F5BD3" Opacity="0.3" Width="350" Height="350" StrokeThickness="102">
             <Ellipse.Effect>
                 <DropShadowEffect BlurRadius="1" Direction="300" Opacity="0.5" ShadowDepth="20"/>
@@ -30,6 +31,7 @@
             </Label.Effect>
         </Label>
 
+        
         <Rectangle x:Name="hodinaRucicka" Visibility="Visible"  Fill="Red" Opacity="0.8" Width="20" HorizontalAlignment="Center" VerticalAlignment="Top" Height="200" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
             <Rectangle.RenderTransform>
                 <RotateTransform x:Name="hodina" Angle="0"/>
@@ -42,8 +44,8 @@
             </Rectangle.RenderTransform>
         </Rectangle>
 
-
-        <Rectangle x:Name="sekundaRucicka" Fill="Yellow"  Opacity="0.8" HorizontalAlignment="Center" VerticalAlignment="Top" Width="10" Height="200" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
+    
+        <Rectangle x:Name="sekundaRucicka" Fill="Yellow"  Opacity="0.8" HorizontalAlignment="Center" VerticalAlignment="Top" Width="10" Height="200" RenderTransformOrigin="1.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
             <Rectangle.RenderTransform>
                 <RotateTransform x:Name="sekunda" Angle="0"/>
             </Rectangle.RenderTransform>

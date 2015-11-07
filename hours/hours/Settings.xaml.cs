@@ -32,6 +32,7 @@ namespace hours
                 SkinBox.Items.Add(System.IO.Path.GetFileName(skin));
                 //nahlad.Source = new BitmapImage(new Uri(skin + "\\thumb.png"));
             }
+
         }
 
         
@@ -46,12 +47,19 @@ namespace hours
         private void change_opacity(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("opacity change on: " + opacity.Value/10.0 );
+
+            MainWindow.I.Opacity = opacity.Value / 10.0;
+            
         }
 
         /* metoda reagujici na zmenu hodnoty baru velikosti */
         private void change_size(object sender, RoutedEventArgs e)
         {
-           System.Console.WriteLine("size change on: " + size.Value / 10.0);
+            System.Console.WriteLine("size change on: " + size.Value / 10.0);
+            MainWindow.I.Height = size.Value * 100;
+            MainWindow.I.Width = size.Value * 100;
+            MainWindow.I.resize();
+
         }
     }
 }

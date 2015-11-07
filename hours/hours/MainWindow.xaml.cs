@@ -26,9 +26,11 @@ namespace hours
     {
         
         private System.Windows.Threading.DispatcherTimer timerCas;
+        public static MainWindow I;
 
         public MainWindow()
         {
+            I = this;
             InitializeComponent();
             System.Console.WriteLine("~app started!");
             this.ShowInTaskbar = false;
@@ -77,19 +79,9 @@ namespace hours
             /* zde lze nastavit velikost okna, ostatni se automaticky upravi na prijatelnou velikost 
              - pozdeji by bylo fajn (az bude mozne modifikovat velikost okna za behu programu) vlozit nasledici radky do reakce na zmenu velikosti okna
             */
-            okno.Width = okno.Height = 400; /* nastav velikost okna 200 az INFINITY  */
-            kolecko.Width = kolecko.Height = okno.Width - 50;
-            sekundaRucicka.Height = okno.Width / 2;
-            sekundaRucicka.Width = okno.Width / 40;
-            minutaRucicka.Height = okno.Width / 2;
-            minutaRucicka.Width = okno.Width / 30;
-            hodinaRucicka.Height = okno.Width / 2;
-            hodinaRucicka.Width = okno.Width / 20;
-            digitalTime.Height = okno.Width / 2;
-            digitalTime.FontSize = okno.Width / 10;
-            datum.Height = okno.Width / 4;
-            datum.FontSize = okno.Width / 20;
-            stred.Width = stred.Height = okno.Width / 10;
+            okno.Width = okno.Height = 400; /* nastav velikost okna 200 az INFINITY  *///default 400
+            resize();
+
             if (informacie.pripojen_k_internetu)
             {
                 teplota.Height = okno.Height / 3;
@@ -106,6 +98,24 @@ namespace hours
             //kolecko.Fill = "Red";
             
     }
+
+
+        public void resize()
+        {
+            //okno.Width = okno.Height = 400; /* nastav velikost okna 200 az INFINITY  */
+            kolecko.Width = kolecko.Height = okno.Width - 50;
+            sekundaRucicka.Height = okno.Width / 2;
+            sekundaRucicka.Width = okno.Width / 40;
+            minutaRucicka.Height = okno.Width / 2;
+            minutaRucicka.Width = okno.Width / 30;
+            hodinaRucicka.Height = okno.Width / 2;
+            hodinaRucicka.Width = okno.Width / 20;
+            digitalTime.Height = okno.Width / 2;
+            digitalTime.FontSize = okno.Width / 10;
+            datum.Height = okno.Width / 4;
+            datum.FontSize = okno.Width / 20;
+            stred.Width = stred.Height = okno.Width / 10;
+        }
 
 
         /*
