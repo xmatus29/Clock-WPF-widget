@@ -21,7 +21,7 @@
         <TextBox Grid.Row="2" Text="Opacity slider" VerticalAlignment="Center" HorizontalAlignment="Center" Background="LightCyan"></TextBox>
         <Slider x:Name="opacity" Grid.Row="3" ValueChanged="change_opacity" Background="CadetBlue" Value="5" />
         <TextBox Grid.Row="4" Text="Size slider" VerticalAlignment="Center" HorizontalAlignment="Center" Background="LightGray"></TextBox>
-        <Slider x:Name="size" Grid.Row="5" Background="GreenYellow" Value="5" ValueChanged="change_size"/>
+        <Slider x:Name="size" Grid.Row="5" Background="GreenYellow" Minimum="2"  Value="6" Maximum="10" ValueChanged="change_size"/>
         <CheckBox Checked="vzdyNavrchuTrue" Unchecked="vzdyNavrchuFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7">Always on top of all Windows</CheckBox>
         
 

@@ -29,8 +29,10 @@ namespace hours
         public static MainWindow I;
         public bool vzdyNavrchu;
 
+
         public MainWindow()
         {
+
             I = this;
             this.vzdyNavrchu = true;
             InitializeComponent();

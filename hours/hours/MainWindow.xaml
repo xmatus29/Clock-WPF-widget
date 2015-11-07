@@ -8,6 +8,8 @@
         MouseDown="dragAndDropAplikacie"
         Deactivated="staleNavrchu"
         x:Name="okno"
+        
+        ResizeMode="NoResize"
         Title="MainWindow" Height="400" Width="400" MinHeight="200" MinWidth="200" MaxHeight="1000" MaxWidth="1000" WindowStyle="None" Background="Transparent" AllowsTransparency="True" WindowStartupLocation="Manual">
 
 
