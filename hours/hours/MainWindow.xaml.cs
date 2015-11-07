@@ -27,10 +27,12 @@ namespace hours
         
         private System.Windows.Threading.DispatcherTimer timerCas;
         public static MainWindow I;
+        public bool vzdyNavrchu;
 
         public MainWindow()
         {
             I = this;
+            this.vzdyNavrchu = true;
             InitializeComponent();
             System.Console.WriteLine("~app started!");
             this.ShowInTaskbar = false;
@@ -150,8 +152,11 @@ namespace hours
          */
         private void staleNavrchu(object sender, EventArgs e)
         {
-            Window window = (Window)sender;
-            window.Topmost = true;
+            if(this.vzdyNavrchu == true)
+            {
+                Window window = (Window)sender;
+                window.Topmost = true;
+            }
         }
 
         /*

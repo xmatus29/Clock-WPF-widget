@@ -61,5 +61,23 @@ namespace hours
             MainWindow.I.resize();
 
         }
+
+        /*
+         * Nastavene aby bolo okno vzdy narvchu
+         */
+        private void vzdyNavrchuTrue(object sender, RoutedEventArgs e)
+        {
+            MainWindow.I.Topmost = true;
+            MainWindow.I.vzdyNavrchu = true;
+        }
+
+        /*
+         * Nastavene ze neni okno vzdy navrhu
+         */
+        private void vzdyNavrchuFalse(object sender, RoutedEventArgs e)
+        {
+            MainWindow.I.Topmost = false;
+            MainWindow.I.vzdyNavrchu = false;
+        }
     }
 }
