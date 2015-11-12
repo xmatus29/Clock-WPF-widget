@@ -145,6 +145,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Skins\fit_logo.png" />
     <Content Include="Skins\TestSKin\thumb.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
