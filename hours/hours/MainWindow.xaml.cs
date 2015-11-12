@@ -175,7 +175,18 @@ namespace hours
         */
         private void Credits(object sender, RoutedEventArgs e)
         {
-            System.Console.WriteLine("Credits: bla bla bla");
+            System.Console.WriteLine("Credits: Start");
+            Credits credits = new Credits();
+            credits.Show();
+            if (okno.Left > SystemParameters.PrimaryScreenWidth / 2.0)
+            {
+                credits.Left = okno.Left - 0.5 * okno.Width;
+            }
+            else
+            {
+                credits.Left = okno.Left + okno.Width;
+            }
+            credits.Top = okno.Top;
         }
 
         /*
@@ -183,6 +194,7 @@ namespace hours
         */
         private void Settings(object sender, RoutedEventArgs e)
         {
+            System.Console.WriteLine("Settings: Start");
             Settings nastavenia = new Settings();
             nastavenia.Show();
             /* nastaveni pozice podle umisteni hodin */
@@ -195,8 +207,6 @@ namespace hours
                 nastavenia.Left = okno.Left + okno.Width;
             }
             nastavenia.Top = okno.Top;
-            System.Console.WriteLine("Settings: blalalall");
-            //kolecko.Opacity = nastavenia.opacity.Value / 10.0;
 
         }
 
