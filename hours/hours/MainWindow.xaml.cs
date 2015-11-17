@@ -27,16 +27,12 @@ namespace hours
         
         private System.Windows.Threading.DispatcherTimer timerCas;
         public static MainWindow I;
+        
         public Settings nastavenia = null;
         public Credits credits = null;
         public Info informacie = null;
-        public bool vzdyNavrchu;
 
 
-        public int mode;//0-analog//1-digital//2-binary
-        public double all_opacity;
-        public double all_size;
-        public bool all_top;
 
 
 
@@ -44,18 +40,12 @@ namespace hours
         {
 
             I = this;
-            this.vzdyNavrchu = true;
+            
             InitializeComponent();
 
-            //SET DEFAULTS
-            mode = 0;
-            all_opacity = MainWindow.I.Opacity * 10;
-            all_size = MainWindow.I.Height / 100;
-            all_top = true;
+           
 
-
-            //RUN
-            change_mode(0);
+            
 
 
 
@@ -63,7 +53,7 @@ namespace hours
 
 
 
-            System.Console.WriteLine("~app started!");
+            
             this.ShowInTaskbar = false;
             this.Left = SystemParameters.PrimaryScreenWidth - this.Width;
             this.Top = 0;
@@ -129,9 +119,32 @@ namespace hours
             //kolecko.Fill = "Red";
 
 
+            //DEFAULT FIRST RUN
+            if (Properties.Settings.Default.runs == 0)
+            {
+                Properties.Settings.Default.all_opacity = Opacity*10;
+                Properties.Settings.Default.all_size = Width/100;
+                Properties.Settings.Default.all_wleft =  Double.Parse( SystemParameters.PrimaryScreenWidth.ToString()) - Double.Parse(Width.ToString());
+                Properties.Settings.Default.all_wtop = 0.0;
+                Properties.Settings.Default.all_top = true;
+            }
+            Properties.Settings.Default.runs += 1;
 
-            
+            Opacity = Properties.Settings.Default.all_opacity / 10;
+            Width = Height = Properties.Settings.Default.all_size * 100;
+            MainWindow.I.resize();
 
+            //position on screen
+            Left = Properties.Settings.Default.all_wleft;
+            Top = Properties.Settings.Default.all_wtop;
+
+
+
+
+
+            //RUN
+            change_mode(Properties.Settings.Default.mode);
+            System.Console.WriteLine("~app started!:" + Properties.Settings.Default.runs);
         }
 
 
@@ -177,6 +190,9 @@ namespace hours
             if (e.ChangedButton == MouseButton.Left)
             {
                 this.DragMove();
+                //position
+                Properties.Settings.Default.all_wleft = MainWindow.I.Left;
+                Properties.Settings.Default.all_wtop = MainWindow.I.Top;
             }
             
         }
@@ -186,7 +202,7 @@ namespace hours
          */
         private void staleNavrchu(object sender, EventArgs e)
         {
-            if(this.vzdyNavrchu == true)
+            if(Properties.Settings.Default.all_top == true)
             {
                 Window window = (Window)sender;
                 window.Topmost = true;
@@ -199,6 +215,7 @@ namespace hours
         private void Ukoncit(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("Ukoncuji aplikace.....");
+            Properties.Settings.Default.Save();
             Environment.Exit(0);
         }
 
@@ -250,7 +267,7 @@ namespace hours
 
         public void change_mode(int x)
         {
-            mode = x;
+            Properties.Settings.Default.mode = x;
             MainWindow.I.DIGITAL.Visibility = Visibility.Hidden;
             MainWindow.I.BINARY.Visibility = Visibility.Hidden;
             MainWindow.I.ANALOG.Visibility = Visibility.Hidden;
@@ -303,8 +320,9 @@ namespace hours
 
         private void BINARY_CLICK(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("SERIALIZEEEE");
-            Serialize<Info>(this.informacie);
+            Console.WriteLine("RESET");
+            Properties.Settings.Default.Reset();
+            //Serialize<Info>(this.informacie);
         }
     }
 }

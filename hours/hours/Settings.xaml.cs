@@ -36,14 +36,20 @@ namespace hours
                 //nahlad.Source = new BitmapImage(new Uri(skin + "\\thumb.png"));
             }
             start();
+            setInfobox();
         }
 
 
         public void start()
         {
-            opacity.Value = MainWindow.I.all_opacity;
-            size.Value = MainWindow.I.all_size; 
-            all_top.IsChecked = MainWindow.I.all_top;
+            opacity.Value = Properties.Settings.Default.all_opacity;
+            size.Value = Properties.Settings.Default.all_size; 
+            all_top.IsChecked = Properties.Settings.Default.all_top;
+        }
+
+        public void setInfobox()
+        {
+            infobox.Text = "Runs count:" + Properties.Settings.Default.runs.ToString();
         }
 
 
@@ -71,7 +77,11 @@ namespace hours
         private void change_opacity(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("opacity change on: " + opacity.Value/10.0 );
-            MainWindow.I.all_opacity = opacity.Value; // save opacity val
+            Properties.Settings.Default.all_opacity = opacity.Value; // save opacity slider val
+            if (opacity.Value < 1.2)
+            {
+                return;
+            }
 
             MainWindow.I.Opacity = opacity.Value / 10.0;
             
@@ -81,7 +91,7 @@ namespace hours
         private void change_size(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("size change on: " + size.Value / 10.0);
-            MainWindow.I.all_size = size.Value; // save size val
+            Properties.Settings.Default.all_size = size.Value; // save size val
             if (size.Value < 2.0)
             {
                 return;
@@ -102,8 +112,7 @@ namespace hours
         private void vzdyNavrchuTrue(object sender, RoutedEventArgs e)
         {
             MainWindow.I.Topmost = true;
-            MainWindow.I.vzdyNavrchu = true;
-            MainWindow.I.all_top = true;
+            Properties.Settings.Default.all_top = true;
         }
 
         /*
@@ -112,8 +121,7 @@ namespace hours
         private void vzdyNavrchuFalse(object sender, RoutedEventArgs e)
         {
             MainWindow.I.Topmost = false;
-            MainWindow.I.vzdyNavrchu = false;
-            MainWindow.I.all_top = false;
+            Properties.Settings.Default.all_top = false;
         }
 
         private void chmode(object sender, RoutedEventArgs e)
