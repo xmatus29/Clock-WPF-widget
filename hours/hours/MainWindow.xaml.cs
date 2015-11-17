@@ -27,7 +27,16 @@ namespace hours
         
         private System.Windows.Threading.DispatcherTimer timerCas;
         public static MainWindow I;
+        public Settings nastavenia = null;
+        public Credits credits = null;
         public bool vzdyNavrchu;
+
+
+        public int mode;//0-analog//1-digital//2-binary
+        public double all_opacity;
+        public double all_size;
+        public bool all_top;
+
 
 
         public MainWindow()
@@ -36,6 +45,19 @@ namespace hours
             I = this;
             this.vzdyNavrchu = true;
             InitializeComponent();
+
+            //SET DEFAULTS
+            mode = 0;
+            all_opacity = MainWindow.I.Opacity * 10;
+            all_size = MainWindow.I.Height / 100;
+            all_top = true;
+            
+
+
+
+
+
+
             System.Console.WriteLine("~app started!");
             this.ShowInTaskbar = false;
             this.Left = SystemParameters.PrimaryScreenWidth - this.Width;
@@ -100,8 +122,12 @@ namespace hours
                 pocasi_obr.Width = pocasi_obr.Height = okno.Width / 2;
             }
             //kolecko.Fill = "Red";
-            
-    }
+
+
+
+            change_mode(1);
+
+        }
 
 
         public void resize()
@@ -176,7 +202,8 @@ namespace hours
         private void Credits(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("Credits: Start");
-            Credits credits = new Credits();
+            if (this.credits != null) { return; }
+            this.credits = new Credits();
             credits.Show();
             if (okno.Left > SystemParameters.PrimaryScreenWidth / 2.0)
             {
@@ -195,8 +222,10 @@ namespace hours
         private void Settings(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("Settings: Start");
-            Settings nastavenia = new Settings();
-            nastavenia.Show();
+            if (this.nastavenia != null){return;}
+            this.nastavenia = new Settings();
+            this.nastavenia.Show();
+
             /* nastaveni pozice podle umisteni hodin */
             if (okno.Left > SystemParameters.PrimaryScreenWidth / 2.0)
             {
@@ -208,6 +237,32 @@ namespace hours
             }
             nastavenia.Top = okno.Top;
 
+        }
+
+
+
+
+        public void change_mode(int x)
+        {
+            //mode = x;
+            MainWindow.I.DIGITAL.Visibility = Visibility.Hidden;
+            MainWindow.I.BINARY.Visibility = Visibility.Hidden;
+            MainWindow.I.ANALOG.Visibility = Visibility.Hidden;
+
+            switch (x)
+            {
+                case 0://analog
+                    MainWindow.I.ANALOG.Visibility = Visibility.Visible;
+                    break;
+                case 1://digital
+                    MainWindow.I.DIGITAL.Visibility = Visibility.Visible;
+                    break;
+                case 2://binary
+                    MainWindow.I.BINARY.Visibility = Visibility.Visible;
+                    break;
+                default:
+                    break;
+            }
         }
 
 

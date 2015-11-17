@@ -14,58 +14,83 @@
 
 
     <Grid>
-        
-        <Ellipse x:Name="kolecko" Visibility="Visible" Fill="#FF2F5BD3" Opacity="0.3" Width="350" Height="350" StrokeThickness="102">
-            <Ellipse.Effect>
-                <DropShadowEffect BlurRadius="1" Direction="300" Opacity="0.5" ShadowDepth="20"/>
-            </Ellipse.Effect>
-        </Ellipse>
-        <Image Visibility="Hidden" Source="C:\Users\Luboš\Documents\GitHubVisualStudio\HOURS-WPF\hours\hours\img\clock1.gif" Opacity="0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="600" Height="600"></Image>
 
-        <Label x:Name="digitalTime" Content="xxh xxm xxs" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200"   FontSize="40" FontFamily="Rockwell Extra Bold" Margin="50,100,54,100">
-            <Label.Effect>
-                <BlurEffect Radius="2"/>
-            </Label.Effect>
-        </Label>
-        <Label x:Name="datum" Content="Monday dd. mm. yyyy"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="100"  FontSize="20" FontFamily="Transformers Movie">
-            <Label.Effect>
-                <BlurEffect Radius="2"/>
-            </Label.Effect>
-        </Label>
+        <Grid x:Name="ANALOG">
 
-        
-        <Rectangle x:Name="hodinaRucicka" Visibility="Visible"  Fill="Red" Opacity="0.8" Width="20" HorizontalAlignment="Center" VerticalAlignment="Top" Height="200" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
-            <Rectangle.RenderTransform>
-                <RotateTransform x:Name="hodina" Angle="0"/>
-            </Rectangle.RenderTransform>
-        </Rectangle>
+            <Ellipse x:Name="kolecko" Visibility="Visible" Fill="#FF2F5BD3" Opacity="0.3" Width="350" Height="350" StrokeThickness="102">
+                <Ellipse.Effect>
+                    <DropShadowEffect BlurRadius="1" Direction="300" Opacity="0.5" ShadowDepth="20"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Image Visibility="Hidden" Source="C:\Users\Luboš\Documents\GitHubVisualStudio\HOURS-WPF\hours\hours\img\clock1.gif" Opacity="0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="600" Height="600"></Image>
 
-        <Rectangle x:Name="minutaRucicka" Visibility="Visible" Fill="Green" Opacity="0.8"  Width="15" HorizontalAlignment="Center" VerticalAlignment="Top" Height="200" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
-            <Rectangle.RenderTransform>
-                <RotateTransform x:Name="minuta" Angle="0"/>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-
-    
-        <Rectangle x:Name="sekundaRucicka" Fill="Yellow"  Opacity="0.8" HorizontalAlignment="Center" VerticalAlignment="Top" Width="10" Height="200" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
-            <Rectangle.RenderTransform>
-                <RotateTransform x:Name="sekunda" Angle="0"/>
-            </Rectangle.RenderTransform>
-        </Rectangle>
+            <Label x:Name="digitalTime" Content="xxh xxm xxs" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200"   FontSize="40" FontFamily="Rockwell Extra Bold" Margin="50,100,54,100">
+                <Label.Effect>
+                    <BlurEffect Radius="2"/>
+                </Label.Effect>
+            </Label>
+            <Label x:Name="datum" Content="Monday dd. mm. yyyy"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="100"  FontSize="20" FontFamily="Transformers Movie">
+                <Label.Effect>
+                    <BlurEffect Radius="2"/>
+                </Label.Effect>
+            </Label>
 
 
+            <Rectangle x:Name="hodinaRucicka" Visibility="Visible"  Fill="Red" Opacity="0.8" Width="20" HorizontalAlignment="Center" VerticalAlignment="Top" Height="200" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
+                <Rectangle.RenderTransform>
+                    <RotateTransform x:Name="hodina" Angle="0"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+
+            <Rectangle x:Name="minutaRucicka" Visibility="Visible" Fill="Green" Opacity="0.8"  Width="15" HorizontalAlignment="Center" VerticalAlignment="Top" Height="200" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
+                <Rectangle.RenderTransform>
+                    <RotateTransform x:Name="minuta" Angle="0"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+
+
+            <Rectangle x:Name="sekundaRucicka" Fill="Yellow"  Opacity="0.8" HorizontalAlignment="Center" VerticalAlignment="Top" Width="10" Height="200" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
+                <Rectangle.RenderTransform>
+                    <RotateTransform x:Name="sekunda" Angle="0"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
 
 
 
 
-        <Image x:Name="pocasi_obr" Source="http://icons.wxug.com/i/c/k/hazy.gif" Opacity="0.5" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="200"></Image>
-        <Label x:Name="teplota" Visibility="Visible" Content="xx °C"  VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="150" Width="70" FontWeight="Bold" FontSize="20" FontFamily="Transformers Movie"/>
-        <Label x:Name="lokace" Visibility="Visible" Content="Lokace" VerticalAlignment="Bottom" HorizontalAlignment="Center"   Height="200" Width="120" FontWeight="Bold" FontSize="25" FontFamily="Snap ITC"/>
-        <Label x:Name="pocasi" Visibility="Hidden" Content="Posasi" VerticalAlignment="Bottom" HorizontalAlignment="Center"   Height="175" Width="120" FontWeight="Bold" FontSize="25" FontFamily="Willamette SF"/>
-        <Ellipse x:Name="stred" Opacity="0.9" Fill="Coral" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="20" Height="20"/>
-        
+
+
+            <Image x:Name="pocasi_obr" Source="http://icons.wxug.com/i/c/k/hazy.gif" Opacity="0.5" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="200"></Image>
+            <Label x:Name="teplota" Visibility="Visible" Content="xx °C"  VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="150" Width="70" FontWeight="Bold" FontSize="20" FontFamily="Transformers Movie"/>
+            <Label x:Name="lokace" Visibility="Visible" Content="Lokace" VerticalAlignment="Bottom" HorizontalAlignment="Center"   Height="200" Width="120" FontWeight="Bold" FontSize="25" FontFamily="Snap ITC"/>
+            <Label x:Name="pocasi" Visibility="Hidden" Content="Posasi" VerticalAlignment="Bottom" HorizontalAlignment="Center"   Height="175" Width="120" FontWeight="Bold" FontSize="25" FontFamily="Willamette SF"/>
+            <Ellipse x:Name="stred" Opacity="0.9" Fill="Coral" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="20" Height="20"/>
+
+        </Grid>
+
+
+
+
+        <Grid x:Name="DIGITAL">
+            <TextBlock Background="Aquamarine">TTTTTTTTT</TextBlock>
+        </Grid>
+
+
+
+        <Grid x:Name="BINARY">
+            <Button>BINARY</Button>
+        </Grid>
+
+
+
+
+
+
+
+
 
     </Grid>
+
     <Window.ContextMenu>
         <ContextMenu>
             <MenuItem Header="Settings" Click="Settings"/>

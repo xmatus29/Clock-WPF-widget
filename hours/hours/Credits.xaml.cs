@@ -25,5 +25,11 @@ namespace hours
             System.Console.WriteLine(System.Environment.CurrentDirectory);
             logo.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\fit_logo.png"));
         }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            MainWindow.I.credits = null;
+        }
     }
 }

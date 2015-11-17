@@ -19,10 +19,10 @@
         <ComboBox x:Name="SkinBox" SelectionChanged="vyber" Grid.Row="0" />
         <!--Calendar Grid.Row="2"></-->
         <TextBox Grid.Row="2" Text="Opacity slider" VerticalAlignment="Center" HorizontalAlignment="Center" Background="LightCyan"></TextBox>
-        <Slider x:Name="opacity" Grid.Row="3" ValueChanged="change_opacity" Background="CadetBlue" Value="5" />
+        <Slider x:Name="opacity" Grid.Row="3" ValueChanged="change_opacity" Background="CadetBlue"  />
         <TextBox Grid.Row="4" Text="Size slider" VerticalAlignment="Center" HorizontalAlignment="Center" Background="LightGray"></TextBox>
-        <Slider x:Name="size" Grid.Row="5" Background="GreenYellow" Minimum="2"  Value="6" Maximum="10" ValueChanged="change_size"/>
-        <CheckBox Checked="vzdyNavrchuTrue" Unchecked="vzdyNavrchuFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7">Always on top of all Windows</CheckBox>
+        <Slider x:Name="size" Grid.Row="5" Background="GreenYellow" ValueChanged="change_size"/>
+        <CheckBox x:Name="all_top" Checked="vzdyNavrchuTrue" Unchecked="vzdyNavrchuFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7">Always on top of all Windows</CheckBox>
         
 
             <Image  x:Name="nahlad" Source="MyImage.jpg" Grid.Row="1"/>

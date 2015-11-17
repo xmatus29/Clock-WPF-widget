@@ -22,8 +22,11 @@ namespace hours
     public partial class Settings : Window
     {
 
+        
+
         public Settings()
         {
+           
             InitializeComponent();
             string[] skiny = Directory.GetDirectories(System.Environment.CurrentDirectory + "\\Skins");
 
@@ -32,10 +35,31 @@ namespace hours
                 SkinBox.Items.Add(System.IO.Path.GetFileName(skin));
                 //nahlad.Source = new BitmapImage(new Uri(skin + "\\thumb.png"));
             }
-
+            start();
         }
 
-        
+
+        public void start()
+        {
+            opacity.Value = MainWindow.I.all_opacity;
+            size.Value = MainWindow.I.all_size; 
+            all_top.IsChecked = MainWindow.I.all_top;
+        }
+
+
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            MainWindow.I.nastavenia = null;
+        }
+
+
+
+
+
+
+
 
         private void vyber(object sender, SelectionChangedEventArgs e)
         {
@@ -47,6 +71,7 @@ namespace hours
         private void change_opacity(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("opacity change on: " + opacity.Value/10.0 );
+            MainWindow.I.all_opacity = opacity.Value; // save opacity val
 
             MainWindow.I.Opacity = opacity.Value / 10.0;
             
@@ -56,8 +81,17 @@ namespace hours
         private void change_size(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("size change on: " + size.Value / 10.0);
-            MainWindow.I.Height = size.Value * 100;
-            MainWindow.I.Width = size.Value * 100;
+            MainWindow.I.all_size = size.Value; // save size val
+            if (size.Value < 2.0)
+            {
+                return;
+            }
+
+            
+           
+
+            MainWindow.I.Height = (size.Value * 100);
+            MainWindow.I.Width = (size.Value * 100);
             MainWindow.I.resize();
 
         }
@@ -69,6 +103,7 @@ namespace hours
         {
             MainWindow.I.Topmost = true;
             MainWindow.I.vzdyNavrchu = true;
+            MainWindow.I.all_top = true;
         }
 
         /*
@@ -78,6 +113,7 @@ namespace hours
         {
             MainWindow.I.Topmost = false;
             MainWindow.I.vzdyNavrchu = false;
+            MainWindow.I.all_top = false;
         }
     }
 }
