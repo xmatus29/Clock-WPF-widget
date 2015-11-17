@@ -29,6 +29,7 @@ namespace hours
         public static MainWindow I;
         public Settings nastavenia = null;
         public Credits credits = null;
+        public Info informacie = null;
         public bool vzdyNavrchu;
 
 
@@ -51,7 +52,11 @@ namespace hours
             all_opacity = MainWindow.I.Opacity * 10;
             all_size = MainWindow.I.Height / 100;
             all_top = true;
-            
+
+
+            //RUN
+            change_mode(0);
+
 
 
 
@@ -62,7 +67,7 @@ namespace hours
             this.ShowInTaskbar = false;
             this.Left = SystemParameters.PrimaryScreenWidth - this.Width;
             this.Top = 0;
-            Info informacie = new Info();
+            informacie = new Info();
 
             /* treba pozdeji zmenit :) pocasi se nacte az pozdeji po spusteni, pokud to bude narusovat chod programu klidne zakomentovat... */
 
@@ -125,7 +130,7 @@ namespace hours
 
 
 
-            change_mode(1);
+            
 
         }
 
@@ -173,6 +178,7 @@ namespace hours
             {
                 this.DragMove();
             }
+            
         }
 
         /*
@@ -244,7 +250,7 @@ namespace hours
 
         public void change_mode(int x)
         {
-            //mode = x;
+            mode = x;
             MainWindow.I.DIGITAL.Visibility = Visibility.Hidden;
             MainWindow.I.BINARY.Visibility = Visibility.Hidden;
             MainWindow.I.ANALOG.Visibility = Visibility.Hidden;
@@ -267,5 +273,38 @@ namespace hours
 
 
 
+
+
+
+
+
+
+
+
+
+        //BINARY
+        public static void Serialize<T>(T t)
+        {
+            //using (System.IO.StringWriter sw = new System.IO.StringWriter())
+            //using (System.Xml.XmlWriter xw = System.Xml.XmlWriter.Create(sw))
+            //{
+            //    new System.Xml.Serialization.XmlSerializer(typeof(T)).Serialize(xw, t);
+            //    return sw.GetStringBuilder().ToString();
+           // }
+
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(T));
+            using (var writer = new System.IO.StreamWriter(@"testxxx.xml"))
+            {
+                serializer.Serialize(writer, t);
+            }
+
+            
+        }
+
+        private void BINARY_CLICK(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("SERIALIZEEEE");
+            Serialize<Info>(this.informacie);
+        }
     }
 }

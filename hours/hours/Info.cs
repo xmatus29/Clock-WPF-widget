@@ -15,7 +15,7 @@ namespace hours
      * Trieda na zistenie pocasia z internetu + casu
      * @Author: Filip Gulan
      */
-    class Info
+    public class Info
     {
         public String teplota;
         public String lokacia;
@@ -29,6 +29,7 @@ namespace hours
 
         private System.Windows.Threading.DispatcherTimer timerPocasie;
         public bool pripojen_k_internetu;
+
         /*
          * Konstruktor triedy
          */

@@ -78,7 +78,7 @@
 
 
         <Grid x:Name="BINARY">
-            <Button>BINARY</Button>
+            <Button Click="BINARY_CLICK">BINARY</Button>
         </Grid>
 
 

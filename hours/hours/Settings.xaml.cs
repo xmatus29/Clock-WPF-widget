@@ -115,5 +115,12 @@ namespace hours
             MainWindow.I.vzdyNavrchu = false;
             MainWindow.I.all_top = false;
         }
+
+        private void chmode(object sender, RoutedEventArgs e)
+        {
+            Button tmp = sender as Button;
+            
+            MainWindow.I.change_mode(Int32.Parse(tmp.ToolTip.ToString()));
+        }
     }
 }
