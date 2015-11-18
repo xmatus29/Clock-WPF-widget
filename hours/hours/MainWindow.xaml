@@ -73,12 +73,32 @@
 
         <Grid x:Name="DIGITAL">
             <TextBlock Background="Aquamarine">TTTTTTTTT</TextBlock>
+            <Button Click="BINARY_CLICK">BINARY</Button>
         </Grid>
 
 
 
         <Grid x:Name="BINARY">
-            <Button Click="BINARY_CLICK">BINARY</Button>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+           
+            
+            
+            
+            
+        
         </Grid>
 
 

@@ -31,6 +31,8 @@ namespace hours
         public Settings nastavenia = null;
         public Credits credits = null;
         public Info informacie = null;
+        BitmapImage binarnaNula;
+        BitmapImage binarnaJedna;
 
 
 
@@ -43,7 +45,8 @@ namespace hours
             
             InitializeComponent();
 
-           
+            this.binarnaJedna = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\thumb.png"));
+            this.binarnaNula = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\thumb1.png"));
 
             
 
@@ -151,7 +154,7 @@ namespace hours
         public void resize()
         {
             //okno.Width = okno.Height = 400; /* nastav velikost okna 200 az INFINITY  */
-            kolecko.Width = kolecko.Height = okno.Width - 50;
+            //kolecko.Width = kolecko.Height = okno.Width - 50;
             sekundaRucicka.Height = okno.Width / 2;
             sekundaRucicka.Width = okno.Width / 40;
             minutaRucicka.Height = okno.Width / 2;
@@ -171,13 +174,58 @@ namespace hours
          */
         private void nastavCas(object sender, EventArgs e)
         {
-            sekunda.Angle = DateTime.Now.Second * 6;
-            minuta.Angle = DateTime.Now.Minute * 6;
-            hodina.Angle = DateTime.Now.Minute * 0.5 + DateTime.Now.Hour * 30;
+            if (Properties.Settings.Default.mode == 0)
+            {
+                sekunda.Angle = DateTime.Now.Second * 6;
+                minuta.Angle = DateTime.Now.Minute * 6;
+                hodina.Angle = DateTime.Now.Minute * 0.5 + DateTime.Now.Hour * 30;
+            }
 
-            digitalTime.Content = DateTime.Now.Hour.ToString() + "h " + DateTime.Now.Minute.ToString() + "m " + DateTime.Now.Second.ToString() + "s";
-            datum.Content = DateTime.Now.DayOfWeek + "  " + DateTime.Now.Day + ". " + DateTime.Now.Month + ". " + DateTime.Now.Year;
+            if (Properties.Settings.Default.mode == 1)
+            {
+                digitalTime.Content = DateTime.Now.Hour.ToString() + "h " + DateTime.Now.Minute.ToString() + "m " + DateTime.Now.Second.ToString() + "s";
+                datum.Content = DateTime.Now.DayOfWeek + "  " + DateTime.Now.Day + ". " + DateTime.Now.Month + ". " + DateTime.Now.Year;
+            }
 
+            if (Properties.Settings.Default.mode == 2)
+            {
+                //Binarne sekudny
+                this.vykresliBinarneHodiny(new Image[6], Convert.ToString(DateTime.Now.Second, 2), 2);
+                //Binarne minuty
+                this.vykresliBinarneHodiny(new Image[6], Convert.ToString(DateTime.Now.Minute, 2), 1);
+                //Binarne hodiny
+                this.vykresliBinarneHodiny(new Image[6], Convert.ToString(DateTime.Now.Hour, 2), 0);
+            }
+           
+        }
+
+        /*
+         * Metoda ktora vykresluje binarne hodiny
+         */
+        private void vykresliBinarneHodiny(Image[] poleBitov, string binarne, int riadok)
+        {
+            //Doplni nuly na zaciatok, aby sa vykrelsovali aj nuly vzdy 6 cisiel
+            for (int i = 0; i < 6 - binarne.Length; i++)
+            {
+                binarne = binarne.Insert(0, "0");
+            }
+            //Umiestnujem obrakzy podla hodnoty bitov
+            for (int i = 0; i < binarne.Length; i++)
+            {
+                poleBitov[i] = new Image();
+                if (binarne[i] == '1') //je tam jendotka tak zasvietim
+                {
+                    poleBitov[i] = new Image();
+                    poleBitov[i].Source = this.binarnaJedna;
+                }
+                else //inak vypnem
+                {
+                    poleBitov[i].Source = this.binarnaNula;
+                }
+                BINARY.Children.Add(poleBitov[i]);
+                Grid.SetColumn(poleBitov[i], i);
+                Grid.SetRow(poleBitov[i], riadok);
+            }
         }
 
 
