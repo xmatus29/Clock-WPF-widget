@@ -189,6 +189,7 @@ namespace hours
 
             if (Properties.Settings.Default.mode == 2)
             {
+                BINARY.Children.Clear();
                 //Binarne sekudny
                 this.vykresliBinarneHodiny(new Image[6], Convert.ToString(DateTime.Now.Second, 2), 2);
                 //Binarne minuty
