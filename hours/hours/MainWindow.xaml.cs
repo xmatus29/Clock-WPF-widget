@@ -207,14 +207,15 @@ namespace hours
          */
         private void vykresliBinarneHodiny(Image[] poleBitov, string binarne, int riadok)
         {
-            //Doplni nuly na zaciatok, aby sa vykrelsovali aj nuly vzdy 6 cisiel
-            for (int i = 0; i < 6 - binarne.Length; i++)
-            {
-                binarne = binarne.Insert(0, "0");
-            }
-            //Umiestnujem obrakzy podla hodnoty bitov
+            //Umiestnujem obrazky podla hodnoty bitov
             for (int i = 0; i < binarne.Length; i++)
             {
+                //Doplni nuly na zaciatok, aby sa vykrelsovali aj nuly vzdy 6 cisiel
+                for (int j = 0; j < 6 - binarne.Length; j++)
+                {
+                    binarne = binarne.Insert(0, "0");
+                }
+
                 poleBitov[i] = new Image();
                 if (binarne[i] == '1') //je tam jendotka tak zasvietim
                 {
@@ -229,6 +230,7 @@ namespace hours
                 Grid.SetColumn(poleBitov[i], i);
                 Grid.SetRow(poleBitov[i], riadok);
             }
+
         }
 
 
