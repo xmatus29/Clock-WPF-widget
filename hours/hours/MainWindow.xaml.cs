@@ -103,22 +103,9 @@ namespace hours
             /* zde lze nastavit velikost okna, ostatni se automaticky upravi na prijatelnou velikost 
              - pozdeji by bylo fajn (az bude mozne modifikovat velikost okna za behu programu) vlozit nasledici radky do reakce na zmenu velikosti okna
             */
-            okno.Width = okno.Height = 400; /* nastav velikost okna 200 az INFINITY  *///default 400
+            okno.Width = okno.Height = 400; /* nastav velikost okna 200 az 1000 *///default 400
             resize();
-
-            if (informacie.pripojen_k_internetu)
-            {
-                teplota.Height = okno.Height / 3;
-                teplota.FontSize = okno.Width / 20;
-                teplota.Width = okno.Width / 5.7;
-                lokace.Height = okno.Height / 2.5;
-                lokace.FontSize = okno.Height / 16;
-                lokace.Width = okno.Width / 3.33;
-                pocasi.Height = okno.Width / 2.2;
-                pocasi.FontSize = okno.Width / 16;
-                pocasi.Width = okno.Width / 3.33;
-                pocasi_obr.Width = pocasi_obr.Height = okno.Width / 2;
-            }
+            
             //kolecko.Fill = "Red";
 
 
@@ -154,18 +141,32 @@ namespace hours
         public void resize()
         {
             //okno.Width = okno.Height = 400; /* nastav velikost okna 200 az INFINITY  */
-            //kolecko.Width = kolecko.Height = okno.Width - 50;
-            sekundaRucicka.Height = okno.Width / 2;
+            kolecko.Width = kolecko.Height = okno.Width / 1.6;
+            sekundaRucicka.Height = okno.Width / 2.66;
             sekundaRucicka.Width = okno.Width / 40;
-            minutaRucicka.Height = okno.Width / 2;
+            minutaRucicka.Height = okno.Width / 2.66;
             minutaRucicka.Width = okno.Width / 30;
-            hodinaRucicka.Height = okno.Width / 2;
+            hodinaRucicka.Height = okno.Width / 2.66;
             hodinaRucicka.Width = okno.Width / 20;
             digitalTime.Height = okno.Width / 2;
             digitalTime.FontSize = okno.Width / 10;
             datum.Height = okno.Width / 4;
             datum.FontSize = okno.Width / 20;
             stred.Width = stred.Height = okno.Width / 10;
+
+            if (informacie.pripojen_k_internetu)
+            {
+                teplota.Height = okno.Height / 10;//3
+                teplota.FontSize = okno.Width / 20;//20
+                teplota.Width = okno.Width / 6;//5.7
+                lokace.Height = okno.Height / 10;//2.5
+                lokace.FontSize = okno.Height / 20;//16
+                lokace.Width = okno.Width / 6;//3.33
+                pocasi.Height = okno.Width / 10;//2.2
+                pocasi.FontSize = okno.Width / 20;//16
+                pocasi.Width = okno.Width / 6;//3.33
+                pocasi_obr.Width = pocasi_obr.Height = okno.Width /10;//2
+            }
         }
 
 
@@ -179,6 +180,7 @@ namespace hours
                 sekunda.Angle = DateTime.Now.Second * 6;
                 minuta.Angle = DateTime.Now.Minute * 6;
                 hodina.Angle = DateTime.Now.Minute * 0.5 + DateTime.Now.Hour * 30;
+                datum.Content = DateTime.Now.DayOfWeek + "  " + DateTime.Now.Day + ". " + DateTime.Now.Month + ". " + DateTime.Now.Year;
             }
 
             if (Properties.Settings.Default.mode == 1)
