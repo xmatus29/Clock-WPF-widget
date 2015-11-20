@@ -343,15 +343,6 @@ namespace hours
 
 
 
-
-
-
-
-
-
-
-
-
         //BINARY
         public static void Serialize<T>(T t)
         {
