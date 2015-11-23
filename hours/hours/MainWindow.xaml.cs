@@ -140,7 +140,9 @@ namespace hours
 
         public void resize()
         {
-            //okno.Width = okno.Height = 400; /* nastav velikost okna 200 az INFINITY  */
+            /*
+                Hodiny
+            */
             kolecko.Width = kolecko.Height = okno.Width / 1.6;
             sekundaRucicka.Height = okno.Width / 2.66;
             sekundaRucicka.Width = okno.Width / 40;
@@ -153,6 +155,56 @@ namespace hours
             datum.Height = okno.Width / 4;
             datum.FontSize = okno.Width / 20;
             stred.Width = stred.Height = okno.Width / 10;
+
+            /*
+                Cifernik
+            */
+            c1.Height = okno.Height/1.57;
+            c1.Width = okno.Width/2.67;
+            c1.FontSize = okno.Width/13.3;
+
+            c2.Height = okno.Height / 1.905;
+            c2.Width = okno.Width / 3.64;
+            c2.FontSize = okno.Width / 13.3;
+
+            c3.Height = okno.Height / 2.5;
+            c3.Width = okno.Width / 4;
+            c3.FontSize = okno.Width / 13.3;
+
+            c4.Height = okno.Height / 3.63;
+            c4.Width = okno.Width / 3.63;
+            c4.FontSize = okno.Width / 13.3;
+
+            c5.Height = okno.Height / 5.17;
+            c5.Width = okno.Width / 2.67;
+            c5.FontSize = okno.Width / 13.3;
+
+            c6.Height = okno.Height / 8;
+            c6.FontSize = okno.Width / 13.3;
+
+            c7.Height = okno.Height / 5.71;
+            c7.Width = okno.Width / 1.53;
+            c7.FontSize = okno.Width / 13.3;
+
+            c8.Height = okno.Height / 3.63;
+            c8.Width = okno.Width / 1.33;
+            c8.FontSize = okno.Width / 13.3;
+
+            c9.Height = okno.Height / 2.5;
+            c9.Width = okno.Width / 1.25;
+            c9.FontSize = okno.Width / 13.3;
+
+            c10.Height = okno.Height / 1.9;
+            c10.Width = okno.Width / 1.28;
+            c10.FontSize = okno.Width / 13.3;
+
+            c11.Height = okno.Height / 1.54;
+            c11.Width = okno.Width / 1.48;
+            c11.FontSize = okno.Width / 13.3;
+
+            c12.Height = okno.Height / 1.45;
+            c12.FontSize = okno.Width / 13.3;
+
 
             if (informacie.pripojen_k_internetu)
             {
@@ -230,9 +282,7 @@ namespace hours
                 Grid.SetColumn(poleBitov[i], i);
                 Grid.SetRow(poleBitov[i], riadok);
             }
-
         }
-
 
 
         /*
@@ -251,7 +301,7 @@ namespace hours
         }
 
         /*
-         * Metoda, tkora sa stara aby bolo okno stale navrchu vsetkeho
+         * Metoda, ktora sa stara aby bolo okno stale navrchu vsetkeho
          */
         private void staleNavrchu(object sender, EventArgs e)
         {
@@ -364,9 +414,7 @@ namespace hours
             using (var writer = new System.IO.StreamWriter(@"testxxx.xml"))
             {
                 serializer.Serialize(writer, t);
-            }
-
-            
+            }       
         }
 
         private void BINARY_CLICK(object sender, RoutedEventArgs e)

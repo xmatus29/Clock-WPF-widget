@@ -27,7 +27,7 @@
         <Grid x:Name="ANALOG" ShowGridLines="True">
             <Grid>
                 <!-- Kolecko -->
-                <Ellipse x:Name="kolecko" Visibility="Visible" Fill="#FF2F5BD3" Opacity="0.3" Width="250" Height="250" StrokeThickness="102"/>
+                <Ellipse x:Name="kolecko" Visibility="Visible" Fill="#FF2F5BD3" Opacity="1" Width="250" Height="250" StrokeThickness="102"/>
                 
                 <!-- Potencialne nahrazeno obrazkem -->
                 <Image Visibility="Hidden" Opacity="0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="250"></Image>
@@ -59,10 +59,24 @@
                         <RotateTransform x:Name="sekunda" Angle="0"/>
                     </Rectangle.RenderTransform>
                 </Rectangle>
-                
+
                 <!-- Stredove kolecko -->
                 <Ellipse x:Name="stred" Opacity="0.9" Fill="Coral" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="20" Height="20"/>
-            
+                
+                <!-- cifernik -->
+                <TextBlock x:Name="c1" Text="1" FontSize="30" Height="255" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c2" Text="2" FontSize="30" Height="210" Width="110" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c3" Text="3" Width="100" Height="160" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c4" Text="4" FontSize="30" Height="110" Width="110" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c5" Text="5" FontSize="30" Height="70" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c6" Text="6" Height="50" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c7" Text="7" FontSize="30" Height="70" Width="260" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c8" Text="8" FontSize="30" Height="110" Width="300" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c9" Text="9" Width="320" Height="160" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c10" Text="10" FontSize="30" Height="210" Width="320" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c11" Text="11" FontSize="30" Height="260" Width="270" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c12" Text="12" FontSize="30" Height="275" HorizontalAlignment="Center" VerticalAlignment="Bottom"></TextBlock>
+                
             </Grid>
         </Grid>
 
@@ -96,7 +110,7 @@
         <Label Grid.Row="1" x:Name="lokace" Visibility="Visible" Content="Lokace" VerticalAlignment="Center" HorizontalAlignment="Center"   Height="30" Width="120" FontWeight="Bold" FontSize="20" FontFamily="Snap ITC"/>
         <Image Grid.Row="2"  x:Name="pocasi_obr" Opacity="0.5" VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" Height="50"/>
         <Label Grid.Row="3" x:Name="teplota" Visibility="Visible" Content="xx °C"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="30" Width="60" FontWeight="Bold" FontSize="20" FontFamily="Transformers Movie"/>
-        <Label Grid.Row="4" x:Name="pocasi" Visibility="Visible" Content="Posasi" VerticalAlignment="Center" HorizontalAlignment="Center"   Height="30" Width="100" FontWeight="Bold" FontSize="20" FontFamily="Willamette SF"/>
+        <Label Grid.Row="4" x:Name="pocasi" Visibility="Visible" Content="Posasi" VerticalAlignment="Center" HorizontalAlignment="Center"   Height="30" Width="180" FontWeight="Bold" FontSize="20" FontFamily="Willamette SF"/>
     </Grid>
 
     <!-- Context menu, ktere se otevre po kliknuti pravym mysitkem -->
