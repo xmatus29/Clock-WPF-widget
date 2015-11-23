@@ -283,11 +283,11 @@ namespace hours
             credits.Show();
             if (okno.Left > SystemParameters.PrimaryScreenWidth / 2.0)
             {
-                credits.Left = okno.Left - 0.5 * okno.Width;
+                credits.Left = okno.Left - credits.Width - 20;
             }
             else
             {
-                credits.Left = okno.Left + okno.Width;
+                credits.Left = okno.Left + okno.Width + 20;
             }
             credits.Top = okno.Top;
         }
@@ -305,13 +305,20 @@ namespace hours
             /* nastaveni pozice podle umisteni hodin */
             if (okno.Left > SystemParameters.PrimaryScreenWidth / 2.0)
             {
-                nastavenia.Left = okno.Left - 0.75*okno.Width;
+                nastavenia.Left = okno.Left - nastavenia.Width-20;
             }
             else
             {
-                nastavenia.Left = okno.Left + okno.Width;
+                nastavenia.Left = okno.Left + okno.Width + 20;
             }
-            nastavenia.Top = okno.Top;
+            if (okno.Top < SystemParameters.PrimaryScreenHeight / 2.0)
+            {
+                nastavenia.Top = okno.Top;
+            }
+            else
+            {
+                nastavenia.Top = SystemParameters.PrimaryScreenHeight - nastavenia.Height - 50;
+            }
 
         }
 
