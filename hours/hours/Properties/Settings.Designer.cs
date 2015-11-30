@@ -106,5 +106,17 @@ namespace hours.Properties {
                 this["all_wtop"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool zobraz_pocasi {
+            get {
+                return ((bool)(this["zobraz_pocasi"]));
+            }
+            set {
+                this["zobraz_pocasi"] = value;
+            }
+        }
     }
 }

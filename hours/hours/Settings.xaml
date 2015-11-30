@@ -13,6 +13,7 @@
             <RowDefinition Height="0.25*" />
             <RowDefinition Height="0.25*" />
             <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.25*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -38,7 +39,7 @@
         <TextBox Grid.Row="5" Text="Size slider" VerticalAlignment="Center" HorizontalAlignment="Center" Background="LightGray"></TextBox>
         <Slider x:Name="size" Grid.Row="6" Background="GreenYellow" ValueChanged="change_size"/>
         <CheckBox x:Name="all_top" Checked="vzdyNavrchuTrue" Unchecked="vzdyNavrchuFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7">Always on top of all Windows</CheckBox>
-
+        <CheckBox x:Name="zobraz_pocasi" Checked="zobrazPocasiTrue" Unchecked="zobrazPocasiFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="8">Zobraz počasí</CheckBox>
         <Viewbox Grid.Row="9"><TextBlock x:Name="infobox" >XXXXXXX</TextBlock></Viewbox>
 
             <Image  x:Name="nahlad" Source="MyImage.jpg" Grid.Row="1"/>

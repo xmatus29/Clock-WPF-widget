@@ -47,15 +47,7 @@ namespace hours
 
             this.binarnaJedna = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\thumb.png"));
             this.binarnaNula = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\thumb1.png"));
-
             
-
-
-
-
-
-
-
             
             this.ShowInTaskbar = false;
             this.Left = SystemParameters.PrimaryScreenWidth - this.Width;
@@ -82,7 +74,6 @@ namespace hours
             this.timerCas.Start();
 
 
-
             /* sekce pocasi */
             if (informacie.pripojen_k_internetu)
             {
@@ -103,7 +94,7 @@ namespace hours
             /* zde lze nastavit velikost okna, ostatni se automaticky upravi na prijatelnou velikost 
              - pozdeji by bylo fajn (az bude mozne modifikovat velikost okna za behu programu) vlozit nasledici radky do reakce na zmenu velikosti okna
             */
-            okno.Width = okno.Height = 400; /* nastav velikost okna 200 az 1000 *///default 400
+            //okno.Width = okno.Height = 400; /* nastav velikost okna 200 az 1000 *///default 400
             resize();
             
             //kolecko.Fill = "Red";
@@ -117,6 +108,7 @@ namespace hours
                 Properties.Settings.Default.all_wleft =  Double.Parse( SystemParameters.PrimaryScreenWidth.ToString()) - Double.Parse(Width.ToString());
                 Properties.Settings.Default.all_wtop = 0.0;
                 Properties.Settings.Default.all_top = true;
+                Properties.Settings.Default.zobraz_pocasi = true;
             }
             Properties.Settings.Default.runs += 1;
 

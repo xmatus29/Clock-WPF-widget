@@ -124,6 +124,26 @@ namespace hours
             Properties.Settings.Default.all_top = false;
         }
 
+        private void zobrazPocasiTrue(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("Zobraz pocasi");
+            MainWindow.I.pocasi.Visibility = Visibility.Visible;
+            MainWindow.I.lokace.Visibility = Visibility.Visible;
+            MainWindow.I.pocasi_obr.Visibility = Visibility.Visible;
+            MainWindow.I.teplota.Visibility = Visibility.Visible;
+            Properties.Settings.Default.zobraz_pocasi = true;
+        }
+
+        private void zobrazPocasiFalse(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("Skryj pocasi");
+            MainWindow.I.pocasi.Visibility = Visibility.Hidden;
+            MainWindow.I.lokace.Visibility = Visibility.Hidden;
+            MainWindow.I.pocasi_obr.Visibility = Visibility.Hidden;
+            MainWindow.I.teplota.Visibility = Visibility.Hidden;
+            Properties.Settings.Default.zobraz_pocasi = false;
+        }
+
         private void chmode(object sender, RoutedEventArgs e)
         {
             Button tmp = sender as Button;
