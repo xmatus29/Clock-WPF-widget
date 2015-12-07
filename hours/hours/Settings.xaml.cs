@@ -150,5 +150,6 @@ namespace hours
             
             MainWindow.I.change_mode(Int32.Parse(tmp.ToolTip.ToString()));
         }
+
     }
 }

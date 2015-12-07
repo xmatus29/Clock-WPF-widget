@@ -202,13 +202,13 @@ namespace hours
             {
                 teplota.Height = okno.Height / 10;//3
                 teplota.FontSize = okno.Width / 20;//20
-                teplota.Width = okno.Width / 6;//5.7
+               // teplota.Width = okno.Width / 6;//5.7
                 lokace.Height = okno.Height / 10;//2.5
                 lokace.FontSize = okno.Height / 20;//16
-                lokace.Width = okno.Width / 6;//3.33
+              //  lokace.Width = okno.Width / 6;//3.33
                 pocasi.Height = okno.Width / 10;//2.2
                 pocasi.FontSize = okno.Width / 20;//16
-                pocasi.Width = okno.Width / 6;//3.33
+               // pocasi.Width = okno.Width / 6;//3.33
                 pocasi_obr.Width = pocasi_obr.Height = okno.Width /10;//2
             }
         }
@@ -221,6 +221,9 @@ namespace hours
         {
             if (Properties.Settings.Default.mode == 0)
             {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(System.Environment.CurrentDirectory + "\\Skins\\" + "\\clock-ticking-2.wav");
+                player.Play();
+                //System.Media.SystemSounds.Hand.Play();
                 sekunda.Angle = DateTime.Now.Second * 6;
                 minuta.Angle = DateTime.Now.Minute * 6;
                 hodina.Angle = DateTime.Now.Minute * 0.5 + DateTime.Now.Hour * 30;

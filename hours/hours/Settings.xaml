@@ -1,6 +1,7 @@
 ﻿<Window x:Class="hours.Settings"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         Title="Setings" Height="400" Width="300">
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
@@ -34,6 +35,10 @@
         
         <ComboBox x:Name="SkinBox" SelectionChanged="vyber" Grid.Row="1" />
         <!--Calendar Grid.Row="2"></-->
+
+        <xctk:ColorPicker Name="ClrPcker_Background" Grid.Row="2"> </xctk:ColorPicker>
+
+
         <TextBox Grid.Row="3" Text="Opacity slider" VerticalAlignment="Center" HorizontalAlignment="Center" Background="LightCyan"></TextBox>
         <Slider x:Name="opacity" Grid.Row="4" ValueChanged="change_opacity" Background="CadetBlue"  />
         <TextBox Grid.Row="5" Text="Size slider" VerticalAlignment="Center" HorizontalAlignment="Center" Background="LightGray"></TextBox>
