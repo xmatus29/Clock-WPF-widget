@@ -221,7 +221,7 @@ namespace hours
         {
             if (Properties.Settings.Default.mode == 0)
             {
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(System.Environment.CurrentDirectory + "\\Skins\\" + "\\clock-ticking-2.wav");
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(System.Environment.CurrentDirectory + "\\Sounds\\" + "\\clock-ticking-2_1s.wav");
                 player.Play();
                 //System.Media.SystemSounds.Hand.Play();
                 sekunda.Angle = DateTime.Now.Second * 6;
