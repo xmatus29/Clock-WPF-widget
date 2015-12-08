@@ -31,6 +31,7 @@ namespace hours
         public Settings nastavenia = null;
         public Credits credits = null;
         public Info informacie = null;
+        public bool tikani;
         BitmapImage binarnaNula;
         BitmapImage binarnaJedna;
 
@@ -42,13 +43,11 @@ namespace hours
         {
 
             I = this;
-            
             InitializeComponent();
 
             this.binarnaJedna = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\thumb.png"));
             this.binarnaNula = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\thumb1.png"));
-            
-            
+
             this.ShowInTaskbar = false;
             this.Left = SystemParameters.PrimaryScreenWidth - this.Width;
             this.Top = 0;
@@ -89,12 +88,7 @@ namespace hours
                 pocasi.Content = "";
 
             }
-            //System.Console.WriteLine(informacie.obrazokURL);
 
-            /* zde lze nastavit velikost okna, ostatni se automaticky upravi na prijatelnou velikost 
-             - pozdeji by bylo fajn (az bude mozne modifikovat velikost okna za behu programu) vlozit nasledici radky do reakce na zmenu velikosti okna
-            */
-            //okno.Width = okno.Height = 400; /* nastav velikost okna 200 az 1000 *///default 400
             resize();
             
             //kolecko.Fill = "Red";
@@ -109,6 +103,7 @@ namespace hours
                 Properties.Settings.Default.all_wtop = 0.0;
                 Properties.Settings.Default.all_top = true;
                 Properties.Settings.Default.zobraz_pocasi = true;
+                Properties.Settings.Default.tikani = false;
             }
             Properties.Settings.Default.runs += 1;
 
@@ -119,10 +114,6 @@ namespace hours
             //position on screen
             Left = Properties.Settings.Default.all_wleft;
             Top = Properties.Settings.Default.all_wtop;
-
-
-
-
 
             //RUN
             change_mode(Properties.Settings.Default.mode);
@@ -221,9 +212,11 @@ namespace hours
         {
             if (Properties.Settings.Default.mode == 0)
             {
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(System.Environment.CurrentDirectory + "\\Sounds\\" + "\\clock-ticking-2_1s.wav");
-                player.Play();
-                //System.Media.SystemSounds.Hand.Play();
+                if (tikani)
+                {
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(System.Environment.CurrentDirectory + "\\Sounds\\" + "\\clock-ticking-2_1s.wav");
+                    player.Play();
+                }
                 sekunda.Angle = DateTime.Now.Second * 6;
                 minuta.Angle = DateTime.Now.Minute * 6;
                 hodina.Angle = DateTime.Now.Minute * 0.5 + DateTime.Now.Hour * 30;

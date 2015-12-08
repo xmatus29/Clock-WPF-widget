@@ -118,5 +118,17 @@ namespace hours.Properties {
                 this["zobraz_pocasi"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool tikani {
+            get {
+                return ((bool)(this["tikani"]));
+            }
+            set {
+                this["tikani"] = value;
+            }
+        }
     }
 }

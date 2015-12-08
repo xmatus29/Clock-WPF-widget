@@ -60,13 +60,6 @@ namespace hours
             MainWindow.I.nastavenia = null;
         }
 
-
-
-
-
-
-
-
         private void vyber(object sender, SelectionChangedEventArgs e)
         {
             string skin = (sender as ComboBox).SelectedItem as string;
@@ -124,6 +117,9 @@ namespace hours
             Properties.Settings.Default.all_top = false;
         }
 
+        /*
+            Metoda pro zapnutí počasí
+        */
         private void zobrazPocasiTrue(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("Zobraz pocasi");
@@ -134,6 +130,9 @@ namespace hours
             Properties.Settings.Default.zobraz_pocasi = true;
         }
 
+        /*
+            Metoda pro vypnutí počasí
+        */
         private void zobrazPocasiFalse(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("Skryj pocasi");
@@ -143,6 +142,85 @@ namespace hours
             MainWindow.I.teplota.Visibility = Visibility.Hidden;
             Properties.Settings.Default.zobraz_pocasi = false;
         }
+
+        /*
+            Metoda pro zapnutí tikání analogových hodin
+        */
+        private void tikaniTrue(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("Tikání zapnuto");
+            MainWindow.I.tikani = true;
+        }
+
+        /*
+            Metoda pro vypnutí tikání analogových hodin
+        */
+        private void tikaniFalse(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("Tikání vypnuto");
+            MainWindow.I.tikani = false;
+        }
+
+        private void nastavBarvuKola(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("barva hodin zmenena");
+            //System.Console.WriteLine(BarvaKola.SelectedColor.ToString());
+            BrushConverter bc = new BrushConverter();
+            Brush brush = (Brush)bc.ConvertFrom(BarvaKola.SelectedColor.ToString());
+            MainWindow.I.kolecko.Fill = brush;
+        }
+
+        private void nastavBarvuH(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("barva hodinove rucicky zmenena");
+            BrushConverter bc = new BrushConverter();
+            Brush brush = (Brush)bc.ConvertFrom(BarvaHRaf.SelectedColor.ToString());
+            MainWindow.I.hodinaRucicka.Fill = brush;
+        }
+
+        private void nastavBarvuM(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("barva minutove rucicky zmenena");
+            BrushConverter bc = new BrushConverter();
+            Brush brush = (Brush)bc.ConvertFrom(BarvaMRaf.SelectedColor.ToString());
+            MainWindow.I.minutaRucicka.Fill = brush;
+        }
+
+        private void nastavBarvuS(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("barva sekundove rucicky zmenena");
+            BrushConverter bc = new BrushConverter();
+            Brush brush = (Brush)bc.ConvertFrom(BarvaSRaf.SelectedColor.ToString());
+            MainWindow.I.sekundaRucicka.Fill = brush;
+        }
+
+        private void nastavBarvuStredu(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("barva stredu zmenena");
+            BrushConverter bc = new BrushConverter();
+            Brush brush = (Brush)bc.ConvertFrom(BarvaStred.SelectedColor.ToString());
+            MainWindow.I.stred.Fill = brush;
+        }
+
+        private void nastavBarvuC(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("barva stredu zmenena");
+            BrushConverter bc = new BrushConverter();
+            Brush brush = (Brush)bc.ConvertFrom(BarvaCifernik.SelectedColor.ToString());
+            MainWindow.I.c1.Foreground = brush;
+            MainWindow.I.c2.Foreground = brush;
+            MainWindow.I.c3.Foreground = brush;
+            MainWindow.I.c4.Foreground = brush;
+            MainWindow.I.c5.Foreground = brush;
+            MainWindow.I.c6.Foreground = brush;
+            MainWindow.I.c7.Foreground = brush;
+            MainWindow.I.c8.Foreground = brush;
+            MainWindow.I.c9.Foreground = brush;
+            MainWindow.I.c10.Foreground = brush;
+            MainWindow.I.c11.Foreground = brush;
+            MainWindow.I.c12.Foreground = brush;
+        }
+
 
         private void chmode(object sender, RoutedEventArgs e)
         {

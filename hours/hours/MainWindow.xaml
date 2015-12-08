@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:hours"
         mc:Ignorable="d"
         MouseDown="dragAndDropAplikacie"
@@ -61,7 +62,7 @@
                 </Rectangle>
 
                 <!-- Stredove kolecko -->
-                <Ellipse x:Name="stred" Opacity="0.9" Fill="Coral" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="20" Height="20"/>
+                <Ellipse x:Name="stred" Opacity="1" Fill="Coral" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="20" Height="20"/>
                 
                 <!-- cifernik -->
                 <TextBlock x:Name="c1" Text="1" FontSize="30" Height="255" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
