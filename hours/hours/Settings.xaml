@@ -68,12 +68,17 @@
 
         <TextBox Grid.Row="14" Text="Opacity slider" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
         <Slider x:Name="opacity" Grid.Row="15" ValueChanged="change_opacity"  />
+        
         <TextBox Grid.Row="16" Text="Size slider" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
         <Slider x:Name="size" Grid.Row="17" ValueChanged="change_size"/>
+        
         <CheckBox x:Name="all_top" Checked="vzdyNavrchuTrue" Unchecked="vzdyNavrchuFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="18">Always on top of all Windows</CheckBox>
+        
         <CheckBox x:Name="zobraz_pocasi" Checked="zobrazPocasiTrue" Unchecked="zobrazPocasiFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="19">Zobraz počasí</CheckBox>
+        
         <CheckBox x:Name="zapnout_tikani" Checked="tikaniTrue" Unchecked="tikaniFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="20">Tikání hodin</CheckBox>
-                <Viewbox Grid.Row="21"><TextBlock x:Name="infobox" >XXXXXXX</TextBlock></Viewbox>
+        
+        <Viewbox Grid.Row="21"><TextBlock x:Name="infobox" >XXXXXXX</TextBlock></Viewbox>
 
             <Image  x:Name="nahlad" Source="MyImage.jpg" Grid.Row="1"/>
     </Grid>

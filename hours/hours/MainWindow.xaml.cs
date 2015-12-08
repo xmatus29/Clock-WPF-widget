@@ -42,8 +42,27 @@ namespace hours
         public MainWindow()
         {
 
+
+
             I = this;
             InitializeComponent();
+
+            if (Properties.Settings.Default.zobraz_pocasi == true)
+            {
+
+                MainWindow.I.pocasi.Visibility = Visibility.Visible;
+                MainWindow.I.lokace.Visibility = Visibility.Visible;
+                MainWindow.I.pocasi_obr.Visibility = Visibility.Visible;
+                MainWindow.I.teplota.Visibility = Visibility.Visible;
+            }
+            else
+            {
+
+                MainWindow.I.pocasi.Visibility = Visibility.Hidden;
+                MainWindow.I.lokace.Visibility = Visibility.Hidden;
+                MainWindow.I.pocasi_obr.Visibility = Visibility.Hidden;
+                MainWindow.I.teplota.Visibility = Visibility.Hidden;
+            }
 
             this.binarnaJedna = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\thumb.png"));
             this.binarnaNula = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\thumb1.png"));
@@ -212,7 +231,7 @@ namespace hours
         {
             if (Properties.Settings.Default.mode == 0)
             {
-                if (tikani)
+                if (Properties.Settings.Default.tikani)
                 {
                     System.Media.SoundPlayer player = new System.Media.SoundPlayer(System.Environment.CurrentDirectory + "\\Sounds\\" + "\\clock-ticking-2_1s.wav");
                     player.Play();

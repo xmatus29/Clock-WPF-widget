@@ -45,6 +45,25 @@ namespace hours
             opacity.Value = Properties.Settings.Default.all_opacity;
             size.Value = Properties.Settings.Default.all_size; 
             all_top.IsChecked = Properties.Settings.Default.all_top;
+            if (Properties.Settings.Default.zobraz_pocasi == true)
+            {
+                    
+                this.zobraz_pocasi.IsChecked = true;
+            }
+            else
+            {
+
+                this.zobraz_pocasi.IsChecked = false;
+            }
+            if (Properties.Settings.Default.tikani == true)
+            {
+                //Settings n = new Settings();
+                this.zapnout_tikani.IsChecked = true;
+            }
+            else
+            {
+                this.zapnout_tikani.IsChecked = false;
+            }
         }
 
         public void setInfobox()
@@ -123,11 +142,11 @@ namespace hours
         private void zobrazPocasiTrue(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("Zobraz pocasi");
+            Properties.Settings.Default.zobraz_pocasi = true;
             MainWindow.I.pocasi.Visibility = Visibility.Visible;
             MainWindow.I.lokace.Visibility = Visibility.Visible;
             MainWindow.I.pocasi_obr.Visibility = Visibility.Visible;
             MainWindow.I.teplota.Visibility = Visibility.Visible;
-            Properties.Settings.Default.zobraz_pocasi = true;
         }
 
         /*
@@ -136,11 +155,11 @@ namespace hours
         private void zobrazPocasiFalse(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("Skryj pocasi");
+            Properties.Settings.Default.zobraz_pocasi = false;
             MainWindow.I.pocasi.Visibility = Visibility.Hidden;
             MainWindow.I.lokace.Visibility = Visibility.Hidden;
             MainWindow.I.pocasi_obr.Visibility = Visibility.Hidden;
             MainWindow.I.teplota.Visibility = Visibility.Hidden;
-            Properties.Settings.Default.zobraz_pocasi = false;
         }
 
         /*
@@ -149,7 +168,8 @@ namespace hours
         private void tikaniTrue(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("Tikání zapnuto");
-            MainWindow.I.tikani = true;
+            //MainWindow.I.tikani = true;
+            Properties.Settings.Default.tikani = true;
         }
 
         /*
@@ -158,7 +178,8 @@ namespace hours
         private void tikaniFalse(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("Tikání vypnuto");
-            MainWindow.I.tikani = false;
+            //MainWindow.I.tikani = false;
+            Properties.Settings.Default.tikani = false;
         }
 
         private void nastavBarvuKola(object sender, RoutedEventArgs e)
