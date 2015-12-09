@@ -3,83 +3,256 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         Title="Setings" Height="450" Width="300">
-    <Grid ShowGridLines="True">
+
+
+    <Grid  x:Name="settWin" ShowGridLines="True">
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
-            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="0.1*" />
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+        <Button Grid.Row="1" x:Name="settTest" Content="TEST!" Click="settTest_Click" ></Button>
 
-            <Viewbox Grid.Column="0" Grid.Row="0"><Button Click="chmode" ToolTip="0">ANALOG</Button></Viewbox>
-            <Viewbox Grid.Column="1" Grid.Row="0"><Button Click="chmode" ToolTip="1">DIGITAL</Button></Viewbox>
-            <Viewbox Grid.Column="2" Grid.Row="0"><Button Click="chmode" ToolTip="2">BINARY</Button></Viewbox>
+        <Button x:Name="settUnvisible" Visibility="Hidden">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                    Storyboard.TargetName="settMain"
+                                    Storyboard.TargetProperty="(Opacity)" 
+                                    From="1.0" To="0.0" Duration="0:0:1" AutoReverse="False"/>
+                            <DoubleAnimation 
+                                    Storyboard.TargetName="settVisual"
+                                    Storyboard.TargetProperty="(Opacity)" 
+                                    From="1.0" To="0.0" Duration="0:0:1" AutoReverse="False"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+
+
+        <Button Content="settMainLoad" Visibility="Hidden">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                    Storyboard.TargetName="settMain"
+                                    Storyboard.TargetProperty="(Opacity)" 
+                                    From="0.0" To="1.0" Duration="0:0:1" AutoReverse="False"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+
+
+        <Button x:Name="settVisualLoad" Visibility="Hidden">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                    Storyboard.TargetName="settVisual"
+                                    Storyboard.TargetProperty="(Opacity)" 
+                                    From="0.0" To="1.0" Duration="0:0:1" AutoReverse="False"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+
+        <Button x:Name="settClockLoad" Visibility="Hidden">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                    Storyboard.TargetName="settClock"
+                                    Storyboard.TargetProperty="(Opacity)" 
+                                    From="0.0" To="1.0" Duration="0:0:1" AutoReverse="False"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+
+        <Button x:Name="settWeathLoad" Visibility="Hidden">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                    Storyboard.TargetName="settWeath"
+                                    Storyboard.TargetProperty="(Opacity)" 
+                                    From="0.0" To="1.0" Duration="0:0:1" AutoReverse="False"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+
+
+
+        <Button x:Name="settOldLoad" Visibility="Hidden">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                    Storyboard.TargetName="settOld"
+                                    Storyboard.TargetProperty="(Opacity)" 
+                                    From="0.0" To="1.0" Duration="0:0:1" AutoReverse="False"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+
+
+
+
+        <Grid x:Name="settMain" Opacity="0.0" Background="Black">
+
+            <TextBlock>Settings main windows</TextBlock>
+            
+        </Grid>
+
+
+        <Grid x:Name="settVisual" Opacity="0.0" Background="Black" >
+            <Label Content="Visual mode settings" VerticalAlignment="Top"/>
+        </Grid>
+
+
+        <Grid x:Name="settClock" HorizontalAlignment="Center" Opacity="0.0" Background="Black">
+
+            <TextBlock>Weather settings</TextBlock>
 
         </Grid>
-        
-        <ComboBox x:Name="SkinBox" SelectionChanged="vyber" Grid.Row="1" />
-        <!--Calendar Grid.Row="2"></-->
-        
-        <TextBox Text="Barva hodin" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2"/>
-        <xctk:ColorPicker x:Name="BarvaKola" SelectedColorChanged="nastavBarvuKola" Grid.Row="3"/>
 
-        <TextBox Text="Barva hodinové rafičky" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4"/>
-        <xctk:ColorPicker x:Name="BarvaHRaf" SelectedColorChanged="nastavBarvuH" Grid.Row="5"/>
 
-        <TextBox Text="Barva minutové rafičky" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="6"/>
-        <xctk:ColorPicker x:Name="BarvaMRaf" SelectedColorChanged="nastavBarvuM" Grid.Row="7"/>
 
-        <TextBox Text="Barva sekundové rafičky" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="8"/>
-        <xctk:ColorPicker x:Name="BarvaSRaf" SelectedColorChanged="nastavBarvuS" Grid.Row="9"/>
+        <Grid x:Name="settWeath" HorizontalAlignment="Center" Opacity="0.0" Background="Black">
 
-        <TextBox Text="Barva středu" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="10"/>
-        <xctk:ColorPicker x:Name="BarvaStred" SelectedColorChanged="nastavBarvuStredu" Grid.Row="11"/>
+            <TextBlock>Weather settings</TextBlock>
 
-        <TextBox Text="Barva ciferníku" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="12"/>
-        <xctk:ColorPicker x:Name="BarvaCifernik" SelectedColorChanged="nastavBarvuC" Grid.Row="13"/>
+        </Grid>
 
-        <TextBox Grid.Row="14" Text="Opacity slider" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
-        <Slider x:Name="opacity" Grid.Row="15" ValueChanged="change_opacity"  />
+
         
-        <TextBox Grid.Row="16" Text="Size slider" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
-        <Slider x:Name="size" Grid.Row="17" ValueChanged="change_size"/>
-        
-        <CheckBox x:Name="all_top" Checked="vzdyNavrchuTrue" Unchecked="vzdyNavrchuFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="18">Always on top of all Windows</CheckBox>
-        
-        <CheckBox x:Name="zobraz_pocasi" Checked="zobrazPocasiTrue" Unchecked="zobrazPocasiFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="19">Zobraz počasí</CheckBox>
-        
-        <CheckBox x:Name="zapnout_tikani" Checked="tikaniTrue" Unchecked="tikaniFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="20">Tikání hodin</CheckBox>
-        
-        <Viewbox Grid.Row="21"><TextBlock x:Name="infobox" >XXXXXXX</TextBlock></Viewbox>
 
-            <Image  x:Name="nahlad" Source="MyImage.jpg" Grid.Row="1"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <Grid  x:Name="settOld" ShowGridLines="True" Opacity="0.0" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Viewbox Grid.Column="0" Grid.Row="0"><Button Click="chmode" ToolTip="0">ANALOG</Button></Viewbox>
+                <Viewbox Grid.Column="1" Grid.Row="0"><Button Click="chmode" ToolTip="1">DIGITAL</Button></Viewbox>
+                <Viewbox Grid.Column="2" Grid.Row="0"><Button Click="chmode" ToolTip="2">BINARY</Button></Viewbox>
+
+            </Grid>
+        
+            <ComboBox x:Name="SkinBox" SelectionChanged="vyber" Grid.Row="1" />
+            <!--Calendar Grid.Row="2"></-->
+        
+            <TextBox Text="Barva hodin" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2"/>
+            <xctk:ColorPicker x:Name="BarvaKola" SelectedColorChanged="nastavBarvuKola" Grid.Row="3"/>
+
+            <TextBox Text="Barva hodinové rafičky" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4"/>
+            <xctk:ColorPicker x:Name="BarvaHRaf" SelectedColorChanged="nastavBarvuH" Grid.Row="5"/>
+
+            <TextBox Text="Barva minutové rafičky" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="6"/>
+            <xctk:ColorPicker x:Name="BarvaMRaf" SelectedColorChanged="nastavBarvuM" Grid.Row="7"/>
+
+            <TextBox Text="Barva sekundové rafičky" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="8"/>
+            <xctk:ColorPicker x:Name="BarvaSRaf" SelectedColorChanged="nastavBarvuS" Grid.Row="9"/>
+
+            <TextBox Text="Barva středu" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="10"/>
+            <xctk:ColorPicker x:Name="BarvaStred" SelectedColorChanged="nastavBarvuStredu" Grid.Row="11"/>
+
+            <TextBox Text="Barva ciferníku" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="12"/>
+            <xctk:ColorPicker x:Name="BarvaCifernik" SelectedColorChanged="nastavBarvuC" Grid.Row="13"/>
+
+            <TextBox Grid.Row="14" Text="Opacity slider" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Slider x:Name="opacity" Grid.Row="15" ValueChanged="change_opacity"  />
+        
+            <TextBox Grid.Row="16" Text="Size slider" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Slider x:Name="size" Grid.Row="17" ValueChanged="change_size"/>
+        
+            <CheckBox x:Name="all_top" Checked="vzdyNavrchuTrue" Unchecked="vzdyNavrchuFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="18">Always on top of all Windows</CheckBox>
+        
+            <CheckBox x:Name="zobraz_pocasi" Checked="zobrazPocasiTrue" Unchecked="zobrazPocasiFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="19">Zobraz počasí</CheckBox>
+        
+            <CheckBox x:Name="zapnout_tikani" Checked="tikaniTrue" Unchecked="tikaniFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="20">Tikání hodin</CheckBox>
+        
+            <Viewbox Grid.Row="21"><TextBlock x:Name="infobox" >XXXXXXX</TextBlock></Viewbox>
+
+                <Image  x:Name="nahlad" Source="MyImage.jpg" Grid.Row="1"/>
+        </Grid>
     </Grid>
 </Window>

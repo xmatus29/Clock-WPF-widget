@@ -22,6 +22,8 @@ namespace hours
     public partial class Settings : Window
     {
 
+        //System.Windows.Media.Brushes BG;
+
         
 
         public Settings()
@@ -29,6 +31,8 @@ namespace hours
            
             InitializeComponent();
             string[] skiny = Directory.GetDirectories(System.Environment.CurrentDirectory + "\\Skins");
+
+            //BG = System.Windows.Media.Brushes.Black;
 
             foreach (string skin in skiny)
             {
@@ -250,5 +254,18 @@ namespace hours
             MainWindow.I.change_mode(Int32.Parse(tmp.ToolTip.ToString()));
         }
 
+
+
+
+
+        private void settTest_Click(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("CLCIK TEST");
+            settUnvisible.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            settOld.Visibility = Visibility.Visible;
+            settOldLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            
+
+        }
     }
 }
