@@ -98,6 +98,9 @@
     <Compile Include="Alarm.xaml.cs">
       <DependentUpon>Alarm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AutoTurn.xaml.cs">
+      <DependentUpon>AutoTurn.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Credits.xaml.cs">
       <DependentUpon>Credits.xaml</DependentUpon>
     </Compile>
@@ -106,6 +109,10 @@
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
     <Page Include="Alarm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AutoTurn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

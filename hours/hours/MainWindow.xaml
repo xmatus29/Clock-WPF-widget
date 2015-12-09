@@ -119,6 +119,7 @@
         <ContextMenu>
             <MenuItem Header="Settings" Click="Settings"/>
             <MenuItem Header="Alarm" Click="Alarm"/>
+            <MenuItem Header="Auto Turn Off" Click="AutoTurnOff"/>
             <MenuItem Header="Credits" Click="Credits"/>
             <MenuItem Header="Exit" Click="Ukoncit" />
         </ContextMenu> 

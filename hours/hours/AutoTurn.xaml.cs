@@ -15,16 +15,16 @@ using System.Windows.Shapes;
 namespace hours
 {
     /// <summary>
-    /// Interaction logic for Alarm.xaml
+    /// Interaction logic for AutoTurn.xaml
     /// </summary>
-    public partial class Alarm : Window
+    public partial class AutoTurn : Window
     {
-        public Alarm()
+        public AutoTurn()
         {
             InitializeComponent();
-            AlarmHodiny.Text = Properties.Settings.Default.alarmHodiny.ToString();
-            AlarmMinuty.Text = Properties.Settings.Default.alarmMinuty.ToString();
-            if (Properties.Settings.Default.alarm == false)
+            AlarmHodiny.Text = Properties.Settings.Default.autoHodiny.ToString();
+            AlarmMinuty.Text = Properties.Settings.Default.autoMinuty.ToString();
+            if (Properties.Settings.Default.auto == false)
             {
                 AlarmButton.Background = Brushes.Red;
                 AlarmButton.Content = "ON";
@@ -36,22 +36,19 @@ namespace hours
             }
         }
 
-        /*
-         * Akcia po spusteni/vypnuti alarmu
-         */
         private void AlarmButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Properties.Settings.Default.alarm == true)
+            if (Properties.Settings.Default.auto == true)
             {
                 AlarmButton.Background = Brushes.Red;
                 AlarmButton.Content = "ON";
-                Properties.Settings.Default.alarm = false;
+                Properties.Settings.Default.auto = false;
             }
             else
             {
                 AlarmButton.Background = Brushes.Green;
                 AlarmButton.Content = "OFF";
-                Properties.Settings.Default.alarm = true;
+                Properties.Settings.Default.auto = true;
             }
         }
 
@@ -70,7 +67,7 @@ namespace hours
             {
                 return;
             }
-            Properties.Settings.Default.alarmMinuty = AlarmMinuty.Text.ToString();
+            Properties.Settings.Default.autoMinuty = AlarmMinuty.Text.ToString();
 
             foreach (char c in (AlarmHodiny.Text.ToString()))
             {
@@ -85,7 +82,7 @@ namespace hours
             {
                 return;
             }
-            Properties.Settings.Default.alarmHodiny = AlarmHodiny.Text.ToString();
+            Properties.Settings.Default.autoHodiny = AlarmHodiny.Text.ToString();
         }
     }
 }

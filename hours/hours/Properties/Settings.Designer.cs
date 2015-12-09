@@ -166,5 +166,41 @@ namespace hours.Properties {
                 this["alarmMinuty"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool auto {
+            get {
+                return ((bool)(this["auto"]));
+            }
+            set {
+                this["auto"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string autoHodiny {
+            get {
+                return ((string)(this["autoHodiny"]));
+            }
+            set {
+                this["autoHodiny"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string autoMinuty {
+            get {
+                return ((string)(this["autoMinuty"]));
+            }
+            set {
+                this["autoMinuty"] = value;
+            }
+        }
     }
 }

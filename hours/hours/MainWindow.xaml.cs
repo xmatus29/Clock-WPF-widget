@@ -31,6 +31,7 @@ namespace hours
         public Settings nastavenia = null;
         public Credits credits = null;
         public Alarm alarm = null;
+        public AutoTurn auto = null;
         public Info informacie = null;
         public bool tikani;
         System.Media.SoundPlayer alarmSound;
@@ -266,6 +267,11 @@ namespace hours
             { 
                 this.alarmSound.Play();
             }
+
+            if (Properties.Settings.Default.auto == true && DateTime.Now.Hour.ToString() == Properties.Settings.Default.autoHodiny && DateTime.Now.Minute.ToString() == Properties.Settings.Default.autoMinuty && DateTime.Now.Second.ToString() == "0")
+            {
+                System.Diagnostics.Process.Start("shutdown", "/s /t 30");
+            }
            
         }
 
@@ -362,6 +368,12 @@ namespace hours
         {
             this.alarm = new Alarm();
             this.alarm.Show();
+        }
+
+        private void AutoTurnOff(object sender, RoutedEventArgs e)
+        {
+            this.auto = new AutoTurn();
+            this.auto.Show();
         }
 
         /*
