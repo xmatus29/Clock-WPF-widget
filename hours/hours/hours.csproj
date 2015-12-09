@@ -191,6 +191,9 @@
     <Content Include="Sounds\clock-ticking-2_1s.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Sounds\Loud-alarm-clock-sound.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Skins\TestSKin\" />

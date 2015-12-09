@@ -33,6 +33,7 @@ namespace hours
         public Alarm alarm = null;
         public Info informacie = null;
         public bool tikani;
+        System.Media.SoundPlayer alarmSound;
         BitmapImage binarnaNula;
         BitmapImage binarnaJedna;
 
@@ -46,7 +47,8 @@ namespace hours
 
 
             I = this;
-            InitializeComponent();
+            InitializeComponent(); 
+            this.alarmSound = new System.Media.SoundPlayer(System.Environment.CurrentDirectory + "\\Sounds\\" + "\\Loud-alarm-clock-sound.wav");
 
             if (Properties.Settings.Default.zobraz_pocasi == true)
             {
@@ -259,6 +261,11 @@ namespace hours
                 //Binarne hodiny
                 this.vykresliBinarneHodiny(new Image[6], Convert.ToString(DateTime.Now.Hour, 2), 0);
             }
+
+            if (Properties.Settings.Default.alarm == true && DateTime.Now.Hour.ToString() == Properties.Settings.Default.alarmHodiny && DateTime.Now.Minute.ToString() == Properties.Settings.Default.alarmMinuty && DateTime.Now.Second.ToString() == "0")
+            { 
+                this.alarmSound.Play();
+            }
            
         }
 
@@ -305,6 +312,7 @@ namespace hours
                 Properties.Settings.Default.all_wleft = MainWindow.I.Left;
                 Properties.Settings.Default.all_wtop = MainWindow.I.Top;
             }
+            this.alarmSound.Stop();
             
         }
 
