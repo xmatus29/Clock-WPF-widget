@@ -30,6 +30,7 @@ namespace hours
         
         public Settings nastavenia = null;
         public Credits credits = null;
+        public Alarm alarm = null;
         public Info informacie = null;
         public bool tikani;
         BitmapImage binarnaNula;
@@ -347,6 +348,12 @@ namespace hours
                 credits.Left = okno.Left + okno.Width + 20;
             }
             credits.Top = okno.Top;
+        }
+
+        private void Alarm(object sender, RoutedEventArgs e)
+        {
+            this.alarm = new Alarm();
+            this.alarm.Show();
         }
 
         /*
