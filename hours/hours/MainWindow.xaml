@@ -83,7 +83,7 @@
 
         <!-- DIGITALNI HODINY -->
         <Grid x:Name="DIGITAL">
-            <Label Visibility="Visible" x:Name="digitalTime" Content="xxh xxm xxs" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200"   FontSize="40" FontFamily="Rockwell Extra Bold" >
+            <Label Visibility="Visible" x:Name="digitalTime" Content="xxh xxm xxs" HorizontalAlignment="Center" VerticalAlignment="Center" Height="60"   FontSize="40" FontFamily="Rockwell Extra Bold" >
                 <Label.Effect>
                     <BlurEffect Radius="2"/>
                 </Label.Effect>

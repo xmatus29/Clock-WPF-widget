@@ -34,11 +34,11 @@ namespace hours
         public AutoTurn auto = null;
         public Info informacie = null;
         public bool tikani;
-        System.Media.SoundPlayer alarmSound;
         BitmapImage binarnaNula;
         BitmapImage binarnaJedna;
 
-
+        Alarm aa = new Alarm();
+        MediaPlayer mplayer = new MediaPlayer();
 
 
 
@@ -48,8 +48,8 @@ namespace hours
 
 
             I = this;
-            InitializeComponent(); 
-            this.alarmSound = new System.Media.SoundPlayer(System.Environment.CurrentDirectory + "\\Sounds\\" + "\\Loud-alarm-clock-sound.wav");
+            InitializeComponent();
+            Properties.Settings.Default.alarmMusic = (System.Environment.CurrentDirectory + "\\Sounds\\" + "\\Loud-alarm-clock-sound.wav");
 
             if (Properties.Settings.Default.zobraz_pocasi == true)
             {
@@ -264,8 +264,12 @@ namespace hours
             }
 
             if (Properties.Settings.Default.alarm == true && DateTime.Now.Hour.ToString() == Properties.Settings.Default.alarmHodiny && DateTime.Now.Minute.ToString() == Properties.Settings.Default.alarmMinuty && DateTime.Now.Second.ToString() == "0")
-            { 
-                this.alarmSound.Play();
+            {
+                //Alarm aa = new Alarm();
+                //MediaPlayer mplayer = new MediaPlayer();
+                this.mplayer.Open(new Uri(Properties.Settings.Default.alarmMusic, UriKind.Relative));
+                this.mplayer.Play();
+
             }
 
             if (Properties.Settings.Default.auto == true && DateTime.Now.Hour.ToString() == Properties.Settings.Default.autoHodiny && DateTime.Now.Minute.ToString() == Properties.Settings.Default.autoMinuty && DateTime.Now.Second.ToString() == "0")
@@ -318,8 +322,7 @@ namespace hours
                 Properties.Settings.Default.all_wleft = MainWindow.I.Left;
                 Properties.Settings.Default.all_wtop = MainWindow.I.Top;
             }
-            this.alarmSound.Stop();
-            
+            this.mplayer.Stop();           
         }
 
         /*
@@ -368,6 +371,24 @@ namespace hours
         {
             this.alarm = new Alarm();
             this.alarm.Show();
+
+            /* nastaveni pozice podle umisteni hodin */
+            if (okno.Left > SystemParameters.PrimaryScreenWidth / 2.0)
+            {
+                alarm.Left = okno.Left - alarm.Width - 20;
+            }
+            else
+            {
+                alarm.Left = okno.Left + okno.Width + 20;
+            }
+            if (okno.Top < SystemParameters.PrimaryScreenHeight / 2.0)
+            {
+                alarm.Top = okno.Top;
+            }
+            else
+            {
+                alarm.Top = SystemParameters.PrimaryScreenHeight - alarm.Height - 50;
+            }
         }
 
         private void AutoTurnOff(object sender, RoutedEventArgs e)

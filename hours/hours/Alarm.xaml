@@ -3,12 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Alarm" Height="100" Width="300">
     <Grid>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
+        
         <Viewbox Grid.Column="0">
             <TextBox  HorizontalAlignment="Center" TextWrapping="Wrap" Text="7" VerticalAlignment="Center" x:Name="AlarmHodiny"/>
         </Viewbox>
@@ -20,6 +23,9 @@
         </Viewbox>
         <Viewbox Grid.Column="3">
             <Button Content="On" Background="Green" Name="AlarmButton" Click="AlarmButton_Click" />
+        </Viewbox>
+        <Viewbox Grid.Column="4">
+            <Button x:Name="selectMusic" Click="selectMusic_Click" Content="Select music" FontWeight="Bold"></Button>
         </Viewbox>
 
     </Grid>

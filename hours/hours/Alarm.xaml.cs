@@ -19,11 +19,17 @@ namespace hours
     /// </summary>
     public partial class Alarm : Window
     {
+        public string file;
         public Alarm()
         {
             InitializeComponent();
+           
             AlarmHodiny.Text = Properties.Settings.Default.alarmHodiny.ToString();
             AlarmMinuty.Text = Properties.Settings.Default.alarmMinuty.ToString();
+
+            AlarmHodiny.Text = System.DateTime.Now.Hour.ToString();
+            AlarmMinuty.Text = System.DateTime.Now.Minute.ToString();
+
             if (Properties.Settings.Default.alarm == false)
             {
                 AlarmButton.Background = Brushes.Red;
@@ -86,6 +92,35 @@ namespace hours
                 return;
             }
             Properties.Settings.Default.alarmHodiny = AlarmHodiny.Text.ToString();
+        }
+
+        private void selectMusic_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+
+            // Set filter for file extension and default file extension 
+            dlg.DefaultExt = ".mp3";
+            dlg.Filter = "mp3 Files (*.mp3)|*.mp3";
+
+
+            // Display OpenFileDialog by calling ShowDialog method 
+            Nullable<bool> result = dlg.ShowDialog();
+
+
+            // Get the selected file name and display in a TextBox 
+            if (result == true)
+            {
+                // Open document 
+                string filename = dlg.FileName;
+                //file = dlg.FileName;
+                Properties.Settings.Default.alarmMusic = filename;
+                //System.Console.WriteLine(filename);
+                //MediaPlayer mplayer = new MediaPlayer();
+                //mplayer.Open(new Uri (filename, UriKind.Relative));
+                //mplayer.Play();
+                //MainWindow.I.fd = filename;
+            }
         }
     }
 }
