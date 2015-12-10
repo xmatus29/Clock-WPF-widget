@@ -10,7 +10,11 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
+            
         </Grid.ColumnDefinitions>
+
+
+        
         
         <Viewbox Grid.Column="0">
             <TextBox  HorizontalAlignment="Center" TextWrapping="Wrap" Text="7" VerticalAlignment="Center" x:Name="AlarmHodiny"/>

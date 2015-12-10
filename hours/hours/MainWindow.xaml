@@ -28,8 +28,18 @@
         <Grid x:Name="ANALOG" ShowGridLines="True">
             <Grid>
                 <!-- Kolecko -->
-                <Ellipse x:Name="kolecko" Visibility="Visible" Fill="#FF2F5BD3" Opacity="1" Width="250" Height="250" StrokeThickness="102"/>
-                
+                <Ellipse x:Name="kolecko" Visibility="Visible" Fill="#FF2F5BD3"  Opacity="1" Width="250" Height="250" StrokeThickness="102">
+                    <Ellipse.Triggers>
+                        <EventTrigger RoutedEvent="Ellipse.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard AutoReverse="True" RepeatBehavior="Forever">
+                                    <ColorAnimation Storyboard.TargetProperty="Fill.Color" To="White" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Ellipse.Triggers>
+                </Ellipse>
+
                 <!-- Potencialne nahrazeno obrazkem -->
                 <Image Visibility="Hidden" Opacity="0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="250"></Image>
                 
@@ -83,7 +93,7 @@
 
         <!-- DIGITALNI HODINY -->
         <Grid x:Name="DIGITAL">
-            <Label Visibility="Visible" x:Name="digitalTime" Content="xxh xxm xxs" HorizontalAlignment="Center" VerticalAlignment="Center" Height="60"   FontSize="40" FontFamily="Rockwell Extra Bold" >
+            <Label Visibility="Visible" x:Name="digitalTime" Content="xxh xxm xxs" HorizontalAlignment="Center" VerticalAlignment="Bottom"   FontSize="40" FontFamily="Rockwell Extra Bold" >
                 <Label.Effect>
                     <BlurEffect Radius="2"/>
                 </Label.Effect>

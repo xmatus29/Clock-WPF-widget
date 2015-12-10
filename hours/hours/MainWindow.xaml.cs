@@ -113,9 +113,6 @@ namespace hours
             }
 
             resize();
-            
-            //kolecko.Fill = "Red";
-
 
             //DEFAULT FIRST RUN
             if (Properties.Settings.Default.runs == 0)
@@ -143,7 +140,9 @@ namespace hours
             System.Console.WriteLine("~app started!:" + Properties.Settings.Default.runs);
         }
 
-
+        /*
+         * Metoda, ktera dynamicky meni vsechny casti hodin
+         */
         public void resize()
         {
             /*
@@ -156,7 +155,6 @@ namespace hours
             minutaRucicka.Width = okno.Width / 30;
             hodinaRucicka.Height = okno.Width / 2.66;
             hodinaRucicka.Width = okno.Width / 20;
-            digitalTime.Height = okno.Width / 2;
             digitalTime.FontSize = okno.Width / 10;
             datum.Height = okno.Width / 4;
             datum.FontSize = okno.Width / 20;
@@ -214,16 +212,13 @@ namespace hours
 
             if (informacie.pripojen_k_internetu)
             {
-                teplota.Height = okno.Height / 10;//3
-                teplota.FontSize = okno.Width / 20;//20
-               // teplota.Width = okno.Width / 6;//5.7
-                lokace.Height = okno.Height / 10;//2.5
-                lokace.FontSize = okno.Height / 20;//16
-              //  lokace.Width = okno.Width / 6;//3.33
-                pocasi.Height = okno.Width / 10;//2.2
-                pocasi.FontSize = okno.Width / 20;//16
-               // pocasi.Width = okno.Width / 6;//3.33
-                pocasi_obr.Width = pocasi_obr.Height = okno.Width /10;//2
+                teplota.Height = okno.Height / 10;
+                teplota.FontSize = okno.Width / 20;
+                lokace.Height = okno.Height / 10;
+                lokace.FontSize = okno.Height / 20;
+                pocasi.Height = okno.Width / 10;
+                pocasi.FontSize = okno.Width / 20;
+                pocasi_obr.Width = pocasi_obr.Height = okno.Width /10;
             }
         }
 
@@ -265,11 +260,8 @@ namespace hours
 
             if (Properties.Settings.Default.alarm == true && DateTime.Now.Hour.ToString() == Properties.Settings.Default.alarmHodiny && DateTime.Now.Minute.ToString() == Properties.Settings.Default.alarmMinuty && DateTime.Now.Second.ToString() == "0")
             {
-                //Alarm aa = new Alarm();
-                //MediaPlayer mplayer = new MediaPlayer();
                 this.mplayer.Open(new Uri(Properties.Settings.Default.alarmMusic, UriKind.Relative));
                 this.mplayer.Play();
-
             }
 
             if (Properties.Settings.Default.auto == true && DateTime.Now.Hour.ToString() == Properties.Settings.Default.autoHodiny && DateTime.Now.Minute.ToString() == Properties.Settings.Default.autoMinuty && DateTime.Now.Second.ToString() == "0")
@@ -348,14 +340,15 @@ namespace hours
         }
 
         /*
-            Credits
-        */
+         * Credits
+         */
         private void Credits(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("Credits: Start");
             if (this.credits != null) { return; }
             this.credits = new Credits();
             credits.Show();
+            
             if (okno.Left > SystemParameters.PrimaryScreenWidth / 2.0)
             {
                 credits.Left = okno.Left - credits.Width - 20;
@@ -407,7 +400,7 @@ namespace hours
             this.nastavenia = new Settings();
             this.nastavenia.Show();
 
-            /* nastaveni pozice podle umisteni hodin */
+            /* nastaveni pozice settings podle umisteni hodin */
             if (okno.Left > SystemParameters.PrimaryScreenWidth / 2.0)
             {
                 nastavenia.Left = okno.Left - nastavenia.Width-20;
@@ -424,12 +417,11 @@ namespace hours
             {
                 nastavenia.Top = SystemParameters.PrimaryScreenHeight - nastavenia.Height - 50;
             }
-
         }
 
-
-
-
+        /*
+         * Volba modu hodin
+         */
         public void change_mode(int x)
         {
             Properties.Settings.Default.mode = x;
@@ -453,9 +445,9 @@ namespace hours
             }
         }
 
-
-
-        //BINARY
+        /*
+         * Binarni hodiny
+         */
         public static void Serialize<T>(T t)
         {
             //using (System.IO.StringWriter sw = new System.IO.StringWriter())

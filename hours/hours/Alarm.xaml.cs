@@ -101,7 +101,7 @@ namespace hours
 
             // Set filter for file extension and default file extension 
             dlg.DefaultExt = ".mp3";
-            dlg.Filter = "mp3 Files (*.mp3)|*.mp3";
+            dlg.Filter = "mp3 Files (*.mp3)|*.mp3|wav files (*.wav)|*.wav";
 
 
             // Display OpenFileDialog by calling ShowDialog method 
@@ -112,14 +112,8 @@ namespace hours
             if (result == true)
             {
                 // Open document 
-                string filename = dlg.FileName;
-                //file = dlg.FileName;
-                Properties.Settings.Default.alarmMusic = filename;
-                //System.Console.WriteLine(filename);
-                //MediaPlayer mplayer = new MediaPlayer();
-                //mplayer.Open(new Uri (filename, UriKind.Relative));
-                //mplayer.Play();
-                //MainWindow.I.fd = filename;
+                //string filename = dlg.FileName;
+                Properties.Settings.Default.alarmMusic = dlg.FileName;
             }
         }
     }

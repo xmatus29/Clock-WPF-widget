@@ -21,11 +21,7 @@ namespace hours
     /// </summary>
     public partial class Settings : Window
     {
-
-        //System.Windows.Media.Brushes BG;
-
-        
-
+        //System.Windows.Media.Brushes BG
         public Settings()
         {
            
@@ -49,33 +45,14 @@ namespace hours
             opacity.Value = Properties.Settings.Default.all_opacity;
             size.Value = Properties.Settings.Default.all_size; 
             all_top.IsChecked = Properties.Settings.Default.all_top;
-            if (Properties.Settings.Default.zobraz_pocasi == true)
-            {
-                    
-                this.zobraz_pocasi.IsChecked = true;
-            }
-            else
-            {
-
-                this.zobraz_pocasi.IsChecked = false;
-            }
-            if (Properties.Settings.Default.tikani == true)
-            {
-                //Settings n = new Settings();
-                this.zapnout_tikani.IsChecked = true;
-            }
-            else
-            {
-                this.zapnout_tikani.IsChecked = false;
-            }
+            zobraz_pocasi.IsChecked = Properties.Settings.Default.zobraz_pocasi;
+            zapnout_tikani.IsChecked = Properties.Settings.Default.tikani;
         }
 
         public void setInfobox()
         {
             infobox.Text = "Runs count:" + Properties.Settings.Default.runs.ToString();
         }
-
-
 
         protected override void OnClosed(EventArgs e)
         {
@@ -89,7 +66,9 @@ namespace hours
             nahlad.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + skin + "\\thumb.png"));
         }
 
-        /* metoda reagujici na zmenu hodnoty baru pruhlednosti */
+        /* 
+         * Metoda reagujici na zmenu hodnoty baru pruhlednosti 
+         */
         private void change_opacity(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("opacity change on: " + opacity.Value/10.0 );
@@ -99,11 +78,12 @@ namespace hours
                 return;
             }
 
-            MainWindow.I.Opacity = opacity.Value / 10.0;
-            
+            MainWindow.I.Opacity = opacity.Value / 10.0;            
         }
 
-        /* metoda reagujici na zmenu hodnoty baru velikosti */
+        /* 
+         * Metoda reagujici na zmenu hodnoty baru velikosti 
+         */
         private void change_size(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("size change on: " + size.Value / 10.0);
@@ -112,14 +92,9 @@ namespace hours
             {
                 return;
             }
-
-            
-           
-
             MainWindow.I.Height = (size.Value * 100);
             MainWindow.I.Width = (size.Value * 100);
             MainWindow.I.resize();
-
         }
 
         /*
@@ -141,8 +116,8 @@ namespace hours
         }
 
         /*
-            Metoda pro zapnutí počasí
-        */
+         * Metoda pro zapnutí počasí
+         */
         private void zobrazPocasiTrue(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("Zobraz pocasi");
@@ -154,8 +129,8 @@ namespace hours
         }
 
         /*
-            Metoda pro vypnutí počasí
-        */
+         * Metoda pro vypnutí počasí
+         */
         private void zobrazPocasiFalse(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("Skryj pocasi");
@@ -167,34 +142,37 @@ namespace hours
         }
 
         /*
-            Metoda pro zapnutí tikání analogových hodin
-        */
+         * Metoda pro zapnutí tikání analogových hodin
+         */
         private void tikaniTrue(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("Tikání zapnuto");
-            //MainWindow.I.tikani = true;
             Properties.Settings.Default.tikani = true;
         }
 
         /*
-            Metoda pro vypnutí tikání analogových hodin
-        */
+         * Metoda pro vypnutí tikání analogových hodin
+         */
         private void tikaniFalse(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("Tikání vypnuto");
-            //MainWindow.I.tikani = false;
             Properties.Settings.Default.tikani = false;
         }
 
+        /*
+         * Metoda menici barvu hodin
+         */
         private void nastavBarvuKola(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("barva hodin zmenena");
-            //System.Console.WriteLine(BarvaKola.SelectedColor.ToString());
             BrushConverter bc = new BrushConverter();
             Brush brush = (Brush)bc.ConvertFrom(BarvaKola.SelectedColor.ToString());
             MainWindow.I.kolecko.Fill = brush;
         }
-
+        
+        /*
+         * Metoda menici barvu hodinove rucicky
+         */
         private void nastavBarvuH(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("barva hodinove rucicky zmenena");
@@ -202,7 +180,10 @@ namespace hours
             Brush brush = (Brush)bc.ConvertFrom(BarvaHRaf.SelectedColor.ToString());
             MainWindow.I.hodinaRucicka.Fill = brush;
         }
-
+        
+        /*
+         * Metoda menici barvu minutove rucicky
+         */
         private void nastavBarvuM(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("barva minutove rucicky zmenena");
@@ -211,6 +192,9 @@ namespace hours
             MainWindow.I.minutaRucicka.Fill = brush;
         }
 
+        /*
+         * Metoda menici barvu sekundove rucicky
+         */
         private void nastavBarvuS(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("barva sekundove rucicky zmenena");
@@ -218,7 +202,10 @@ namespace hours
             Brush brush = (Brush)bc.ConvertFrom(BarvaSRaf.SelectedColor.ToString());
             MainWindow.I.sekundaRucicka.Fill = brush;
         }
-
+        
+        /*
+         * Metoda menici barvu stredu hodin
+         */
         private void nastavBarvuStredu(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("barva stredu zmenena");
@@ -227,6 +214,9 @@ namespace hours
             MainWindow.I.stred.Fill = brush;
         }
 
+        /*
+         * Metoda menici barvu ciferniku analogovych hodin
+         */
         private void nastavBarvuC(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("barva stredu zmenena");
@@ -254,18 +244,12 @@ namespace hours
             MainWindow.I.change_mode(Int32.Parse(tmp.ToolTip.ToString()));
         }
 
-
-
-
-
         private void settTest_Click(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("CLCIK TEST");
             settUnvisible.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             settOld.Visibility = Visibility.Visible;
             settOldLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
-            
-
         }
     }
 }
