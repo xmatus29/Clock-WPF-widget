@@ -21,14 +21,22 @@ namespace hours
     /// </summary>
     public partial class Settings : Window
     {
-        //System.Windows.Media.Brushes BG
+        SolidColorBrush BG;//deafault settings background color
+
+
         public Settings()
         {
            
             InitializeComponent();
             string[] skiny = Directory.GetDirectories(System.Environment.CurrentDirectory + "\\Skins");
 
-            //BG = System.Windows.Media.Brushes.Black;
+            //initialize bg all color
+            BG = new SolidColorBrush(Colors.DimGray);
+            settWin.Background = BG;
+            settMain.Background = BG;
+            settVisual.Background = BG;
+            settClock.Background = BG;
+            settWeath.Background = BG;
 
             foreach (string skin in skiny)
             {
@@ -244,9 +252,20 @@ namespace hours
             MainWindow.I.change_mode(Int32.Parse(tmp.ToolTip.ToString()));
         }
 
-        private void settTest_Click(object sender, RoutedEventArgs e)
+
+
+
+
+        private void toVisual(object sender, RoutedEventArgs e)
         {
-            System.Console.WriteLine("CLCIK TEST");
+            System.Console.WriteLine("VISALCLK");
+            settUnvisible.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            settVisualLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+        }
+
+        private void toOld(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("OLDCKLL");
             settUnvisible.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             settOld.Visibility = Visibility.Visible;
             settOldLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
