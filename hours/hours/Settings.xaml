@@ -47,7 +47,7 @@
         </Button>
 
 
-        <Button Content="settMainLoad" Visibility="Hidden">
+        <Button x:Name="settMainLoad" Visibility="Hidden">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="Button.Click">
                     <BeginStoryboard>
@@ -128,7 +128,7 @@
 
 
 
-        <Grid x:Name="settMain" Opacity="0.0" Background="Gray" Grid.Row="0">
+        <Grid x:Name="settMain" Opacity="1.0" Background="Gray" Grid.Row="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
@@ -155,20 +155,36 @@
         </Grid>
 
 
-        <Grid x:Name="settVisual" Opacity="0.0" Background="Black" >
+        <Grid x:Name="settVisual" Opacity="0.0" Background="Black" Visibility="Hidden" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Viewbox Grid.Row="0">
+                <Button Click="toMain">back</Button>
+            </Viewbox>
+            
             <Label Content="Visual mode settings" VerticalAlignment="Top"/>
         </Grid>
 
 
-        <Grid x:Name="settClock" HorizontalAlignment="Center" Opacity="0.0" Background="Black">
-
-            <TextBlock>Weather settings</TextBlock>
+        <Grid x:Name="settClock" HorizontalAlignment="Center" Opacity="0.0" Background="Black" Visibility="Hidden">
+            
+            
 
         </Grid>
 
 
 
-        <Grid x:Name="settWeath" HorizontalAlignment="Center" Opacity="0.0" Background="Black">
+        <Grid x:Name="settWeath" HorizontalAlignment="Center" Opacity="0.0" Background="Black" Visibility="Hidden">
 
             <TextBlock>Weather settings</TextBlock>
 

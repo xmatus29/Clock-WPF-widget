@@ -253,14 +253,30 @@ namespace hours
         }
 
 
+        private void toDef()
+        {
+            settUnvisible.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            settMainLoad.Visibility = Visibility.Hidden;
+            settVisualLoad.Visibility = Visibility.Hidden;
+        }
 
 
+
+        private void toMain(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("VISALCLK");
+            toDef();
+            settMain.Visibility = Visibility.Visible;
+            settMainLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            
+        }
 
         private void toVisual(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("VISALCLK");
             settUnvisible.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             settVisualLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            settVisual.Visibility = Visibility.Visible;
         }
 
         private void toOld(object sender, RoutedEventArgs e)
