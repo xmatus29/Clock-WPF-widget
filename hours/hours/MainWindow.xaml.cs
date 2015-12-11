@@ -102,7 +102,7 @@ namespace hours
                 teplota.Content = informacie.teplota + " °C";
                 lokace.Content = informacie.lokacia;
                 pocasi.Content = informacie.pocasie;
-                pocasi_obr.Source = (ImageSource)new ImageSourceConverter().ConvertFromString(informacie.obrazokURL);
+                //pocasi_obr.Source = (ImageSource)new ImageSourceConverter().ConvertFromString(informacie.obrazokURL);
             }
             else
             {

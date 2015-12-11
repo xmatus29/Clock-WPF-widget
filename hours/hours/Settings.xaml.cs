@@ -23,7 +23,6 @@ namespace hours
     {
         SolidColorBrush BG;//deafault settings background color
 
-
         public Settings()
         {
            
@@ -37,6 +36,7 @@ namespace hours
             settVisual.Background = BG;
             settClock.Background = BG;
             settWeath.Background = BG;
+            settOld.Background = BG;
 
             foreach (string skin in skiny)
             {
@@ -256,35 +256,70 @@ namespace hours
         private void toDef()
         {
             settUnvisible.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
-            settMainLoad.Visibility = Visibility.Hidden;
-            settVisualLoad.Visibility = Visibility.Hidden;
+            settMain.Visibility = Visibility.Hidden;
+            settVisual.Visibility = Visibility.Hidden;
+            settClock.Visibility = Visibility.Hidden;
+            settWeath.Visibility = Visibility.Hidden;
+            settOld.Visibility = Visibility.Hidden;
         }
 
 
 
         private void toMain(object sender, RoutedEventArgs e)
         {
-            System.Console.WriteLine("VISALCLK");
+            System.Console.WriteLine("MAIN");
+
             toDef();
-            settMain.Visibility = Visibility.Visible;
             settMainLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
-            
+            settMain.Visibility = Visibility.Visible;
+
         }
 
         private void toVisual(object sender, RoutedEventArgs e)
         {
-            System.Console.WriteLine("VISALCLK");
+            System.Console.WriteLine("VISUAL");
             settUnvisible.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             settVisualLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             settVisual.Visibility = Visibility.Visible;
         }
 
+
+        private void toClock(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("CLC");
+            settUnvisible.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            settClock.Visibility = Visibility.Visible;
+            settClockLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+        }
+
+
+        private void toWeath(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("WEA");
+            settUnvisible.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            settWeath.Visibility = Visibility.Visible;
+            settWeathLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+        }
+
+
+        private void toReset(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("RESET!");
+
+        }
+
         private void toOld(object sender, RoutedEventArgs e)
         {
-            System.Console.WriteLine("OLDCKLL");
+            System.Console.WriteLine("OLD");
             settUnvisible.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             settOld.Visibility = Visibility.Visible;
             settOldLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+        }
+
+        private void toExit(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("Close!");
+            this.Close();
         }
     }
 }
