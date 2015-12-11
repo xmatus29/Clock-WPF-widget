@@ -127,7 +127,7 @@
     <!-- Context menu, ktere se otevre po kliknuti pravym mysitkem -->
     <Window.ContextMenu>
         <ContextMenu>
-            <MenuItem Header="Settings" Click="Settings"/>
+            <MenuItem Header="Settings" Click="Settings" x:Name="RUNSETT"/>
             <MenuItem Header="Alarm" Click="Alarm"/>
             <MenuItem Header="Auto Turn Off" Click="AutoTurnOff"/>
             <MenuItem Header="Credits" Click="Credits"/>

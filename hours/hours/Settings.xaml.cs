@@ -305,6 +305,11 @@ namespace hours
         private void toReset(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("RESET!");
+            Properties.Settings.Default.Reset();
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
+
+            
 
         }
 

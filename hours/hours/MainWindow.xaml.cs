@@ -138,6 +138,9 @@ namespace hours
             //RUN
             change_mode(Properties.Settings.Default.mode);
             System.Console.WriteLine("~app started!:" + Properties.Settings.Default.runs);
+
+            //OPEN SETTINGS ON STARTUP
+            //RUNSETT.RaiseEvent(new RoutedEventArgs(MenuItem.ClickEvent));
         }
 
         /*
