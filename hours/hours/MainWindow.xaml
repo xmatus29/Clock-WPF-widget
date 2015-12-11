@@ -130,6 +130,7 @@
             <MenuItem Header="Settings" Click="Settings" x:Name="RUNSETT"/>
             <MenuItem Header="Alarm" Click="Alarm"/>
             <MenuItem Header="Auto Turn Off" Click="AutoTurnOff"/>
+            <MenuItem Header="Stopwatch" Click="StopWatch"/>
             <MenuItem Header="Credits" Click="Credits"/>
             <MenuItem Header="Exit" Click="Ukoncit" />
         </ContextMenu> 

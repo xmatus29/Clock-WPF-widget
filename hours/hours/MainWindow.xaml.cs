@@ -32,6 +32,7 @@ namespace hours
         public Credits credits = null;
         public Alarm alarm = null;
         public AutoTurn auto = null;
+        public Stopwatch stopky = null;
         public Info informacie = null;
         public bool tikani;
         BitmapImage binarnaNula;
@@ -393,6 +394,12 @@ namespace hours
             this.auto.Show();
         }
 
+        private void StopWatch(object sender, RoutedEventArgs e)
+        {
+            this.stopky = new Stopwatch();
+            this.stopky.Show();
+        }
+
         /*
             Settings
         */
@@ -470,7 +477,7 @@ namespace hours
         private void BINARY_CLICK(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("RESET");
-            Properties.Settings.Default.Reset();
+            //Properties.Settings.Default.Reset();
             //Serialize<Info>(this.informacie);
         }
     }

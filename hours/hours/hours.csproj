@@ -109,6 +109,9 @@
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Stopwatch.xaml.cs">
+      <DependentUpon>Stopwatch.xaml</DependentUpon>
+    </Compile>
     <Page Include="Alarm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -135,6 +138,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stopwatch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
