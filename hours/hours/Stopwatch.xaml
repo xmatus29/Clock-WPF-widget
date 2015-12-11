@@ -3,6 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Stopwatch" Height="300" Width="300">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Viewbox Grid.Row="0">
+            <TextBlock Name="StopkyZobrazovanie" Text="00:00:00" ></TextBlock>
+        </Viewbox>
+        <Viewbox Grid.Row="1">
+            <Button Content="Start" Name="StartStopkyButton" Click="StartStopkyButton_Click" Width="100" Background="Green"/>
+        </Viewbox>
+        <Viewbox Grid.Row="2">
+            <Button Content="Reset" Name="ResetStopkyButton" Click="ResetStopkyButton_Click" Width="100" />
+        </Viewbox>
     </Grid>
 </Window>
