@@ -50,7 +50,15 @@ namespace hours
 
             I = this;
             InitializeComponent();
+
+            koleckoO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\podklad.png"));
+            stredO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\kolecko.png"));
+            sekundaRucickaO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\sekunda.png"));
+            minutaRucickaO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\minuta.png"));
+            hodinaRucickaO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\hodina.png"));
+
             Properties.Settings.Default.alarmMusic = (System.Environment.CurrentDirectory + "\\Sounds\\" + "\\Loud-alarm-clock-sound.wav");
+
 
             if (Properties.Settings.Default.zobraz_pocasi == true)
             {
@@ -153,16 +161,24 @@ namespace hours
                 Hodiny
             */
             kolecko.Width = kolecko.Height = okno.Width / 1.6;
+            koleckoO.Width = kolecko.Height = okno.Width / 1.6;
             sekundaRucicka.Height = okno.Width / 2.66;
             sekundaRucicka.Width = okno.Width / 40;
+            sekundaRucickaO.Height = okno.Width / 2.66;
+            sekundaRucickaO.Width = okno.Width / 40;
             minutaRucicka.Height = okno.Width / 2.66;
             minutaRucicka.Width = okno.Width / 30;
+            minutaRucickaO.Height = okno.Width / 2.66;
+            minutaRucickaO.Width = okno.Width / 30;
             hodinaRucicka.Height = okno.Width / 2.66;
             hodinaRucicka.Width = okno.Width / 20;
+            hodinaRucickaO.Height = okno.Width / 2.66;
+            hodinaRucickaO.Width = okno.Width / 20;
             digitalTime.FontSize = okno.Width / 10;
             datum.Height = okno.Width / 4;
             datum.FontSize = okno.Width / 20;
             stred.Width = stred.Height = okno.Width / 10;
+            stredO.Width = stredO.Height = okno.Width / 20;
 
             /*
                 Cifernik
@@ -240,8 +256,11 @@ namespace hours
                     player.Play();
                 }
                 sekunda.Angle = DateTime.Now.Second * 6;
+                sekundaO.Angle = DateTime.Now.Second * 6;
                 minuta.Angle = DateTime.Now.Minute * 6;
+                minutaO.Angle = DateTime.Now.Minute * 6;
                 hodina.Angle = DateTime.Now.Minute * 0.5 + DateTime.Now.Hour * 30;
+                hodinaO.Angle = DateTime.Now.Minute * 0.5 + DateTime.Now.Hour * 30;
                 datum.Content = DateTime.Now.DayOfWeek + "  " + DateTime.Now.Day + ". " + DateTime.Now.Month + ". " + DateTime.Now.Year;
             }
 
