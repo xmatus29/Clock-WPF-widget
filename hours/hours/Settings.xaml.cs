@@ -55,6 +55,8 @@ namespace hours
             all_top.IsChecked = Properties.Settings.Default.all_top;
             zobraz_pocasi.IsChecked = Properties.Settings.Default.zobraz_pocasi;
             zapnout_tikani.IsChecked = Properties.Settings.Default.tikani;
+
+            w_city.IsChecked = Properties.Settings.Default.w_city;
         }
 
         public void setInfobox()
@@ -147,6 +149,25 @@ namespace hours
             MainWindow.I.lokace.Visibility = Visibility.Hidden;
             MainWindow.I.pocasi_obr.Visibility = Visibility.Hidden;
             MainWindow.I.teplota.Visibility = Visibility.Hidden;
+        }
+
+
+        /*
+         * Metoda CITY ON
+         */
+        private void w_city_true(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.w_city = true;
+            MainWindow.I.lokace.Visibility = Visibility.Visible;
+        }
+
+        /*
+         * Metoda CITY OOFF
+         */
+        private void w_city_false(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.w_city = false;
+            MainWindow.I.lokace.Visibility = Visibility.Hidden;
         }
 
         /*
@@ -247,7 +268,7 @@ namespace hours
 
         private void chmode(object sender, RoutedEventArgs e)
         {
-            Button tmp = sender as Button;
+            Viewbox tmp = sender as Viewbox;
             
             MainWindow.I.change_mode(Int32.Parse(tmp.ToolTip.ToString()));
         }

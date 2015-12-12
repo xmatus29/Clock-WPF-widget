@@ -286,5 +286,53 @@ namespace hours.Properties {
                 this["alarmMusic"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool w_city {
+            get {
+                return ((bool)(this["w_city"]));
+            }
+            set {
+                this["w_city"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool w_temp {
+            get {
+                return ((bool)(this["w_temp"]));
+            }
+            set {
+                this["w_temp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool w_info {
+            get {
+                return ((bool)(this["w_info"]));
+            }
+            set {
+                this["w_info"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool w_obr {
+            get {
+                return ((bool)(this["w_obr"]));
+            }
+            set {
+                this["w_obr"] = value;
+            }
+        }
     }
 }

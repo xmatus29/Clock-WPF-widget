@@ -45,6 +45,7 @@ namespace hours
 
         public MainWindow()
         {
+            //Properties.Settings.Default.Reset();
 
 
 

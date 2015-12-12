@@ -411,7 +411,7 @@
         
         
         
-        <Grid x:Name="settVisual" Opacity="0.0" Background="Black" Visibility="Hidden" >
+        <Grid x:Name="settVisual" Opacity="0.0" Background="Gray" Visibility="Hidden" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.1*" />
                 <RowDefinition Height="1*" />
@@ -469,22 +469,161 @@
 
             <Grid Grid.Row="1" x:Name="connVisual">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*" />
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="0.2*" />
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="0.5*" />
+
 
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
+
+                <Viewbox Grid.Row="0">
+                    <Label>Select visual mode</Label>
+                </Viewbox>
+
+
+                <Viewbox Grid.Row="1" MouseDown="chmode" ToolTip="0"   >
+                    <Viewbox.Triggers>
+                        <EventTrigger RoutedEvent="Viewbox.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation 
+                                        Storyboard.TargetName="SA"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="30" Duration="0:0:0.30" AutoReverse="False"/>
+                                </Storyboard>
+
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Viewbox.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation 
+                                        Storyboard.TargetName="SA"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="9" Duration="0:0:0.30" AutoReverse="False"/>
+                                </Storyboard>
+
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Viewbox.Triggers>
+
+                    <Label x:Name="SA">ANALOG</Label>
+                </Viewbox>
+
+
+                <Viewbox Grid.Row="2" MouseDown="chmode" ToolTip="1"   >
+                    <Viewbox.Triggers>
+                        <EventTrigger RoutedEvent="Viewbox.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation 
+                                        Storyboard.TargetName="SD"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="30" Duration="0:0:0.30" AutoReverse="False"/>
+                                </Storyboard>
+
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Viewbox.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation 
+                                        Storyboard.TargetName="SD"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="9" Duration="0:0:0.30" AutoReverse="False"/>
+                                </Storyboard>
+
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Viewbox.Triggers>
+
+                    <Label x:Name="SD">DIGITAL</Label>
+                </Viewbox>
+
+
+                <Viewbox Grid.Row="3" MouseDown="chmode" ToolTip="2"   >
+                    <Viewbox.Triggers>
+                        <EventTrigger RoutedEvent="Viewbox.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation 
+                                        Storyboard.TargetName="SB"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="30" Duration="0:0:0.30" AutoReverse="False"/>
+                                </Storyboard>
+
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Viewbox.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation 
+                                        Storyboard.TargetName="SB"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="9" Duration="0:0:0.30" AutoReverse="False"/>
+                                </Storyboard>
+
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Viewbox.Triggers>
+
+                    <Label x:Name="SB">BINARY</Label>
+                </Viewbox>
+
+
+
+                <Grid Grid.Row="4" Height="38" VerticalAlignment="Bottom"  >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Viewbox Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Label>Size: </Label>
+                    </Viewbox>
+                    <Slider x:Name="size" Grid.Column="1" ValueChanged="change_size"  VerticalAlignment="Center"/>
+
+                </Grid>
+
+                <Grid Grid.Row="5" Height="38" VerticalAlignment="Bottom"  >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Viewbox Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Label>Opacity:</Label>
+                    </Viewbox>
+                    <Slider x:Name="opacity" Grid.Column="1" ValueChanged="change_opacity"  VerticalAlignment="Center"/>
+
+                </Grid>
+
+                <CheckBox x:Name="all_top" Grid.Row="6" Checked="vzdyNavrchuTrue" Unchecked="vzdyNavrchuFalse" HorizontalAlignment="Center" VerticalAlignment="Center" >Always on top of all Windows</CheckBox>
+
+
             </Grid>
 
 
         </Grid>
 
 
+        
+        
         
         
         
@@ -584,7 +723,26 @@
 
 
 
-        <Grid x:Name="settWeath" Opacity="0.0" Background="Gray" Visibility="Hidden">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <Grid x:Name="settWeath" Opacity="1.0" Background="Gray" Visibility="Visible">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.1*" />
                 <RowDefinition Height="1*" />
@@ -643,8 +801,8 @@
 
             <Grid Grid.Row="1" x:Name="connWeath">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="0.1*" />
+                    <RowDefinition Height="0.4*" />
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="0.2*" />
@@ -653,7 +811,81 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
+
+
+
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Viewbox Grid.Column="1" HorizontalAlignment="Left">
+                        <Label>show weather</Label>
+                    </Viewbox>
+
+                    <Viewbox Grid.Column="0">
+                        <CheckBox x:Name="zobraz_pocasi" Margin="3" Checked="zobrazPocasiTrue" Unchecked="zobrazPocasiFalse" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    </Viewbox>
+ 
+                </Grid>
+
+
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Viewbox Grid.Column="1" HorizontalAlignment="Left">
+                        <Viewbox.Triggers>
+                            <EventTrigger RoutedEvent="Viewbox.MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+                                        Storyboard.TargetName="CI"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="30" Duration="0:0:0.30" AutoReverse="False"/>
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Viewbox.MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+                                        Storyboard.TargetName="CI"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="9" Duration="0:0:0.30" AutoReverse="False"/>
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Viewbox.Triggers>
+                        <Label x:Name="CI">CITY</Label>
+                    </Viewbox>
+
+                    <Viewbox Grid.Column="0">
+                        <CheckBox x:Name="w_city" Margin="3" Checked="w_city_true" Unchecked="w_city_false" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    </Viewbox>
+
+                </Grid>
+
+
             </Grid>
+
+            
+            
+            
 
         </Grid>
 
@@ -810,14 +1042,14 @@
                 <xctk:ColorPicker x:Name="BarvaCifernik" SelectedColorChanged="nastavBarvuC" Grid.Row="13"/>
 
                 <TextBox Grid.Row="14" Text="Opacity slider" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
-                <Slider x:Name="opacity" Grid.Row="15" ValueChanged="change_opacity"  />
+                <Slider x:Name="opacityx" Grid.Row="15" ValueChanged="change_opacity"  />
 
                 <TextBox Grid.Row="16" Text="Size slider" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
-                <Slider x:Name="size" Grid.Row="17" ValueChanged="change_size"/>
+                <Slider x:Name="sizex" Grid.Row="17" ValueChanged="change_size"/>
 
-                <CheckBox x:Name="all_top" Checked="vzdyNavrchuTrue" Unchecked="vzdyNavrchuFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="18">Always on top of all Windows</CheckBox>
+                <CheckBox x:Name="all_topx" Checked="vzdyNavrchuTrue" Unchecked="vzdyNavrchuFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="18">Always on top of all Windows</CheckBox>
 
-                <CheckBox x:Name="zobraz_pocasi" Checked="zobrazPocasiTrue" Unchecked="zobrazPocasiFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="19">Zobraz počasí</CheckBox>
+                <CheckBox x:Name="zobraz_pocasix" Checked="zobrazPocasiTrue" Unchecked="zobrazPocasiFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="19">Zobraz počasí</CheckBox>
 
                 <CheckBox x:Name="zapnout_tikani" Checked="tikaniTrue" Unchecked="tikaniFalse" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="20">Tikání hodin</CheckBox>
 
