@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:hours"
         mc:Ignorable="d"
         Title="Credits" Height="150" Width="500">
-    <Grid ShowGridLines="True">
+    <Grid ShowGridLines="False">
+        <Grid.Background>
+            <ImageBrush TileMode="Tile" Viewport="0,0,24,24" ViewportUnits="Absolute" ImageSource="Skins/background.png" AlignmentY="Top" AlignmentX="Center"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.25*"/>
             <RowDefinition Height="0.25*" />

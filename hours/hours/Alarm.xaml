@@ -1,9 +1,12 @@
 ﻿<Window x:Class="hours.Alarm"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Alarm" Height="100" Width="300">
+        Title="Alarm" Height="100" Width="300" ResizeMode="NoResize">
     <Grid>
-
+        <Grid.Background>
+            <ImageBrush TileMode="Tile" Viewport="0,0,24,24" ViewportUnits="Absolute" ImageSource="Skins/background.png" AlignmentY="Top" AlignmentX="Center"/>
+        </Grid.Background>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />

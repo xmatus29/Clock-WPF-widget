@@ -385,6 +385,7 @@ namespace hours
 
         private void Alarm(object sender, RoutedEventArgs e)
         {
+            if (this.alarm != null) { return; }
             this.alarm = new Alarm();
             this.alarm.Show();
 
@@ -409,12 +410,14 @@ namespace hours
 
         private void AutoTurnOff(object sender, RoutedEventArgs e)
         {
+            if (this.auto != null) { return; }
             this.auto = new AutoTurn();
             this.auto.Show();
         }
 
         private void StopWatch(object sender, RoutedEventArgs e)
         {
+            if (this.stopky != null) { return; }
             this.stopky = new Stopwatch();
             this.stopky.Show();
         }
