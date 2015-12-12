@@ -534,12 +534,15 @@ namespace hours
             {
                 case 0://analog
                     MainWindow.I.ANALOG.Visibility = Visibility.Visible;
+                    riadokHodin.Height = new GridLength(1, GridUnitType.Star);
                     break;
                 case 1://digital
                     MainWindow.I.DIGITAL.Visibility = Visibility.Visible;
+                    riadokHodin.Height = new GridLength(0.2, GridUnitType.Star);
                     break;
                 case 2://binary
                     MainWindow.I.BINARY.Visibility = Visibility.Visible;
+                    riadokHodin.Height = new GridLength(0.5, GridUnitType.Star);
                     break;
                 default:
                     break;
