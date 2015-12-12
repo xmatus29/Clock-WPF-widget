@@ -57,6 +57,9 @@ namespace hours
             zapnout_tikani.IsChecked = Properties.Settings.Default.tikani;
 
             w_city.IsChecked = Properties.Settings.Default.w_city;
+            w_temp.IsChecked = Properties.Settings.Default.w_temp;
+            w_info.IsChecked = Properties.Settings.Default.w_info;
+            w_obr.IsChecked = Properties.Settings.Default.w_obr;
         }
 
         public void setInfobox()
@@ -162,6 +165,62 @@ namespace hours
         {
             Properties.Settings.Default.w_city = false;
             MainWindow.I.w_city_grid.Visibility = Visibility.Hidden;
+        }
+
+
+        /*
+         * Metoda INFO ON
+         */
+        private void w_info_true(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.w_info = true;
+            MainWindow.I.w_info_grid.Visibility = Visibility.Visible;
+        }
+
+        /*
+         * Metoda INFO OOFF
+         */
+        private void w_info_false(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.w_info = false;
+            MainWindow.I.w_info_grid.Visibility = Visibility.Hidden;
+        }
+
+
+        /*
+         * Metoda TEMP ON
+         */
+        private void w_temp_true(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.w_temp = true;
+            MainWindow.I.w_temp_grid.Visibility = Visibility.Visible;
+        }
+
+        /*
+         * Metoda TEMP OOFF
+         */
+        private void w_temp_false(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.w_temp = false;
+            MainWindow.I.w_temp_grid.Visibility = Visibility.Hidden;
+        }
+
+        /*
+         * Metoda OBR ON
+         */
+        private void w_obr_true(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.w_obr = true;
+            MainWindow.I.w_obr_grid.Visibility = Visibility.Visible;
+        }
+
+        /*
+         * Metoda OBR OOFF
+         */
+        private void w_obr_false(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.w_obr = false;
+            MainWindow.I.w_obr_grid.Visibility = Visibility.Hidden;
         }
 
         /*

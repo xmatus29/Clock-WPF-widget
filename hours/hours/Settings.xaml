@@ -802,10 +802,11 @@
             <Grid Grid.Row="1" x:Name="connWeath">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.1*" />
-                    <RowDefinition Height="0.4*" />
+                    <RowDefinition Height="3*" />
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="1*" />
-                    <RowDefinition Height="0.2*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
 
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -871,11 +872,148 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="CI">CITY</Label>
+                        <Label x:Name="CI">City/Country</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
                         <CheckBox x:Name="w_city" Margin="3" Checked="w_city_true" Unchecked="w_city_false" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    </Viewbox>
+
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Viewbox Grid.Column="1" HorizontalAlignment="Left">
+                        <Viewbox.Triggers>
+                            <EventTrigger RoutedEvent="Viewbox.MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+                                        Storyboard.TargetName="TEMP"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="30" Duration="0:0:0.30" AutoReverse="False"/>
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Viewbox.MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+                                        Storyboard.TargetName="TEMP"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="9" Duration="0:0:0.30" AutoReverse="False"/>
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Viewbox.Triggers>
+                        <Label x:Name="TEMP">Temperature</Label>
+                    </Viewbox>
+
+                    <Viewbox Grid.Column="0">
+                        <CheckBox x:Name="w_temp" Margin="3" Checked="w_temp_true" Unchecked="w_temp_false" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    </Viewbox>
+
+                </Grid>
+
+
+
+                <Grid Grid.Row="4">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Viewbox Grid.Column="1" HorizontalAlignment="Left">
+                        <Viewbox.Triggers>
+                            <EventTrigger RoutedEvent="Viewbox.MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+                                        Storyboard.TargetName="INFO"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="30" Duration="0:0:0.30" AutoReverse="False"/>
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Viewbox.MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+                                        Storyboard.TargetName="INFO"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="9" Duration="0:0:0.30" AutoReverse="False"/>
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Viewbox.Triggers>
+                        <Label x:Name="INFO">Text info</Label>
+                    </Viewbox>
+
+                    <Viewbox Grid.Column="0">
+                        <CheckBox x:Name="w_info" Margin="3" Checked="w_info_true" Unchecked="w_info_false" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    </Viewbox>
+
+                </Grid>
+
+
+
+
+                <Grid Grid.Row="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Viewbox Grid.Column="1" HorizontalAlignment="Left">
+                        <Viewbox.Triggers>
+                            <EventTrigger RoutedEvent="Viewbox.MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+                                        Storyboard.TargetName="OBR"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="30" Duration="0:0:0.30" AutoReverse="False"/>
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Viewbox.MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+                                        Storyboard.TargetName="OBR"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="9" Duration="0:0:0.30" AutoReverse="False"/>
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Viewbox.Triggers>
+                        <Label x:Name="OBR">Weather image</Label>
+                    </Viewbox>
+
+                    <Viewbox Grid.Column="0">
+                        <CheckBox x:Name="w_obr" Margin="3" Checked="w_obr_true" Unchecked="w_obr_false" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
                     </Viewbox>
 
                 </Grid>
