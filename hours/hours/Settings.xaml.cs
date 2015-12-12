@@ -132,10 +132,7 @@ namespace hours
         {
             System.Console.WriteLine("Zobraz pocasi");
             Properties.Settings.Default.zobraz_pocasi = true;
-            MainWindow.I.pocasi.Visibility = Visibility.Visible;
-            MainWindow.I.lokace.Visibility = Visibility.Visible;
-            MainWindow.I.pocasi_obr.Visibility = Visibility.Visible;
-            MainWindow.I.teplota.Visibility = Visibility.Visible;
+            MainWindow.I.w_all.Visibility = Visibility.Visible;
         }
 
         /*
@@ -145,10 +142,7 @@ namespace hours
         {
             System.Console.WriteLine("Skryj pocasi");
             Properties.Settings.Default.zobraz_pocasi = false;
-            MainWindow.I.pocasi.Visibility = Visibility.Hidden;
-            MainWindow.I.lokace.Visibility = Visibility.Hidden;
-            MainWindow.I.pocasi_obr.Visibility = Visibility.Hidden;
-            MainWindow.I.teplota.Visibility = Visibility.Hidden;
+            MainWindow.I.w_all.Visibility = Visibility.Hidden;
         }
 
 
@@ -158,7 +152,7 @@ namespace hours
         private void w_city_true(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.w_city = true;
-            MainWindow.I.lokace.Visibility = Visibility.Visible;
+            MainWindow.I.w_city_grid.Visibility = Visibility.Visible;
         }
 
         /*
@@ -167,7 +161,7 @@ namespace hours
         private void w_city_false(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.w_city = false;
-            MainWindow.I.lokace.Visibility = Visibility.Hidden;
+            MainWindow.I.w_city_grid.Visibility = Visibility.Hidden;
         }
 
         /*
