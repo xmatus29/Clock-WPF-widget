@@ -135,10 +135,33 @@
         </Grid>
 
         <!-- POCASI -->
-        <Label Grid.Row="1" x:Name="lokace"  Content="Lokace" VerticalAlignment="Center" HorizontalAlignment="Center"   Height="30" FontWeight="Bold" FontSize="20" FontFamily="Snap ITC"/>
-        <Image Grid.Row="2"  x:Name="pocasi_obr" Opacity="0.5" VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" Height="50"/>
-        <Label Grid.Row="3" x:Name="teplota" Content="xx °C"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="30" FontWeight="Bold" FontSize="20" FontFamily="Transformers Movie"/>
-        <Label Grid.Row="4" x:Name="pocasi" Content="Posasi" VerticalAlignment="Center" HorizontalAlignment="Center"   Height="30" FontWeight="Bold" FontSize="20" FontFamily="Willamette SF"/>
+
+        
+
+        <Border Grid.Row="1">
+            <Label x:Name="lokace"  Content="Lokace" VerticalAlignment="Center" HorizontalAlignment="Center"   Height="30" FontWeight="Bold" FontSize="20" FontFamily="Snap ITC"/>
+            <Border.Background>
+                <ImageBrush TileMode="Tile" ImageSource="Skins/backgroundInfo.png" AlignmentY="Top" AlignmentX="Center"/>
+            </Border.Background>
+        </Border>
+        <Border Grid.Row="2">
+            <Image x:Name="pocasi_obr" Opacity="0.5" VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" Height="50"/>
+            <Border.Background>
+                <ImageBrush TileMode="Tile" ImageSource="Skins/backgroundInfo.png" AlignmentY="Top" AlignmentX="Center"/>
+            </Border.Background>
+        </Border>
+        <Border Grid.Row="3">
+            <Label x:Name="teplota" Content="xx °C"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="30" FontWeight="Bold" FontSize="20" FontFamily="Transformers Movie"/>
+            <Border.Background>
+                <ImageBrush TileMode="Tile" ImageSource="Skins/backgroundInfo.png" AlignmentY="Top" AlignmentX="Center"/>
+            </Border.Background>
+        </Border>
+        <Border Grid.Row="4">
+            <Label x:Name="pocasi" Content="Posasi" VerticalAlignment="Center" HorizontalAlignment="Center"   Height="30" FontWeight="Bold" FontSize="20" FontFamily="Willamette SF"/>
+            <Border.Background>
+                <ImageBrush TileMode="Tile" ImageSource="Skins/backgroundInfo.png" AlignmentY="Top" AlignmentX="Center"/>
+            </Border.Background>
+        </Border>
     </Grid>
 
     <!-- Context menu, ktere se otevre po kliknuti pravym mysitkem -->

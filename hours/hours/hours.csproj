@@ -197,6 +197,9 @@
     <Content Include="Skins\background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Skins\backgroundInfo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Skins\fit_logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
