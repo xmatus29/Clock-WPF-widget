@@ -143,11 +143,15 @@
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
+                <RowDefinition Height="0.00000000001*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
 
             </Grid.ColumnDefinitions>
+            
+            
+            
 
             <Border x:Name="w_city_grid" Grid.Row="0">
                 <Label x:Name="lokace"  Content="Lokace" VerticalAlignment="Center" HorizontalAlignment="Center"   Height="30" FontWeight="Bold" FontSize="20" FontFamily="Snap ITC"/>
