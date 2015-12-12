@@ -32,13 +32,22 @@ namespace hours
 
             if (Properties.Settings.Default.alarm == false)
             {
-                AlarmButton.Background = Brushes.Red;
+                AlarmButton.Background = Brushes.Green;
                 AlarmButton.Content = "ON";
             }
             else
             {
-                AlarmButton.Background = Brushes.Green;
+                AlarmButton.Background = Brushes.Red;
                 AlarmButton.Content = "OFF";
+            }
+
+            if(Properties.Settings.Default.alarmMusic == "")
+            {
+                tema.Text = "Default";
+            }
+            else
+            {
+                tema.Text = Properties.Settings.Default.alarmMusic.Substring(Properties.Settings.Default.alarmMusic.LastIndexOf('-') + 1);
             }
         }
 
@@ -49,13 +58,13 @@ namespace hours
         {
             if (Properties.Settings.Default.alarm == true)
             {
-                AlarmButton.Background = Brushes.Red;
+                AlarmButton.Background = Brushes.Green;
                 AlarmButton.Content = "ON";
                 Properties.Settings.Default.alarm = false;
             }
             else
             {
-                AlarmButton.Background = Brushes.Green;
+                AlarmButton.Background = Brushes.Red;
                 AlarmButton.Content = "OFF";
                 Properties.Settings.Default.alarm = true;
             }
@@ -114,6 +123,7 @@ namespace hours
                 // Open document 
                 //string filename = dlg.FileName;
                 Properties.Settings.Default.alarmMusic = dlg.FileName;
+                tema.Text = Properties.Settings.Default.alarmMusic.Substring(Properties.Settings.Default.alarmMusic.LastIndexOf('-') + 1);
             }
         }
     }

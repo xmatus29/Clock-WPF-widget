@@ -26,12 +26,12 @@ namespace hours
             AlarmMinuty.Text = Properties.Settings.Default.autoMinuty.ToString();
             if (Properties.Settings.Default.auto == false)
             {
-                AlarmButton.Background = Brushes.Red;
+                AlarmButton.Background = Brushes.Green;
                 AlarmButton.Content = "ON";
             }
             else
             {
-                AlarmButton.Background = Brushes.Green;
+                AlarmButton.Background = Brushes.Red;
                 AlarmButton.Content = "OFF";
             }
         }
@@ -40,13 +40,13 @@ namespace hours
         {
             if (Properties.Settings.Default.auto == true)
             {
-                AlarmButton.Background = Brushes.Red;
+                AlarmButton.Background = Brushes.Green;
                 AlarmButton.Content = "ON";
                 Properties.Settings.Default.auto = false;
             }
             else
             {
-                AlarmButton.Background = Brushes.Green;
+                AlarmButton.Background = Brushes.Red;
                 AlarmButton.Content = "OFF";
                 Properties.Settings.Default.auto = true;
             }

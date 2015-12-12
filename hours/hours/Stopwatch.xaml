@@ -9,7 +9,7 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Viewbox Grid.Row="0">
-            <TextBlock Name="StopkyZobrazovanie" Text="00:00:00" ></TextBlock>
+            <TextBlock Name="StopkyZobrazovanie" Text="00:00:000" ></TextBlock>
         </Viewbox>
         <Viewbox Grid.Row="1">
             <Button Content="Start" Name="StartStopkyButton" Click="StartStopkyButton_Click" Width="100" Background="Green"/>

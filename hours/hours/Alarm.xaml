@@ -9,27 +9,34 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
             
         </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="0.4*"/>
+        </Grid.RowDefinitions>
 
 
-        
-        
+
+
         <Viewbox Grid.Column="0">
-            <TextBox  HorizontalAlignment="Center" TextWrapping="Wrap" Text="7" VerticalAlignment="Center" x:Name="AlarmHodiny"/>
+            <TextBox  HorizontalAlignment="Center" TextWrapping="Wrap" Text="7" VerticalAlignment="Center" x:Name="AlarmHodiny" Width="37" />
         </Viewbox>
         <Viewbox Grid.Column="1">
-            <TextBox  HorizontalAlignment="Center" TextWrapping="Wrap" Text="7" VerticalAlignment="Center" x:Name="AlarmMinuty"/>
+            <TextBox  HorizontalAlignment="Center" TextWrapping="Wrap" Text="7" VerticalAlignment="Center" x:Name="AlarmMinuty" Width="37"/>
         </Viewbox>
         <Viewbox Grid.Column="2">
-            <Button Content="Set" Name="SetAlarmButton" Click="SetAlarmButton_Click" />
+            <Button Content="Set" Name="SetAlarmButton" Click="SetAlarmButton_Click" Width="36" />
         </Viewbox>
         <Viewbox Grid.Column="3">
-            <Button Content="On" Background="Green" Name="AlarmButton" Click="AlarmButton_Click" />
+            <Button Content="On" Background="Green" Name="AlarmButton" Click="AlarmButton_Click" Width="38" />
         </Viewbox>
-        <Viewbox Grid.Column="4">
-            <Button x:Name="selectMusic" Click="selectMusic_Click" Content="Select music" FontWeight="Bold"></Button>
+        <Viewbox Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="2" >
+            <Button x:Name="selectMusic" Click="selectMusic_Click" Content="Select music" FontWeight="Bold" ></Button>
+        </Viewbox>
+        <Viewbox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <TextBlock Name="tema" Text="Default" ></TextBlock>
         </Viewbox>
 
     </Grid>

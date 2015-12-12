@@ -50,7 +50,9 @@ namespace hours
 
         private void ResetStopkyButton_Click(object sender, RoutedEventArgs e)
         {
-            StopkyZobrazovanie.Text = "00:00:00";
+            StopkyZobrazovanie.Text = "00:00:000";
+            StartStopkyButton.Background = Brushes.Green;
+            StartStopkyButton.Content = "START";
             this.cas.Reset();
         }
 
@@ -58,7 +60,26 @@ namespace hours
         {
             if(this.cas.IsRunning)
             {
-                StopkyZobrazovanie.Text = this.cas.Elapsed.Minutes + ":" + this.cas.Elapsed.Seconds + ":"  + this.cas.Elapsed.Milliseconds;
+                string minuty = this.cas.Elapsed.Minutes.ToString();
+                string sekundy = this.cas.Elapsed.Seconds.ToString();
+                string milisekundy = this.cas.Elapsed.Milliseconds.ToString();
+                if(minuty.Length < 2)
+                {
+                    minuty = minuty.Insert(0, "0");
+                }
+                if (sekundy.Length < 2)
+                {
+                    sekundy = sekundy.Insert(0, "0");
+                }
+                if (milisekundy.Length == 1)
+                {
+                    milisekundy = milisekundy.Insert(0, "00");
+                }
+                else if (milisekundy.Length == 2)
+                {
+                    milisekundy = milisekundy.Insert(0, "0");
+                }
+                StopkyZobrazovanie.Text = minuty + ":" + sekundy + ":"  + milisekundy;
             }
         }
     }
