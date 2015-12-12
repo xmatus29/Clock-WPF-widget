@@ -27,8 +27,8 @@ namespace hours
             AlarmHodiny.Text = Properties.Settings.Default.alarmHodiny.ToString();
             AlarmMinuty.Text = Properties.Settings.Default.alarmMinuty.ToString();
 
-            AlarmHodiny.Text = System.DateTime.Now.Hour.ToString();
-            AlarmMinuty.Text = System.DateTime.Now.Minute.ToString();
+            //AlarmHodiny.Text = System.DateTime.Now.Hour.ToString();
+            //AlarmMinuty.Text = System.DateTime.Now.Minute.ToString();
 
             if (Properties.Settings.Default.alarm == false)
             {
