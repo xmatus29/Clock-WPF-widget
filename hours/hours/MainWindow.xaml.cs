@@ -149,8 +149,57 @@ namespace hours
             change_mode(Properties.Settings.Default.mode);
             System.Console.WriteLine("~app started!:" + Properties.Settings.Default.runs);
 
+            if (Properties.Settings.Default.w_city) { w_city_grid.Visibility = Visibility.Visible; }
+            else { w_city_grid.Visibility = Visibility.Hidden; }
+
+            if (Properties.Settings.Default.w_info) { w_info_grid.Visibility = Visibility.Visible; }
+            else { w_info_grid.Visibility = Visibility.Hidden; }
+
+            if (Properties.Settings.Default.w_temp) { w_temp_grid.Visibility = Visibility.Visible; }
+            else { w_temp_grid.Visibility = Visibility.Hidden; }
+
+            if (Properties.Settings.Default.w_obr) { w_obr_grid.Visibility = Visibility.Visible; }
+            else { w_obr_grid.Visibility = Visibility.Hidden; }
+
+            //WEATHER RELOAD
+            w_reload();
+
             //OPEN SETTINGS ON STARTUP
             //RUNSETT.RaiseEvent(new RoutedEventArgs(MenuItem.ClickEvent));
+        }
+
+        //weather reload
+        public void w_reload()
+        {
+            List<Border> vis = new List<Border>();
+            List<Border> unvis = new List<Border>();
+
+            List<Border> w_elem = new List<Border>();
+            w_elem.Add(MainWindow.I.w_city_grid);
+            w_elem.Add(MainWindow.I.w_info_grid);
+            w_elem.Add(MainWindow.I.w_obr_grid);
+            w_elem.Add(MainWindow.I.w_temp_grid);
+
+
+            foreach (var item in w_elem)
+            {
+                if (item.Visibility == Visibility.Hidden) { unvis.Add(item); }
+                else { vis.Add(item); }
+            }
+
+            foreach (var item in unvis)
+            {
+                item.SetValue(Grid.RowProperty, 5);
+
+            }
+
+            int i = 0;
+            foreach (var item in vis)
+            {
+                item.SetValue(Grid.RowProperty, i++);
+            }
+
+
         }
 
         /*

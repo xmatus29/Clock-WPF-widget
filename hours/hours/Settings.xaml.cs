@@ -45,6 +45,7 @@ namespace hours
             }
             start();
             setInfobox();
+
         }
 
 
@@ -60,6 +61,8 @@ namespace hours
             w_temp.IsChecked = Properties.Settings.Default.w_temp;
             w_info.IsChecked = Properties.Settings.Default.w_info;
             w_obr.IsChecked = Properties.Settings.Default.w_obr;
+
+            MainWindow.I.w_reload();
         }
 
         public void setInfobox()
@@ -128,6 +131,11 @@ namespace hours
             Properties.Settings.Default.all_top = false;
         }
 
+
+
+
+        
+
         /*
          * Metoda pro zapnutí počasí
          */
@@ -136,6 +144,7 @@ namespace hours
             System.Console.WriteLine("Zobraz pocasi");
             Properties.Settings.Default.zobraz_pocasi = true;
             MainWindow.I.w_all.Visibility = Visibility.Visible;
+            MainWindow.I.w_reload();
         }
 
         /*
@@ -146,6 +155,7 @@ namespace hours
             System.Console.WriteLine("Skryj pocasi");
             Properties.Settings.Default.zobraz_pocasi = false;
             MainWindow.I.w_all.Visibility = Visibility.Hidden;
+            MainWindow.I.w_reload();
         }
 
 
@@ -156,6 +166,7 @@ namespace hours
         {
             Properties.Settings.Default.w_city = true;
             MainWindow.I.w_city_grid.Visibility = Visibility.Visible;
+            MainWindow.I.w_reload();
         }
 
         /*
@@ -165,6 +176,7 @@ namespace hours
         {
             Properties.Settings.Default.w_city = false;
             MainWindow.I.w_city_grid.Visibility = Visibility.Hidden;
+            MainWindow.I.w_reload();
         }
 
 
@@ -175,6 +187,7 @@ namespace hours
         {
             Properties.Settings.Default.w_info = true;
             MainWindow.I.w_info_grid.Visibility = Visibility.Visible;
+            MainWindow.I.w_reload();
         }
 
         /*
@@ -184,6 +197,7 @@ namespace hours
         {
             Properties.Settings.Default.w_info = false;
             MainWindow.I.w_info_grid.Visibility = Visibility.Hidden;
+            MainWindow.I.w_reload();
         }
 
 
@@ -194,6 +208,7 @@ namespace hours
         {
             Properties.Settings.Default.w_temp = true;
             MainWindow.I.w_temp_grid.Visibility = Visibility.Visible;
+            MainWindow.I.w_reload();
         }
 
         /*
@@ -203,6 +218,7 @@ namespace hours
         {
             Properties.Settings.Default.w_temp = false;
             MainWindow.I.w_temp_grid.Visibility = Visibility.Hidden;
+            MainWindow.I.w_reload();
         }
 
         /*
@@ -212,6 +228,7 @@ namespace hours
         {
             Properties.Settings.Default.w_obr = true;
             MainWindow.I.w_obr_grid.Visibility = Visibility.Visible;
+            MainWindow.I.w_reload();
         }
 
         /*
@@ -221,6 +238,7 @@ namespace hours
         {
             Properties.Settings.Default.w_obr = false;
             MainWindow.I.w_obr_grid.Visibility = Visibility.Hidden;
+            MainWindow.I.w_reload();
         }
 
         /*
