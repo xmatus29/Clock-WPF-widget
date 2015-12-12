@@ -346,5 +346,77 @@ namespace hours.Properties {
                 this["w_datum"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string c_podkladA {
+            get {
+                return ((string)(this["c_podkladA"]));
+            }
+            set {
+                this["c_podkladA"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string c_stredA {
+            get {
+                return ((string)(this["c_stredA"]));
+            }
+            set {
+                this["c_stredA"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string c_hodinaA {
+            get {
+                return ((string)(this["c_hodinaA"]));
+            }
+            set {
+                this["c_hodinaA"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string c_minutaA {
+            get {
+                return ((string)(this["c_minutaA"]));
+            }
+            set {
+                this["c_minutaA"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string c_sekundaA {
+            get {
+                return ((string)(this["c_sekundaA"]));
+            }
+            set {
+                this["c_sekundaA"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string c_cifernikA {
+            get {
+                return ((string)(this["c_cifernikA"]));
+            }
+            set {
+                this["c_cifernikA"] = value;
+            }
+        }
     }
 }

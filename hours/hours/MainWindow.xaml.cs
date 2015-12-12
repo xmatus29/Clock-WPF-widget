@@ -24,10 +24,10 @@ namespace hours
 
     public partial class MainWindow : Window
     {
-        
+
         private System.Windows.Threading.DispatcherTimer timerCas;
         public static MainWindow I;
-        
+
         public Settings nastavenia = null;
         public Credits credits = null;
         public Alarm alarm = null;
@@ -58,6 +58,59 @@ namespace hours
             minutaRucickaO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\minuta.png"));
             hodinaRucickaO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\hodina.png"));
 
+            if (String.Compare(Properties.Settings.Default.c_podkladA, "") != 0)
+            {
+                BrushConverter bc = new BrushConverter();
+                Brush brush = (Brush)bc.ConvertFrom(Properties.Settings.Default.c_podkladA);
+                MainWindow.I.kolecko.Fill = brush;
+            }
+
+            if (String.Compare(Properties.Settings.Default.c_stredA, "") != 0)
+            {
+                BrushConverter bc1 = new BrushConverter();
+                Brush brush1 = (Brush)bc1.ConvertFrom(Properties.Settings.Default.c_stredA);
+                MainWindow.I.stred.Fill = brush1;
+            }
+
+            if (String.Compare(Properties.Settings.Default.c_hodinaA, "") != 0)
+            {
+                BrushConverter bc2 = new BrushConverter();
+                Brush brush2 = (Brush)bc2.ConvertFrom(Properties.Settings.Default.c_hodinaA);
+                MainWindow.I.hodinaRucicka.Fill = brush2;
+            }
+
+            if (String.Compare(Properties.Settings.Default.c_minutaA, "") != 0)
+            {
+                BrushConverter bc3 = new BrushConverter();
+                Brush brush3 = (Brush)bc3.ConvertFrom(Properties.Settings.Default.c_minutaA);
+                MainWindow.I.minutaRucicka.Fill = brush3;
+            }
+
+            if (String.Compare(Properties.Settings.Default.c_sekundaA, "") != 0)
+            {
+                BrushConverter bc4 = new BrushConverter();
+                Brush brush4 = (Brush)bc4.ConvertFrom(Properties.Settings.Default.c_sekundaA);
+                MainWindow.I.sekundaRucicka.Fill = brush4;
+            }
+
+            if (String.Compare(Properties.Settings.Default.c_cifernikA, "") != 0)
+            {
+                BrushConverter bc5 = new BrushConverter();
+                Brush brush5 = (Brush)bc5.ConvertFrom(Properties.Settings.Default.c_cifernikA);
+                MainWindow.I.c1.Foreground = brush5;
+                MainWindow.I.c2.Foreground = brush5;
+                MainWindow.I.c3.Foreground = brush5;
+                MainWindow.I.c4.Foreground = brush5;
+                MainWindow.I.c5.Foreground = brush5;
+                MainWindow.I.c6.Foreground = brush5;
+                MainWindow.I.c7.Foreground = brush5;
+                MainWindow.I.c8.Foreground = brush5;
+                MainWindow.I.c9.Foreground = brush5;
+                MainWindow.I.c10.Foreground = brush5;
+                MainWindow.I.c11.Foreground = brush5;
+                MainWindow.I.c12.Foreground = brush5;
+            }
+
             Properties.Settings.Default.alarmMusic = (System.Environment.CurrentDirectory + "\\Sounds\\" + "\\Loud-alarm-clock-sound.wav");
 
 
@@ -77,6 +130,24 @@ namespace hours
                 MainWindow.I.pocasi_obr.Visibility = Visibility.Hidden;
                 MainWindow.I.teplota.Visibility = Visibility.Hidden;
             }
+
+
+            /*
+                        POZOR!!!!
+                        pro prepinani analogovych hodin staci jeden button
+            */
+
+            // nastavi WPF hodiny
+            //WPF_CLOCK.Visibility = Visibility.Visible;
+            //SKIN_CLOCK.Visibility = Visibility.Hidden;
+
+            // OR
+
+            // nastavi SKIN hodiny
+            //SKIN_CLOCK.Visibility = Visibility.Visible;
+            //WPF_CLOCK.Visibility = Visibility.Hidden;
+
+
 
             this.binarnaJedna = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\thumb.png"));
             this.binarnaNula = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\thumb1.png"));
@@ -127,13 +198,19 @@ namespace hours
             //DEFAULT FIRST RUN
             if (Properties.Settings.Default.runs == 0)
             {
-                Properties.Settings.Default.all_opacity = Opacity*10;
-                Properties.Settings.Default.all_size = Width/100;
-                Properties.Settings.Default.all_wleft =  Double.Parse( SystemParameters.PrimaryScreenWidth.ToString()) - Double.Parse(Width.ToString());
+                Properties.Settings.Default.all_opacity = Opacity * 10;
+                Properties.Settings.Default.all_size = Width / 100;
+                Properties.Settings.Default.all_wleft = Double.Parse(SystemParameters.PrimaryScreenWidth.ToString()) - Double.Parse(Width.ToString());
                 Properties.Settings.Default.all_wtop = 0.0;
                 Properties.Settings.Default.all_top = true;
                 Properties.Settings.Default.zobraz_pocasi = true;
                 Properties.Settings.Default.tikani = false;
+                Properties.Settings.Default.c_podkladA = "blue";
+                Properties.Settings.Default.c_stredA = "red";
+                Properties.Settings.Default.c_hodinaA = "black";
+                Properties.Settings.Default.c_minutaA = "green";
+                Properties.Settings.Default.c_sekundaA = "white";
+                Properties.Settings.Default.c_cifernikA = "black";
             }
             Properties.Settings.Default.runs += 1;
 
@@ -237,50 +314,50 @@ namespace hours
             /*
                 Cifernik
             */
-            c1.Height = okno.Height/1.57;
-            c1.Width = okno.Width/2.67;
-            c1.FontSize = okno.Width/13.3;
+            c1.Height = okno.Height / 1.57 + 10;
+            c1.Width = okno.Width / 2.67;
+            c1.FontSize = okno.Width / 13.3;
 
-            c2.Height = okno.Height / 1.905;
+            c2.Height = okno.Height / 1.905 + 10;
             c2.Width = okno.Width / 3.64;
             c2.FontSize = okno.Width / 13.3;
 
-            c3.Height = okno.Height / 2.5;
+            c3.Height = okno.Height / 2.5 + 10;
             c3.Width = okno.Width / 4;
             c3.FontSize = okno.Width / 13.3;
 
-            c4.Height = okno.Height / 3.63;
+            c4.Height = okno.Height / 3.63 + 10;
             c4.Width = okno.Width / 3.63;
             c4.FontSize = okno.Width / 13.3;
 
-            c5.Height = okno.Height / 5.17;
+            c5.Height = okno.Height / 5.17 + 10;
             c5.Width = okno.Width / 2.67;
             c5.FontSize = okno.Width / 13.3;
 
-            c6.Height = okno.Height / 8;
+            c6.Height = okno.Height / 8 + 10;
             c6.FontSize = okno.Width / 13.3;
 
-            c7.Height = okno.Height / 5.71;
+            c7.Height = okno.Height / 5.71 + 10;
             c7.Width = okno.Width / 1.53;
             c7.FontSize = okno.Width / 13.3;
 
-            c8.Height = okno.Height / 3.63;
+            c8.Height = okno.Height / 3.63 + 10;
             c8.Width = okno.Width / 1.33;
             c8.FontSize = okno.Width / 13.3;
 
-            c9.Height = okno.Height / 2.5;
+            c9.Height = okno.Height / 2.5 + 10;
             c9.Width = okno.Width / 1.25;
             c9.FontSize = okno.Width / 13.3;
 
-            c10.Height = okno.Height / 1.9;
+            c10.Height = okno.Height / 1.9 + 10;
             c10.Width = okno.Width / 1.28;
             c10.FontSize = okno.Width / 13.3;
 
-            c11.Height = okno.Height / 1.54;
+            c11.Height = okno.Height / 1.54 + 10;
             c11.Width = okno.Width / 1.48;
             c11.FontSize = okno.Width / 13.3;
 
-            c12.Height = okno.Height / 1.45;
+            c12.Height = okno.Height / 1.45 + 10;
             c12.FontSize = okno.Width / 13.3;
 
 
@@ -292,7 +369,7 @@ namespace hours
                 lokace.FontSize = okno.Height / 25;
                 pocasi.Height = okno.Width / 12;
                 pocasi.FontSize = okno.Width / 25;
-                pocasi_obr.Width = pocasi_obr.Height = okno.Width /12;
+                pocasi_obr.Width = pocasi_obr.Height = okno.Width / 12;
             }
         }
 
@@ -360,7 +437,7 @@ namespace hours
             {
                 System.Diagnostics.Process.Start("shutdown", "/s /t 30");
             }
-           
+
         }
 
         /*
@@ -406,7 +483,7 @@ namespace hours
                 Properties.Settings.Default.all_wleft = MainWindow.I.Left;
                 Properties.Settings.Default.all_wtop = MainWindow.I.Top;
             }
-            this.mplayer.Stop();           
+            this.mplayer.Stop();
         }
 
         /*
@@ -414,7 +491,7 @@ namespace hours
          */
         private void staleNavrchu(object sender, EventArgs e)
         {
-            if(Properties.Settings.Default.all_top == true)
+            if (Properties.Settings.Default.all_top == true)
             {
                 Window window = (Window)sender;
                 window.Topmost = true;
@@ -440,7 +517,7 @@ namespace hours
             if (this.credits != null) { return; }
             this.credits = new Credits();
             credits.Show();
-            
+
             if (okno.Left > SystemParameters.PrimaryScreenWidth / 2.0)
             {
                 credits.Left = okno.Left - credits.Width - 20;
@@ -497,14 +574,14 @@ namespace hours
         private void Settings(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("Settings: Start");
-            if (this.nastavenia != null){return;}
+            if (this.nastavenia != null) { return; }
             this.nastavenia = new Settings();
             this.nastavenia.Show();
 
             /* nastaveni pozice settings podle umisteni hodin */
             if (okno.Left > SystemParameters.PrimaryScreenWidth / 2.0)
             {
-                nastavenia.Left = okno.Left - nastavenia.Width-20;
+                nastavenia.Left = okno.Left - nastavenia.Width - 20;
             }
             else
             {

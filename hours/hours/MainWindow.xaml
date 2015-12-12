@@ -24,82 +24,86 @@
         <!-- ANALOGOVE HODINY -->
         <Grid x:Name="ANALOG" ShowGridLines="True">
             <Grid>
-                <!-- Kolecko -->
-                <Ellipse x:Name="kolecko" Visibility="Hidden" Fill="#FF2F5BD3"  Opacity="1" Width="250" Height="250" StrokeThickness="102">
-                    <Ellipse.Triggers>
-                        <EventTrigger RoutedEvent="Ellipse.Loaded">
-                            <BeginStoryboard>
-                                <Storyboard AutoReverse="True" RepeatBehavior="Forever">
-                                    <ColorAnimation Storyboard.TargetProperty="Fill.Color" To="White" />
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </Ellipse.Triggers>
-                </Ellipse>
-
-                <!-- Potencialne nahrazeno obrazkem -->
-                <Image x:Name="koleckoO" Visibility="Visible" Opacity="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250"></Image>
+                <Grid x:Name="WPF_CLOCK" Visibility="Hidden">
+                    <!-- Kolecko (Podklad) -->
+                <Ellipse x:Name="kolecko" Visibility="Visible" Fill="#FF2F5BD3"  Opacity="1" Width="250" Height="250" StrokeThickness="102"/>
 
                 <!-- Hodinova rucicka -->
-                <Rectangle x:Name="hodinaRucicka" Visibility="Hidden"  Fill="Red" Opacity="0.8" Width="20" HorizontalAlignment="Center" VerticalAlignment="Top" Height="150" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
+                <Rectangle x:Name="hodinaRucicka" Visibility="Visible"  Fill="Red" Opacity="0.8" Width="20" HorizontalAlignment="Center" VerticalAlignment="Top" Height="150" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
                     <Rectangle.RenderTransform>
                         <RotateTransform x:Name="hodina" Angle="0"/>
                     </Rectangle.RenderTransform>
                 </Rectangle>
-                <Image x:Name="hodinaRucickaO" Visibility="Visible" Opacity="1" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" Height="300" RenderTransformOrigin="0.5,0.5">
-                    <Image.RenderTransform>
-                        <RotateTransform x:Name="hodinaO" Angle="0"/>
-                    </Image.RenderTransform>
-                </Image>
 
                 <!-- Minutova rucicka -->
-                <Rectangle x:Name="minutaRucicka" Visibility="Hidden" Fill="Green" Opacity="0.8"  Width="15" HorizontalAlignment="Center" VerticalAlignment="Top" Height="150" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
+                <Rectangle x:Name="minutaRucicka" Visibility="Visible" Fill="Green" Opacity="0.8"  Width="15" HorizontalAlignment="Center" VerticalAlignment="Top" Height="150" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
                     <Rectangle.RenderTransform>
                         <RotateTransform x:Name="minuta" Angle="0"/>
                     </Rectangle.RenderTransform>
                 </Rectangle>
+
+                <!-- Sekundova rucicka -->
+                <Rectangle x:Name="sekundaRucicka" Visibility="Visible" Fill="Yellow"  Opacity="0.8" HorizontalAlignment="Center" VerticalAlignment="Top" Width="10" Height="150" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
+                    <Rectangle.RenderTransform>
+                        <RotateTransform x:Name="sekunda" Angle="0"/>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+
+                <!-- Stredove kolecko -->
+                <Ellipse x:Name="stred" Visibility="Visible" Opacity="1" Fill="Coral" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="20" Height="20"/>
+
+                <!-- Cifernik -->
+                <TextBlock x:Name="c1" Visibility="Visible" Text="1" FontSize="30" Height="255" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c2" Visibility="Visible" Text="2" FontSize="30" Height="210" Width="110" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c3" Visibility="Visible" Text="3" Width="100" Height="160" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontWeight="Bold"></TextBlock>
+                <TextBlock x:Name="c4" Visibility="Visible" Text="4" FontSize="30" Height="110" Width="110" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c5" Visibility="Visible" Text="5" FontSize="30" Height="70" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c6" Visibility="Visible" FontWeight="Bold" Text="6" Height="50" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c7" Visibility="Visible" Text="7" FontSize="30" Height="70" Width="260" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c8" Visibility="Visible" Text="8" FontSize="30" Height="110" Width="300" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c9" Visibility="Visible" FontWeight="Bold" Text="9" Width="320" Height="160" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c10" Visibility="Visible" Text="10" FontSize="30" Height="210" Width="320" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c11" Visibility="Visible" Text="11" FontSize="30" Height="260" Width="270" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock x:Name="c12" Visibility="Visible" FontWeight="Bold" Text="12" FontSize="30" Height="275" HorizontalAlignment="Center" VerticalAlignment="Bottom"></TextBlock>
+
+                </Grid>
+                
+                
+                <Grid x:Name="SKIN_CLOCK" Visibility="Visible">
+                <!-- Podklad SKIN -->
+                <Image x:Name="koleckoO" Visibility="Visible" Opacity="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250"></Image>
+
+                <!-- Hodinova rucicka SKIN -->
+                <Image x:Name="hodinaRucickaO" Visibility="Visible" Opacity="1" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" Height="300" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform x:Name="hodinaO" Angle="0"/>
+                    </Image.RenderTransform>
+                </Image>                
+                
+                <!-- Minutova rucicka SKIN -->
                 <Image x:Name="minutaRucickaO" Visibility="Visible" Opacity="1" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" Height="300" RenderTransformOrigin="0.5,0.5">
                     <Image.RenderTransform>
                         <RotateTransform x:Name="minutaO" Angle="0"/>
                     </Image.RenderTransform>
                 </Image>
-
-                <!-- Sekundova rucicka -->
-                <Rectangle x:Name="sekundaRucicka" Visibility="Hidden" Fill="Yellow"  Opacity="0.8" HorizontalAlignment="Center" VerticalAlignment="Top" Width="10" Height="150" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
-                    <Rectangle.RenderTransform>
-                        <RotateTransform x:Name="sekunda" Angle="0"/>
-                    </Rectangle.RenderTransform>
-                </Rectangle>
+                
+                <!-- Sekundova rucicka SKIN -->
                 <Image x:Name="sekundaRucickaO" Visibility="Visible"  Opacity="1" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" Height="300" RenderTransformOrigin="0.5,0.5">
                     <Image.RenderTransform>
                         <RotateTransform x:Name="sekundaO" Angle="0"/>
                     </Image.RenderTransform>
                 </Image>
-
-                <!-- Stredove kolecko -->
-                <Ellipse x:Name="stred" Visibility="Hidden" Opacity="1" Fill="Coral" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="20" Height="20"/>
+                
+                <!-- Stredove kolecko  SKIN-->
                 <Image x:Name="stredO"  Visibility="Visible" Opacity="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="30" Height="30"></Image>
 
-
-                <!-- Cifernik -->
-                <TextBlock x:Name="c1" Visibility="Hidden" Text="1" FontSize="30" Height="255" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
-                <TextBlock x:Name="c2" Visibility="Hidden" Text="2" FontSize="30" Height="210" Width="110" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
-                <TextBlock x:Name="c3" Visibility="Hidden" Text="3" Width="100" Height="160" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontWeight="Bold"></TextBlock>
-                <TextBlock x:Name="c4" Visibility="Hidden" Text="4" FontSize="30" Height="110" Width="110" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
-                <TextBlock x:Name="c5" Visibility="Hidden" Text="5" FontSize="30" Height="70" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
-                <TextBlock x:Name="c6" Visibility="Hidden" FontWeight="Bold" Text="6" Height="50" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Bottom"></TextBlock>
-                <TextBlock x:Name="c7" Visibility="Hidden" Text="7" FontSize="30" Height="70" Width="260" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
-                <TextBlock x:Name="c8" Visibility="Hidden" Text="8" FontSize="30" Height="110" Width="300" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
-                <TextBlock x:Name="c9" Visibility="Hidden" FontWeight="Bold" Text="9" Width="320" Height="160" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
-                <TextBlock x:Name="c10" Visibility="Hidden" Text="10" FontSize="30" Height="210" Width="320" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
-                <TextBlock x:Name="c11" Visibility="Hidden" Text="11" FontSize="30" Height="260" Width="270" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
-                <TextBlock x:Name="c12" Visibility="Hidden" FontWeight="Bold" Text="12" FontSize="30" Height="275" HorizontalAlignment="Center" VerticalAlignment="Bottom"></TextBlock>
+                </Grid>
 
             </Grid>
         </Grid>
 
         <!-- DIGITALNI HODINY -->
-        <Grid x:Name="DIGITAL" Grid.Row="0">
+        <Grid x:Name="DIGITAL" Grid.Row="0" Visibility="Hidden">
 
             <Border x:Name="w_digital_grid" Grid.Row="0">
                 <Label Visibility="Visible" Foreground="White" x:Name="digitalTime" Content="hh : mm : ss" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontFamily="Rockwell Extra Bold"/>
