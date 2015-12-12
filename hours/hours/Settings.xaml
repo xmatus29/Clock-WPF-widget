@@ -807,6 +807,7 @@
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
 
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -1014,6 +1015,50 @@
 
                     <Viewbox Grid.Column="0">
                         <CheckBox x:Name="w_obr" Margin="3" Checked="w_obr_true" Unchecked="w_obr_false" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    </Viewbox>
+
+                </Grid>
+
+                <Grid Grid.Row="6">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Viewbox Grid.Column="1" HorizontalAlignment="Left">
+                        <Viewbox.Triggers>
+                            <EventTrigger RoutedEvent="Viewbox.MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+                                        Storyboard.TargetName="INFO"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="30" Duration="0:0:0.30" AutoReverse="False"/>
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Viewbox.MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+                                        Storyboard.TargetName="INFO"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="9" Duration="0:0:0.30" AutoReverse="False"/>
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Viewbox.Triggers>
+                        <Label x:Name="DATUM">Datum</Label>
+                    </Viewbox>
+
+                    <Viewbox Grid.Column="0">
+                        <CheckBox x:Name="w_datum" Margin="3" Checked="w_datum_true" Unchecked="w_datum_false" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
                     </Viewbox>
 
                 </Grid>

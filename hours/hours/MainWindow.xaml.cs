@@ -161,6 +161,9 @@ namespace hours
             if (Properties.Settings.Default.w_obr) { w_obr_grid.Visibility = Visibility.Visible; }
             else { w_obr_grid.Visibility = Visibility.Hidden; }
 
+            if (Properties.Settings.Default.w_datum) { w_datum_grid.Visibility = Visibility.Visible; }
+            else { w_datum_grid.Visibility = Visibility.Hidden; }
+
             //WEATHER RELOAD
             w_reload();
 
@@ -179,6 +182,7 @@ namespace hours
             w_elem.Add(MainWindow.I.w_info_grid);
             w_elem.Add(MainWindow.I.w_obr_grid);
             w_elem.Add(MainWindow.I.w_temp_grid);
+            w_elem.Add(MainWindow.I.w_datum_grid);
 
 
             foreach (var item in w_elem)
@@ -224,9 +228,9 @@ namespace hours
             hodinaRucicka.Width = okno.Width / 20;
             hodinaRucickaO.Height = okno.Width / 2.66;
             hodinaRucickaO.Width = okno.Width / 20;
-            digitalTime.FontSize = okno.Width / 10;
-            datum.Height = okno.Width / 4;
-            datum.FontSize = okno.Width / 20;
+            digitalTime.FontSize = okno.Width / 6.2;
+            datum.Height = okno.Width / 12;
+            datum.FontSize = okno.Width / 35;
             stred.Width = stred.Height = okno.Width / 10;
             stredO.Width = stredO.Height = okno.Width / 20;
 
@@ -282,13 +286,13 @@ namespace hours
 
             if (informacie.pripojen_k_internetu)
             {
-                teplota.Height = okno.Height / 10;
-                teplota.FontSize = okno.Width / 20;
-                lokace.Height = okno.Height / 10;
-                lokace.FontSize = okno.Height / 20;
-                pocasi.Height = okno.Width / 10;
-                pocasi.FontSize = okno.Width / 20;
-                pocasi_obr.Width = pocasi_obr.Height = okno.Width /10;
+                teplota.Height = okno.Height / 12;
+                teplota.FontSize = okno.Width / 25;
+                lokace.Height = okno.Height / 12;
+                lokace.FontSize = okno.Height / 25;
+                pocasi.Height = okno.Width / 12;
+                pocasi.FontSize = okno.Width / 25;
+                pocasi_obr.Width = pocasi_obr.Height = okno.Width /12;
             }
         }
 
@@ -316,7 +320,22 @@ namespace hours
 
             if (Properties.Settings.Default.mode == 1)
             {
-                digitalTime.Content = DateTime.Now.Hour.ToString() + "h " + DateTime.Now.Minute.ToString() + "m " + DateTime.Now.Second.ToString() + "s";
+                string minuty = System.DateTime.Now.Minute.ToString();
+                string sekundy = System.DateTime.Now.Second.ToString();
+                string hodiny = System.DateTime.Now.Hour.ToString();
+                if (minuty.Length < 2)
+                {
+                    minuty = minuty.Insert(0, "0");
+                }
+                if (sekundy.Length < 2)
+                {
+                    sekundy = sekundy.Insert(0, "0");
+                }
+                if (hodiny.Length < 2)
+                {
+                    hodiny = hodiny.Insert(0, "0");
+                }
+                digitalTime.Content = hodiny + " : " + minuty + " : " + sekundy;
                 datum.Content = DateTime.Now.DayOfWeek + "  " + DateTime.Now.Day + ". " + DateTime.Now.Month + ". " + DateTime.Now.Year;
             }
 

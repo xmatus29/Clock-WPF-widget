@@ -334,5 +334,17 @@ namespace hours.Properties {
                 this["w_obr"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool w_datum {
+            get {
+                return ((bool)(this["w_datum"]));
+            }
+            set {
+                this["w_datum"] = value;
+            }
+        }
     }
 }

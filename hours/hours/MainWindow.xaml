@@ -19,9 +19,6 @@
         <Grid.RowDefinitions >
             <RowDefinition Height="1*" />
             <RowDefinition Height="0.3*" />
-
-
-
         </Grid.RowDefinitions>
 
         <!-- ANALOGOVE HODINY -->
@@ -42,13 +39,6 @@
 
                 <!-- Potencialne nahrazeno obrazkem -->
                 <Image x:Name="koleckoO" Visibility="Visible" Opacity="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250"></Image>
-
-                <!-- Datum -->
-                <Label x:Name="datum" Content="Monday dd. mm. yyyy"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="100"  FontSize="20" FontFamily="Transformers Movie">
-                    <Label.Effect>
-                        <BlurEffect Radius="2"/>
-                    </Label.Effect>
-                </Label>
 
                 <!-- Hodinova rucicka -->
                 <Rectangle x:Name="hodinaRucicka" Visibility="Hidden"  Fill="Red" Opacity="0.8" Width="20" HorizontalAlignment="Center" VerticalAlignment="Top" Height="150" RenderTransformOrigin="0.5,1" RadiusX="20" RadiusY="20" StrokeThickness="50">
@@ -109,12 +99,14 @@
         </Grid>
 
         <!-- DIGITALNI HODINY -->
-        <Grid x:Name="DIGITAL">
-            <Label Visibility="Visible" x:Name="digitalTime" Content="xxh xxm xxs" HorizontalAlignment="Center" VerticalAlignment="Bottom"   FontSize="40" FontFamily="Rockwell Extra Bold" >
-                <Label.Effect>
-                    <BlurEffect Radius="2"/>
-                </Label.Effect>
-            </Label>
+        <Grid x:Name="DIGITAL" Grid.Row="0">
+
+            <Border x:Name="w_digital_grid" Grid.Row="0">
+                <Label Visibility="Visible" Foreground="White" x:Name="digitalTime" Content="hh : mm : ss" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontFamily="Rockwell Extra Bold"/>
+                <Border.Background>
+                    <ImageBrush TileMode="Tile" ImageSource="Skins/digiBack.png" AlignmentY="Top" AlignmentX="Center"/>
+                </Border.Background>
+            </Border>
         </Grid>
 
         <!-- BINARNI HODINY -->
@@ -143,15 +135,13 @@
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
                 <RowDefinition Height="0.00000000001*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
-
             </Grid.ColumnDefinitions>
-            
-            
-            
+
 
             <Border x:Name="w_city_grid" Grid.Row="0">
                 <Label x:Name="lokace"  Content="Lokace" VerticalAlignment="Center" HorizontalAlignment="Center"   Height="30" FontWeight="Bold" FontSize="20" FontFamily="Snap ITC"/>
@@ -178,6 +168,13 @@
                 </Border.Background>
             </Border>
 
+            <!-- Datum -->
+            <Border x:Name="w_datum_grid" Grid.Row="4">
+                <Label x:Name="datum" Content="Monday dd. mm. yyyy"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="30"  FontSize="20" FontFamily="Transformers Movie"/>
+                <Border.Background>
+                    <ImageBrush TileMode="Tile" ImageSource="Skins/backgroundInfo.png" AlignmentY="Top" AlignmentX="Center"/>
+                </Border.Background>
+            </Border>
         </Grid>
 
         

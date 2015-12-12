@@ -61,6 +61,7 @@ namespace hours
             w_temp.IsChecked = Properties.Settings.Default.w_temp;
             w_info.IsChecked = Properties.Settings.Default.w_info;
             w_obr.IsChecked = Properties.Settings.Default.w_obr;
+            w_datum.IsChecked = Properties.Settings.Default.w_datum;
 
             MainWindow.I.w_reload();
         }
@@ -240,6 +241,27 @@ namespace hours
             MainWindow.I.w_obr_grid.Visibility = Visibility.Hidden;
             MainWindow.I.w_reload();
         }
+
+        /*
+         * Metoda DATUM ON
+         */
+        private void w_datum_true(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.w_datum = true;
+            MainWindow.I.w_datum_grid.Visibility = Visibility.Visible;
+            MainWindow.I.w_reload();
+        }
+
+        /*
+         * Metoda DATUM OFF
+         */
+        private void w_datum_false(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.w_datum = false;
+            MainWindow.I.w_datum_grid.Visibility = Visibility.Hidden;
+            MainWindow.I.w_reload();
+        }
+
 
         /*
          * Metoda pro zapnutí tikání analogových hodin
