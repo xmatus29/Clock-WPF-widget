@@ -82,5 +82,11 @@ namespace hours
                 StopkyZobrazovanie.Text = minuty + ":" + sekundy + ":"  + milisekundy;
             }
         }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            MainWindow.I.stopky = null;
+        }
     }
 }

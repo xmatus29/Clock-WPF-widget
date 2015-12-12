@@ -84,5 +84,11 @@ namespace hours
             }
             Properties.Settings.Default.autoHodiny = AlarmHodiny.Text.ToString();
         }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            MainWindow.I.auto = null;
+        }
     }
 }

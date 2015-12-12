@@ -126,5 +126,11 @@ namespace hours
                 tema.Text = Properties.Settings.Default.alarmMusic.Substring(Properties.Settings.Default.alarmMusic.LastIndexOf('-') + 1);
             }
         }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            MainWindow.I.alarm = null;
+        }
     }
 }
