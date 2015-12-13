@@ -22,6 +22,7 @@ namespace hours
     public partial class Settings : Window
     {
         SolidColorBrush BG;//deafault settings background color
+        int back = 0;
 
         public Settings()
         {
@@ -629,6 +630,7 @@ namespace hours
             settClock.Visibility = Visibility.Hidden;
             settWeath.Visibility = Visibility.Hidden;
             settOld.Visibility = Visibility.Hidden;
+            settEdit.Visibility = Visibility.Hidden;
         }
 
 
@@ -640,6 +642,64 @@ namespace hours
             toDef();
             settMainLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             settMain.Visibility = Visibility.Visible;
+
+        }
+           //editor
+        private void toEdit(object sender, RoutedEventArgs e)
+        {
+            Label tmp = sender as Label;
+
+            System.Console.WriteLine("EDIT" + tmp.Name.ToString() );
+            
+
+            //fontbox
+            e_font.Visibility = Visibility.Hidden;
+            MainWindow.I.dbg("EDIT:"+ tmp.Name.ToString().Contains("w_"));
+
+            if( (tmp.Name.ToString().Contains("w_") || tmp.Name.ToString().Contains("c1_")) && (!tmp.Name.ToString().Contains("_nofont")) )   //weather
+            {
+                e_font.Visibility = Visibility.Visible;
+            }
+
+            
+            if (tmp.Name.ToString().Contains("c_"))
+            {
+                this.back = 1;//clock
+            }
+            else
+            {
+                this.back = 2;//weather
+            }
+            
+
+            //toDef();
+            settEditLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            settEdit.Visibility = Visibility.Visible;
+        }
+
+        private async void fromEdit(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("EDIT-BACK");
+
+            //toDef();
+            settEditUNLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));//unload.visi.load.hide
+            if (this.back == 1)
+            {
+                
+                settClockLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));//load
+                //toClock
+            }
+            else
+            {
+                //toWeath
+                settWeathLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));//load
+            }
+
+            await Task.Delay(1000);
+            settEdit.Visibility = Visibility.Hidden;//hide edit mode
+
+           
+            
 
         }
 
@@ -726,5 +786,35 @@ namespace hours
             System.Console.WriteLine("Close!");
             this.Close();
         }
+
+
+
+        //e_R_CH   -RED channel change
+        private void e_R_CH(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("EDIT->R: " + e_R.Value ); 
+        }
+        private void e_G_CH(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("EDIT->G: " + e_G.Value);
+        }
+        private void e_B_CH(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("EDIT->B: " + e_B.Value);
+        }
+        private void e_O_CH(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("EDIT->OPACITY: " + e_O.Value);
+        }
+        private void e_S_CH(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("EDIT->SIZE: " + e_S.Value);
+        }
+        private void e_F_CH(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine("EDIT->FONT: " + e_F.Value);
+        }
+
+
     }
 }

@@ -37,6 +37,27 @@
                                     Storyboard.TargetName="settOld"
                                     Storyboard.TargetProperty="(Opacity)"
                                     To="0.0" Duration="0:0:1" AutoReverse="False"/>
+                            <DoubleAnimation 
+                                    Storyboard.TargetName="settEdit"
+                                    Storyboard.TargetProperty="(Opacity)"
+                                    To="0.0" Duration="0:0:1" AutoReverse="False"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+
+
+
+        <Button x:Name="settEditUNLoad" Visibility="Hidden">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                    Storyboard.TargetName="settEdit"
+                                    Storyboard.TargetProperty="(Opacity)" 
+                                    To="0.0" Duration="0:0:1" AutoReverse="False"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -123,19 +144,39 @@
         </Button>
 
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+        <Button x:Name="settEditLoad" Visibility="Hidden">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                    Storyboard.TargetName="settEdit"
+                                    Storyboard.TargetProperty="(Opacity)" 
+                                    To="1.0" Duration="0:0:1" AutoReverse="False"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         <Grid x:Name="settMain" Opacity="1.0" Background="Gray" Grid.Row="0" Visibility="Visible">
@@ -646,7 +687,7 @@
         
         
         
-        <Grid x:Name="settClock" Opacity="1.0" Background="Gray" Visibility="Visible">
+        <Grid x:Name="settClock" Opacity="0.0" Background="Gray" Visibility="Hidden">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.1*" />
                 <RowDefinition Height="1*" />
@@ -758,7 +799,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="c0_msecx">milisec</Label>
+                        <Label x:Name="c0_msecx" MouseDown="toEdit">milisec</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
@@ -805,7 +846,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="c0_secx">seconds</Label>
+                        <Label x:Name="c0_secx" MouseDown="toEdit">seconds</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
@@ -852,7 +893,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="c0_minx">minutes</Label>
+                        <Label x:Name="c0_minx" MouseDown="toEdit">minutes</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
@@ -898,7 +939,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="c0_hourx">hours</Label>
+                        <Label x:Name="c0_hourx" MouseDown="toEdit">hours</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
@@ -946,7 +987,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="c0_midx">middle circle</Label>
+                        <Label x:Name="c0_midx" MouseDown="toEdit">middle circle</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
@@ -994,7 +1035,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="c0_cifx">clock numbers</Label>
+                        <Label x:Name="c0_cifx" MouseDown="toEdit">clock numbers</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
@@ -1041,7 +1082,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="c0_podx">clock style bg</Label>
+                        <Label x:Name="c0_podx" MouseDown="toEdit">clock style bg</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
@@ -1088,7 +1129,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="c0_ticx">tick sound</Label>
+                        <Label x:Name="c0_ticx" MouseDown="toEdit">tick sound</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
@@ -1468,7 +1509,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation 
-                                        Storyboard.TargetName="CI"
+                                        Storyboard.TargetName="w_CI"
                                         Storyboard.TargetProperty="(FontSize)" 
                                         To="30" Duration="0:0:0.30" AutoReverse="False"/>
                                     </Storyboard>
@@ -1479,7 +1520,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation 
-                                        Storyboard.TargetName="CI"
+                                        Storyboard.TargetName="w_CI"
                                         Storyboard.TargetProperty="(FontSize)" 
                                         To="9" Duration="0:0:0.30" AutoReverse="False"/>
                                     </Storyboard>
@@ -1487,7 +1528,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="CI">City/Country</Label>
+                        <Label x:Name="w_CI" MouseDown="toEdit">City/Country</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
@@ -1512,7 +1553,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation 
-                                        Storyboard.TargetName="TEMP"
+                                        Storyboard.TargetName="w_TEMP"
                                         Storyboard.TargetProperty="(FontSize)" 
                                         To="30" Duration="0:0:0.30" AutoReverse="False"/>
                                     </Storyboard>
@@ -1523,7 +1564,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation 
-                                        Storyboard.TargetName="TEMP"
+                                        Storyboard.TargetName="w_TEMP"
                                         Storyboard.TargetProperty="(FontSize)" 
                                         To="9" Duration="0:0:0.30" AutoReverse="False"/>
                                     </Storyboard>
@@ -1531,7 +1572,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="TEMP">Temperature</Label>
+                        <Label x:Name="w_TEMP" MouseDown="toEdit">Temperature</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
@@ -1558,7 +1599,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation 
-                                        Storyboard.TargetName="INFO"
+                                        Storyboard.TargetName="w_INFO"
                                         Storyboard.TargetProperty="(FontSize)" 
                                         To="30" Duration="0:0:0.30" AutoReverse="False"/>
                                     </Storyboard>
@@ -1569,7 +1610,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation 
-                                        Storyboard.TargetName="INFO"
+                                        Storyboard.TargetName="w_INFO"
                                         Storyboard.TargetProperty="(FontSize)" 
                                         To="9" Duration="0:0:0.30" AutoReverse="False"/>
                                     </Storyboard>
@@ -1577,7 +1618,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="INFO">Text info</Label>
+                        <Label x:Name="w_INFO" MouseDown="toEdit">Text info</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
@@ -1605,7 +1646,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation 
-                                        Storyboard.TargetName="OBR"
+                                        Storyboard.TargetName="w_OBR_nofont"
                                         Storyboard.TargetProperty="(FontSize)" 
                                         To="30" Duration="0:0:0.30" AutoReverse="False"/>
                                     </Storyboard>
@@ -1616,7 +1657,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation 
-                                        Storyboard.TargetName="OBR"
+                                        Storyboard.TargetName="w_OBR_nofont"
                                         Storyboard.TargetProperty="(FontSize)" 
                                         To="9" Duration="0:0:0.30" AutoReverse="False"/>
                                     </Storyboard>
@@ -1624,7 +1665,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="OBR">Weather image</Label>
+                        <Label x:Name="w_OBR_nofont" MouseDown="toEdit">Weather image</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
@@ -1649,7 +1690,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation 
-                                        Storyboard.TargetName="DATUM"
+                                        Storyboard.TargetName="w_DATUM"
                                         Storyboard.TargetProperty="(FontSize)" 
                                         To="30" Duration="0:0:0.30" AutoReverse="False"/>
                                     </Storyboard>
@@ -1660,7 +1701,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation 
-                                        Storyboard.TargetName="DATUM"
+                                        Storyboard.TargetName="w_DATUM"
                                         Storyboard.TargetProperty="(FontSize)" 
                                         To="9" Duration="0:0:0.30" AutoReverse="False"/>
                                     </Storyboard>
@@ -1668,7 +1709,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="DATUM">Datum</Label>
+                        <Label x:Name="w_DATUM" MouseDown="toEdit">Datum</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
@@ -1858,7 +1899,264 @@
             </Grid>
         </Grid>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <Grid x:Name="settEdit" Opacity="1.0" Background="Gray" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*" />
+                <RowDefinition Height="1*" />
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+
+                <Viewbox Grid.Column="0" MouseDown="fromEdit" HorizontalAlignment="Left"  >
+                    <Viewbox.Triggers>
+                        <EventTrigger RoutedEvent="Viewbox.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation 
+                                        Storyboard.TargetName="EB"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="30" Duration="0:0:0.30" AutoReverse="False"/>
+                                </Storyboard>
+
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Viewbox.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation 
+                                        Storyboard.TargetName="EB"
+                                        Storyboard.TargetProperty="(FontSize)" 
+                                        To="9" Duration="0:0:0.30" AutoReverse="False"/>
+                                </Storyboard>
+
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Viewbox.Triggers>
+
+                    <Label x:Name="EB" FontFamily="Segoe MDL2 Assets" Content="&#xE248;" HorizontalAlignment="Center" VerticalAlignment="Center" ></Label>
+                </Viewbox>
+
+                <Viewbox Grid.Column="0" HorizontalAlignment="Center">
+                    <TextBlock >Editor</TextBlock>
+                </Viewbox>
+
+            </Grid>
+
+
+
+            <Grid Grid.Row="1" x:Name="connEdit">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Viewbox Grid.Column="0" HorizontalAlignment="Left">
+                        <Label x:Name="R" MouseDown="toEdit">R</Label>
+                    </Viewbox>
+
+                   
+                    <Slider x:Name="e_R" Grid.Column="1" ValueChanged="e_R_CH"  VerticalAlignment="Center" SmallChange="1" Maximum="255" ToolTip="{Binding Value, ElementName=e_R}"/>
+                    
+
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Viewbox Grid.Column="0" HorizontalAlignment="Left">
+                        <Label x:Name="G" MouseDown="toEdit">G</Label>
+                    </Viewbox>
+
+
+                    <Slider x:Name="e_G" Grid.Column="1" ValueChanged="e_G_CH"  VerticalAlignment="Center"  SmallChange="1" Maximum="255" ToolTip="{Binding Value, ElementName=e_G}"/>
+
+
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Viewbox Grid.Column="0" HorizontalAlignment="Left">
+                        <Label x:Name="B" MouseDown="toEdit">B</Label>
+                    </Viewbox>
+
+
+                    <Slider x:Name="e_B" Grid.Column="1" ValueChanged="e_B_CH"  VerticalAlignment="Center" SmallChange="1" Maximum="255" ToolTip="{Binding Value, ElementName=e_B}"/>
+
+
+                </Grid>
+
+                <Grid Grid.Row="4">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Viewbox Grid.Column="0" HorizontalAlignment="Left">
+                        <Label x:Name="O" MouseDown="toEdit">Opacity</Label>
+                    </Viewbox>
+
+
+                    <Slider x:Name="e_O" Grid.Column="1" ValueChanged="e_O_CH"  VerticalAlignment="Center" Maximum="1" ToolTip="{Binding Value, ElementName=e_O}"/>
+
+
+                </Grid>
+
+                <Grid Grid.Row="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Viewbox Grid.Column="0" HorizontalAlignment="Left">
+                        <Label x:Name="S" MouseDown="toEdit">Size</Label>
+                    </Viewbox>
+
+
+                    <Slider x:Name="e_S" Grid.Column="1" ValueChanged="e_S_CH"  VerticalAlignment="Center" ToolTip="{Binding Value, ElementName=e_S}"/>
+
+
+                </Grid>
+
+                <Grid Grid.Row="6" x:Name="e_font">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Viewbox Grid.Column="0" HorizontalAlignment="Left">
+                        <Label x:Name="F" MouseDown="toEdit">Font</Label>
+                    </Viewbox>
+
+
+                    <Slider x:Name="e_F" Grid.Column="1" ValueChanged="e_F_CH"  VerticalAlignment="Center"/>
+
+
+                </Grid>
+
+
+            </Grid>
+
+
+
+        </Grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
     </Grid>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 

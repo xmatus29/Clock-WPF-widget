@@ -688,5 +688,11 @@ namespace hours
             if(this.DEBUG == true)
                 System.Console.WriteLine(tmp);
         }
+
+        //wait
+        public async void wait()
+        {
+            await Task.Delay(1000);
+        }
     }
 }
