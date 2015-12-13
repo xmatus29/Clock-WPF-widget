@@ -874,6 +874,7 @@ namespace hours
             Properties.Settings.Default[path] = val.ToString();
             MainWindow.I.dbg("EDIT->" + path + ":" + Properties.Settings.Default[path]);
 
+            w_x(this.OBJ);
 
         }
         private void e_B_CH(object sender, RoutedEventArgs e)
@@ -883,6 +884,8 @@ namespace hours
             e_B.Value = val = Convert.ToInt32(e_B.Value);
             Properties.Settings.Default[path] = val.ToString();
             MainWindow.I.dbg("EDIT->" + path + ":" + Properties.Settings.Default[path]);
+
+            w_x(this.OBJ);
         }
         private void e_O_CH(object sender, RoutedEventArgs e)
         {
@@ -891,6 +894,8 @@ namespace hours
             val = e_O.Value;//double opacity
             Properties.Settings.Default[path] = val.ToString();
             MainWindow.I.dbg("EDIT->" + path + ":" + Properties.Settings.Default[path]);
+
+            w_x(this.OBJ);
         }
         private void e_S_CH(object sender, RoutedEventArgs e)
         {
@@ -899,6 +904,8 @@ namespace hours
             val = e_S.Value;//double size
             Properties.Settings.Default[path] = val.ToString();
             MainWindow.I.dbg("EDIT->" + path + ":" + Properties.Settings.Default[path]);
+
+            w_x(this.OBJ);
         }
         private void e_F_CH(object sender, RoutedEventArgs e)
         {
@@ -907,6 +914,8 @@ namespace hours
             e_F.Value = val = Convert.ToInt32(e_F.Value);
             Properties.Settings.Default[path] = val.ToString();
             MainWindow.I.dbg("EDIT->" + path + ":" + Properties.Settings.Default[path]);
+
+            w_x(this.OBJ);
         }
 
 
