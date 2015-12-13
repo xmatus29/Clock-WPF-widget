@@ -550,5 +550,1157 @@ namespace hours.Properties {
                 this["c0_pod"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_msecx_R {
+            get {
+                return ((string)(this["c0_msecx_R"]));
+            }
+            set {
+                this["c0_msecx_R"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_msecx_G {
+            get {
+                return ((string)(this["c0_msecx_G"]));
+            }
+            set {
+                this["c0_msecx_G"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_msecx_B {
+            get {
+                return ((string)(this["c0_msecx_B"]));
+            }
+            set {
+                this["c0_msecx_B"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_msecx_O {
+            get {
+                return ((string)(this["c0_msecx_O"]));
+            }
+            set {
+                this["c0_msecx_O"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_msecx_S {
+            get {
+                return ((string)(this["c0_msecx_S"]));
+            }
+            set {
+                this["c0_msecx_S"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_msecx_F {
+            get {
+                return ((string)(this["c0_msecx_F"]));
+            }
+            set {
+                this["c0_msecx_F"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_secx_R {
+            get {
+                return ((string)(this["c0_secx_R"]));
+            }
+            set {
+                this["c0_secx_R"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_secx_G {
+            get {
+                return ((string)(this["c0_secx_G"]));
+            }
+            set {
+                this["c0_secx_G"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_secx_B {
+            get {
+                return ((string)(this["c0_secx_B"]));
+            }
+            set {
+                this["c0_secx_B"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_secx_O {
+            get {
+                return ((string)(this["c0_secx_O"]));
+            }
+            set {
+                this["c0_secx_O"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_secx_S {
+            get {
+                return ((string)(this["c0_secx_S"]));
+            }
+            set {
+                this["c0_secx_S"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_secx_F {
+            get {
+                return ((string)(this["c0_secx_F"]));
+            }
+            set {
+                this["c0_secx_F"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_minx_R {
+            get {
+                return ((string)(this["c0_minx_R"]));
+            }
+            set {
+                this["c0_minx_R"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_minx_G {
+            get {
+                return ((string)(this["c0_minx_G"]));
+            }
+            set {
+                this["c0_minx_G"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_minx_B {
+            get {
+                return ((string)(this["c0_minx_B"]));
+            }
+            set {
+                this["c0_minx_B"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_minx_O {
+            get {
+                return ((string)(this["c0_minx_O"]));
+            }
+            set {
+                this["c0_minx_O"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_minx_S {
+            get {
+                return ((string)(this["c0_minx_S"]));
+            }
+            set {
+                this["c0_minx_S"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_minx_F {
+            get {
+                return ((string)(this["c0_minx_F"]));
+            }
+            set {
+                this["c0_minx_F"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_hourx_R {
+            get {
+                return ((string)(this["c0_hourx_R"]));
+            }
+            set {
+                this["c0_hourx_R"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_hourx_G {
+            get {
+                return ((string)(this["c0_hourx_G"]));
+            }
+            set {
+                this["c0_hourx_G"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_hourx_B {
+            get {
+                return ((string)(this["c0_hourx_B"]));
+            }
+            set {
+                this["c0_hourx_B"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_hourx_O {
+            get {
+                return ((string)(this["c0_hourx_O"]));
+            }
+            set {
+                this["c0_hourx_O"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_hourx_S {
+            get {
+                return ((string)(this["c0_hourx_S"]));
+            }
+            set {
+                this["c0_hourx_S"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_hourx_F {
+            get {
+                return ((string)(this["c0_hourx_F"]));
+            }
+            set {
+                this["c0_hourx_F"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_midx_R {
+            get {
+                return ((string)(this["c0_midx_R"]));
+            }
+            set {
+                this["c0_midx_R"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_midx_G {
+            get {
+                return ((string)(this["c0_midx_G"]));
+            }
+            set {
+                this["c0_midx_G"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_midx_B {
+            get {
+                return ((string)(this["c0_midx_B"]));
+            }
+            set {
+                this["c0_midx_B"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_midx_O {
+            get {
+                return ((string)(this["c0_midx_O"]));
+            }
+            set {
+                this["c0_midx_O"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_midx_S {
+            get {
+                return ((string)(this["c0_midx_S"]));
+            }
+            set {
+                this["c0_midx_S"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_midx_F {
+            get {
+                return ((string)(this["c0_midx_F"]));
+            }
+            set {
+                this["c0_midx_F"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_cifx_R {
+            get {
+                return ((string)(this["c0_cifx_R"]));
+            }
+            set {
+                this["c0_cifx_R"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_cifx_G {
+            get {
+                return ((string)(this["c0_cifx_G"]));
+            }
+            set {
+                this["c0_cifx_G"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_cifx_B {
+            get {
+                return ((string)(this["c0_cifx_B"]));
+            }
+            set {
+                this["c0_cifx_B"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_cifx_O {
+            get {
+                return ((string)(this["c0_cifx_O"]));
+            }
+            set {
+                this["c0_cifx_O"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_cifx_S {
+            get {
+                return ((string)(this["c0_cifx_S"]));
+            }
+            set {
+                this["c0_cifx_S"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_cifx_F {
+            get {
+                return ((string)(this["c0_cifx_F"]));
+            }
+            set {
+                this["c0_cifx_F"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_podx_R {
+            get {
+                return ((string)(this["c0_podx_R"]));
+            }
+            set {
+                this["c0_podx_R"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_podx_G {
+            get {
+                return ((string)(this["c0_podx_G"]));
+            }
+            set {
+                this["c0_podx_G"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_podx_B {
+            get {
+                return ((string)(this["c0_podx_B"]));
+            }
+            set {
+                this["c0_podx_B"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_podx_O {
+            get {
+                return ((string)(this["c0_podx_O"]));
+            }
+            set {
+                this["c0_podx_O"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_podx_S {
+            get {
+                return ((string)(this["c0_podx_S"]));
+            }
+            set {
+                this["c0_podx_S"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c0_podx_F {
+            get {
+                return ((string)(this["c0_podx_F"]));
+            }
+            set {
+                this["c0_podx_F"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_CI_R {
+            get {
+                return ((string)(this["w_CI_R"]));
+            }
+            set {
+                this["w_CI_R"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_CI_G {
+            get {
+                return ((string)(this["w_CI_G"]));
+            }
+            set {
+                this["w_CI_G"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_CI_B {
+            get {
+                return ((string)(this["w_CI_B"]));
+            }
+            set {
+                this["w_CI_B"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_CI_O {
+            get {
+                return ((string)(this["w_CI_O"]));
+            }
+            set {
+                this["w_CI_O"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_CI_S {
+            get {
+                return ((string)(this["w_CI_S"]));
+            }
+            set {
+                this["w_CI_S"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_CI_F {
+            get {
+                return ((string)(this["w_CI_F"]));
+            }
+            set {
+                this["w_CI_F"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_TEMP_R {
+            get {
+                return ((string)(this["w_TEMP_R"]));
+            }
+            set {
+                this["w_TEMP_R"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_TEMP_G {
+            get {
+                return ((string)(this["w_TEMP_G"]));
+            }
+            set {
+                this["w_TEMP_G"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_TEMP_B {
+            get {
+                return ((string)(this["w_TEMP_B"]));
+            }
+            set {
+                this["w_TEMP_B"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_TEMP_O {
+            get {
+                return ((string)(this["w_TEMP_O"]));
+            }
+            set {
+                this["w_TEMP_O"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_TEMP_S {
+            get {
+                return ((string)(this["w_TEMP_S"]));
+            }
+            set {
+                this["w_TEMP_S"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_TEMP_F {
+            get {
+                return ((string)(this["w_TEMP_F"]));
+            }
+            set {
+                this["w_TEMP_F"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_INFO_R {
+            get {
+                return ((string)(this["w_INFO_R"]));
+            }
+            set {
+                this["w_INFO_R"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_INFO_G {
+            get {
+                return ((string)(this["w_INFO_G"]));
+            }
+            set {
+                this["w_INFO_G"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_INFO_B {
+            get {
+                return ((string)(this["w_INFO_B"]));
+            }
+            set {
+                this["w_INFO_B"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_INFO_O {
+            get {
+                return ((string)(this["w_INFO_O"]));
+            }
+            set {
+                this["w_INFO_O"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_INFO_S {
+            get {
+                return ((string)(this["w_INFO_S"]));
+            }
+            set {
+                this["w_INFO_S"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_INFO_F {
+            get {
+                return ((string)(this["w_INFO_F"]));
+            }
+            set {
+                this["w_INFO_F"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_OBR_nofont_R {
+            get {
+                return ((string)(this["w_OBR_nofont_R"]));
+            }
+            set {
+                this["w_OBR_nofont_R"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_OBR_nofont_G {
+            get {
+                return ((string)(this["w_OBR_nofont_G"]));
+            }
+            set {
+                this["w_OBR_nofont_G"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_OBR_nofont_B {
+            get {
+                return ((string)(this["w_OBR_nofont_B"]));
+            }
+            set {
+                this["w_OBR_nofont_B"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_OBR_nofont_O {
+            get {
+                return ((string)(this["w_OBR_nofont_O"]));
+            }
+            set {
+                this["w_OBR_nofont_O"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_OBR_nofont_S {
+            get {
+                return ((string)(this["w_OBR_nofont_S"]));
+            }
+            set {
+                this["w_OBR_nofont_S"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_OBR_nofont_F {
+            get {
+                return ((string)(this["w_OBR_nofont_F"]));
+            }
+            set {
+                this["w_OBR_nofont_F"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_DATUM_R {
+            get {
+                return ((string)(this["w_DATUM_R"]));
+            }
+            set {
+                this["w_DATUM_R"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_DATUM_G {
+            get {
+                return ((string)(this["w_DATUM_G"]));
+            }
+            set {
+                this["w_DATUM_G"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_DATUM_B {
+            get {
+                return ((string)(this["w_DATUM_B"]));
+            }
+            set {
+                this["w_DATUM_B"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_DATUM_O {
+            get {
+                return ((string)(this["w_DATUM_O"]));
+            }
+            set {
+                this["w_DATUM_O"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_DATUM_S {
+            get {
+                return ((string)(this["w_DATUM_S"]));
+            }
+            set {
+                this["w_DATUM_S"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string w_DATUM_F {
+            get {
+                return ((string)(this["w_DATUM_F"]));
+            }
+            set {
+                this["w_DATUM_F"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_msecx_R {
+            get {
+                return ((string)(this["c1_msecx_R"]));
+            }
+            set {
+                this["c1_msecx_R"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_msecx_G {
+            get {
+                return ((string)(this["c1_msecx_G"]));
+            }
+            set {
+                this["c1_msecx_G"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_msecx_B {
+            get {
+                return ((string)(this["c1_msecx_B"]));
+            }
+            set {
+                this["c1_msecx_B"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_msecx_O {
+            get {
+                return ((string)(this["c1_msecx_O"]));
+            }
+            set {
+                this["c1_msecx_O"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_msecx_S {
+            get {
+                return ((string)(this["c1_msecx_S"]));
+            }
+            set {
+                this["c1_msecx_S"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_msecx_F {
+            get {
+                return ((string)(this["c1_msecx_F"]));
+            }
+            set {
+                this["c1_msecx_F"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_secx_R {
+            get {
+                return ((string)(this["c1_secx_R"]));
+            }
+            set {
+                this["c1_secx_R"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_secx_G {
+            get {
+                return ((string)(this["c1_secx_G"]));
+            }
+            set {
+                this["c1_secx_G"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_secx_B {
+            get {
+                return ((string)(this["c1_secx_B"]));
+            }
+            set {
+                this["c1_secx_B"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_secx_O {
+            get {
+                return ((string)(this["c1_secx_O"]));
+            }
+            set {
+                this["c1_secx_O"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_secx_S {
+            get {
+                return ((string)(this["c1_secx_S"]));
+            }
+            set {
+                this["c1_secx_S"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_secx_F {
+            get {
+                return ((string)(this["c1_secx_F"]));
+            }
+            set {
+                this["c1_secx_F"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_minx_R {
+            get {
+                return ((string)(this["c1_minx_R"]));
+            }
+            set {
+                this["c1_minx_R"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_minx_G {
+            get {
+                return ((string)(this["c1_minx_G"]));
+            }
+            set {
+                this["c1_minx_G"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_minx_B {
+            get {
+                return ((string)(this["c1_minx_B"]));
+            }
+            set {
+                this["c1_minx_B"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_minx_O {
+            get {
+                return ((string)(this["c1_minx_O"]));
+            }
+            set {
+                this["c1_minx_O"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_minx_S {
+            get {
+                return ((string)(this["c1_minx_S"]));
+            }
+            set {
+                this["c1_minx_S"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_minx_F {
+            get {
+                return ((string)(this["c1_minx_F"]));
+            }
+            set {
+                this["c1_minx_F"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_hourx_R {
+            get {
+                return ((string)(this["c1_hourx_R"]));
+            }
+            set {
+                this["c1_hourx_R"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_hourx_G {
+            get {
+                return ((string)(this["c1_hourx_G"]));
+            }
+            set {
+                this["c1_hourx_G"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_hourx_B {
+            get {
+                return ((string)(this["c1_hourx_B"]));
+            }
+            set {
+                this["c1_hourx_B"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_hourx_O {
+            get {
+                return ((string)(this["c1_hourx_O"]));
+            }
+            set {
+                this["c1_hourx_O"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_hourx_S {
+            get {
+                return ((string)(this["c1_hourx_S"]));
+            }
+            set {
+                this["c1_hourx_S"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string c1_hourx_F {
+            get {
+                return ((string)(this["c1_hourx_F"]));
+            }
+            set {
+                this["c1_hourx_F"] = value;
+            }
+        }
     }
 }

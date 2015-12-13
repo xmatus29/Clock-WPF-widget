@@ -340,7 +340,6 @@ namespace hours
             datum.FontSize = okno.Width / 35;
             stred.Width = stred.Height = okno.Width / 10;
             stredO.Width = stredO.Height = okno.Width / 20;
-            koleckoCifO.Width = koleckoCifO.Height = okno.Width / 1.6;
 
             /*
                 Cifernik

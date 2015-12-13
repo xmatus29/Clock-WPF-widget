@@ -23,6 +23,8 @@ namespace hours
     {
         SolidColorBrush BG;//deafault settings background color
         int back = 0;
+        string ENV = "";
+        string OBJ = "";
 
         public Settings()
         {
@@ -638,6 +640,7 @@ namespace hours
         private void toMain(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("MAIN");
+            this.ENV = "m";
 
             toDef();
             settMainLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
@@ -651,6 +654,8 @@ namespace hours
 
             System.Console.WriteLine("EDIT" + tmp.Name.ToString() );
             
+            this.OBJ = tmp.Name.ToString();
+
 
             //fontbox
             e_font.Visibility = Visibility.Hidden;
@@ -705,6 +710,7 @@ namespace hours
 
         private void toVisual(object sender, RoutedEventArgs e)
         {
+            this.ENV = "v";
             System.Console.WriteLine("VISUAL");
             settUnvisible.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             settVisualLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
@@ -714,6 +720,7 @@ namespace hours
 
         private void toClock(object sender, RoutedEventArgs e)
         {
+            
             System.Console.WriteLine("CLC");
             connClock0.Visibility = Visibility.Hidden;
             connClock1.Visibility = Visibility.Hidden;
@@ -724,17 +731,20 @@ namespace hours
             switch (Properties.Settings.Default.mode)
             {
                 case 0://analog
+                    this.ENV = "c" + "0";
                     System.Console.WriteLine("CLC-ANALLOOG");
                     c_text.Text = "Clock - Analog";
                     connClock0.Visibility = Visibility.Visible;
 
                     break;
                 case 1://digital
+                    this.ENV = "c" + "1";
                     System.Console.WriteLine("CLC-DIGITAL");
                     c_text.Text = "Clock - Digital";
                     connClock1.Visibility = Visibility.Visible;
                     break;
                 case 2://binary
+                    this.ENV = "c" + "2";
                     System.Console.WriteLine("CLC-BINARY");
                     c_text.Text = "Clock - Binary";
                     connClock2.Visibility = Visibility.Visible;
@@ -755,6 +765,7 @@ namespace hours
 
         private void toWeath(object sender, RoutedEventArgs e)
         {
+            this.ENV = "w" ;
             System.Console.WriteLine("WEA");
             settUnvisible.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             settWeath.Visibility = Visibility.Visible;
@@ -775,6 +786,7 @@ namespace hours
 
         private void toOld(object sender, RoutedEventArgs e)
         {
+            this.ENV = "0";
             System.Console.WriteLine("OLD");
             settUnvisible.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             settOld.Visibility = Visibility.Visible;
@@ -787,32 +799,62 @@ namespace hours
             this.Close();
         }
 
+        
+
 
 
         //e_R_CH   -RED channel change
         private void e_R_CH(object sender, RoutedEventArgs e)
         {
-            System.Console.WriteLine("EDIT->R: " + e_R.Value ); 
+            int val = 0;
+            string path = this.OBJ + "_" + "R";
+            e_R.Value = val = Convert.ToInt32(e_R.Value);
+            Properties.Settings.Default[path] = val.ToString();
+            MainWindow.I.dbg("EDIT->"+ path + ":" + Properties.Settings.Default[path]   );
+            
+
         }
         private void e_G_CH(object sender, RoutedEventArgs e)
         {
-            System.Console.WriteLine("EDIT->G: " + e_G.Value);
+            int val = 0;
+            string path = this.OBJ + "_" + "G";
+            e_G.Value = val = Convert.ToInt32(e_G.Value);
+            Properties.Settings.Default[path] = val.ToString();
+            MainWindow.I.dbg("EDIT->" + path + ":" + Properties.Settings.Default[path]);
+
+
         }
         private void e_B_CH(object sender, RoutedEventArgs e)
         {
-            System.Console.WriteLine("EDIT->B: " + e_B.Value);
+            int val = 0;
+            string path = this.OBJ + "_" + "B";
+            e_B.Value = val = Convert.ToInt32(e_B.Value);
+            Properties.Settings.Default[path] = val.ToString();
+            MainWindow.I.dbg("EDIT->" + path + ":" + Properties.Settings.Default[path]);
         }
         private void e_O_CH(object sender, RoutedEventArgs e)
         {
-            System.Console.WriteLine("EDIT->OPACITY: " + e_O.Value);
+            double val = 0;
+            string path = this.OBJ + "_" + "O";
+            val = e_O.Value;//double opacity
+            Properties.Settings.Default[path] = val.ToString();
+            MainWindow.I.dbg("EDIT->" + path + ":" + Properties.Settings.Default[path]);
         }
         private void e_S_CH(object sender, RoutedEventArgs e)
         {
-            System.Console.WriteLine("EDIT->SIZE: " + e_S.Value);
+            double val = 0;
+            string path = this.OBJ + "_" + "S";
+            val = e_S.Value;//double size
+            Properties.Settings.Default[path] = val.ToString();
+            MainWindow.I.dbg("EDIT->" + path + ":" + Properties.Settings.Default[path]);
         }
         private void e_F_CH(object sender, RoutedEventArgs e)
         {
-            System.Console.WriteLine("EDIT->FONT: " + e_F.Value);
+            int val = 0;
+            string path = this.OBJ + "_" + "F";
+            e_F.Value = val = Convert.ToInt32(e_F.Value);
+            Properties.Settings.Default[path] = val.ToString();
+            MainWindow.I.dbg("EDIT->" + path + ":" + Properties.Settings.Default[path]);
         }
 
 
