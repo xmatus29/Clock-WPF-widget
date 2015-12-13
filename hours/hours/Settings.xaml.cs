@@ -854,6 +854,7 @@ namespace hours
         {
             int R, G, B; double O;
 
+
             name = "c1_msecx";
             R = Convert.ToInt32(Properties.Settings.Default[name + "_R"]);
             G = Convert.ToInt32(Properties.Settings.Default[name + "_G"]);
