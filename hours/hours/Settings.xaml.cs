@@ -849,6 +849,21 @@ namespace hours
 
         }
 
+
+        public void c_x(string name)
+        {
+            int R, G, B; double O;
+
+            name = "c1_msecx";
+            R = Convert.ToInt32(Properties.Settings.Default[name + "_R"]);
+            G = Convert.ToInt32(Properties.Settings.Default[name + "_G"]);
+            B = Convert.ToInt32(Properties.Settings.Default[name + "_B"]);
+            O = Convert.ToDouble(Properties.Settings.Default[name + "_O"]);
+            MainWindow.I.digitalTime.Foreground = makeBrush(R, G, B);
+            MainWindow.I.digitalTime.Opacity = O;
+
+        }
+
         
 
 
