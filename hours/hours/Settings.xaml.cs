@@ -282,6 +282,7 @@ namespace hours
         */
         private void c0_msec_true(object sender, RoutedEventArgs e)
         {
+            MainWindow.I.dbg("CLK-ANALOG-> msec on");
             Properties.Settings.Default.c0_msec = true;
             MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
         }
@@ -290,6 +291,7 @@ namespace hours
          */
         private void c0_msec_false(object sender, RoutedEventArgs e)
         {
+            MainWindow.I.dbg("CLK-ANALOG-> msec off");
             Properties.Settings.Default.c0_msec = false;
             MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
         }
@@ -300,6 +302,7 @@ namespace hours
         */
         private void c0_sec_true(object sender, RoutedEventArgs e)
         {
+            MainWindow.I.dbg("CLK-ANALOG-> sec on");
             Properties.Settings.Default.c0_sec = true;
             MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
         }
@@ -308,6 +311,7 @@ namespace hours
          */
         private void c0_sec_false(object sender, RoutedEventArgs e)
         {
+            MainWindow.I.dbg("CLK-ANALOG-> sec off");
             Properties.Settings.Default.c0_sec = false;
             MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
         }
@@ -317,6 +321,7 @@ namespace hours
         */
         private void c0_min_true(object sender, RoutedEventArgs e)
         {
+            MainWindow.I.dbg("CLK-ANALOG-> min on");
             Properties.Settings.Default.c0_min = true;
             MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
         }
@@ -325,6 +330,7 @@ namespace hours
          */
         private void c0_min_false(object sender, RoutedEventArgs e)
         {
+            MainWindow.I.dbg("CLK-ANALOG-> min off");
             Properties.Settings.Default.c0_min = false;
             MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
         }
@@ -335,6 +341,7 @@ namespace hours
         */
         private void c0_hour_true(object sender, RoutedEventArgs e)
         {
+            MainWindow.I.dbg("CLK-ANALOG-> hour on");
             Properties.Settings.Default.c0_hour = true;
             MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
         }
@@ -343,6 +350,7 @@ namespace hours
          */
         private void c0_hour_false(object sender, RoutedEventArgs e)
         {
+            MainWindow.I.dbg("CLK-ANALOG-> hour off");
             Properties.Settings.Default.c0_hour = false;
             MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
         }
@@ -357,6 +365,7 @@ namespace hours
         */
         private void c1_msec_true(object sender, RoutedEventArgs e)
         {
+            MainWindow.I.dbg("CLK-DIGITAL-> msec on");
             Properties.Settings.Default.c1_msec = true;
             MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
         }
@@ -365,6 +374,7 @@ namespace hours
          */
         private void c1_msec_false(object sender, RoutedEventArgs e)
         {
+            MainWindow.I.dbg("CLK-DIGITAL-> msec off");
             Properties.Settings.Default.c1_msec = false;
             MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
         }
@@ -374,6 +384,7 @@ namespace hours
         */
         private void c1_sec_true(object sender, RoutedEventArgs e)
         {
+            MainWindow.I.dbg("CLK-DIGITAL-> sec on");
             Properties.Settings.Default.c1_sec = true;
             MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
         }
@@ -382,6 +393,7 @@ namespace hours
          */
         private void c1_sec_false(object sender, RoutedEventArgs e)
         {
+            MainWindow.I.dbg("CLK-DIGITAL-> sec off");
             Properties.Settings.Default.c1_sec = false;
             MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
         }
@@ -391,6 +403,7 @@ namespace hours
         */
         private void c1_min_true(object sender, RoutedEventArgs e)
         {
+            MainWindow.I.dbg("CLK-DIGITAL-> min on");
             Properties.Settings.Default.c1_min = true;
             MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
         }
@@ -399,6 +412,7 @@ namespace hours
          */
         private void c1_min_false(object sender, RoutedEventArgs e)
         {
+            MainWindow.I.dbg("CLK-DIGITAL-> min off");
             Properties.Settings.Default.c1_min = false;
             MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
         }
@@ -408,6 +422,7 @@ namespace hours
         */
         private void c1_hour_true(object sender, RoutedEventArgs e)
         {
+            MainWindow.I.dbg("CLK-DIGITAL-> hour on");
             Properties.Settings.Default.c1_hour = true;
             MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
         }
@@ -416,6 +431,7 @@ namespace hours
          */
         private void c1_hour_false(object sender, RoutedEventArgs e)
         {
+            MainWindow.I.dbg("CLK-DIGITAL-> hour off");
             Properties.Settings.Default.c1_hour = false;
             MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
         }

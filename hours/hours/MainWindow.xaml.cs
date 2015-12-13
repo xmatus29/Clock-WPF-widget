@@ -24,6 +24,7 @@ namespace hours
 
     public partial class MainWindow : Window
     {
+        bool DEBUG = true;
 
         private System.Windows.Threading.DispatcherTimer timerCas;
         public static MainWindow I;
@@ -650,6 +651,13 @@ namespace hours
             Console.WriteLine("RESET");
             //Properties.Settings.Default.Reset();
             //Serialize<Info>(this.informacie);
+        }
+
+
+        public void dbg(string tmp)
+        {
+            if(this.DEBUG == true)
+                System.Console.WriteLine(tmp);
         }
     }
 }
