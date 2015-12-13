@@ -54,7 +54,7 @@ namespace hours
             InitializeComponent();
 
             koleckoO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\podklad.png"));
-            koleckoCifO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\podklad.png"));//set! -cifernik
+            koleckoCifO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\cifernik.png"));//set! -cifernik
             stredO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\kolecko.png"));
             sekundaRucickaO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\sekunda.png"));
             minutaRucickaO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\minuta.png"));

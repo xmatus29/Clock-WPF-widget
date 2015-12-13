@@ -200,6 +200,9 @@
     <Content Include="Skins\backgroundInfo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Skins\cifernik.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Skins\digiBack.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
