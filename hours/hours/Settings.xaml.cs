@@ -58,7 +58,7 @@ namespace hours
 
         public void start()
         {
-            e_F.ItemsSource = FontFamily.FamilyNames.ToList();//fill font list
+            //e_F.ItemsSource = FontFamily.FamilyNames.ToList();//fill font list
             
 
 
@@ -822,6 +822,7 @@ namespace hours
             O = Convert.ToDouble(Properties.Settings.Default[name + "_O"]);
             MainWindow.I.lokace.Foreground = makeBrush(R,G,B);
             MainWindow.I.lokace.Opacity = O;
+            MainWindow.I.lokace.FontFamily = new FontFamily(Properties.Settings.Default[name + "_F"].ToString());
 
             //city
             name = "w_TEMP";
@@ -831,6 +832,7 @@ namespace hours
             O = Convert.ToDouble(Properties.Settings.Default[name + "_O"]);
             MainWindow.I.teplota.Foreground = makeBrush(R, G, B);
             MainWindow.I.teplota.Opacity = O;
+            MainWindow.I.teplota.FontFamily = new FontFamily(Properties.Settings.Default[name + "_F"].ToString());
 
             //city
             name = "w_INFO";
@@ -840,6 +842,7 @@ namespace hours
             O = Convert.ToDouble(Properties.Settings.Default[name + "_O"]);
             MainWindow.I.pocasi.Foreground = makeBrush(R, G, B);
             MainWindow.I.pocasi.Opacity = O;
+            MainWindow.I.pocasi.FontFamily = new FontFamily(Properties.Settings.Default[name + "_F"].ToString());
 
             //city
             name = "w_DATUM";
@@ -849,6 +852,7 @@ namespace hours
             O = Convert.ToDouble(Properties.Settings.Default[name + "_O"]);
             MainWindow.I.datum.Foreground = makeBrush(R, G, B);
             MainWindow.I.datum.Opacity = O;
+            MainWindow.I.datum.FontFamily = new FontFamily(Properties.Settings.Default[name + "_F"].ToString());
 
 
         }
@@ -868,14 +872,15 @@ namespace hours
             MainWindow.I.digitalTime.Foreground = makeBrush(R, G, B);
             MainWindow.I.digitalTime.Opacity = O;
             //MainWindow.I.digitalTime
-            //MainWindow.I.digitalTime.FontFamily =  ;
+            //MainWindow.I.digitalTime.Margin = new System.Windows.Thickness(-S);
+            MainWindow.I.digitalTime.FontFamily = new FontFamily(Properties.Settings.Default[name + "_F"].ToString());
 
 
 
 
             //fonts
 
-            
+
 
         }
 
