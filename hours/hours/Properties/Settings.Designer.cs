@@ -517,13 +517,37 @@ namespace hours.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Setting {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool c0_mid {
             get {
-                return ((string)(this["Setting"]));
+                return ((bool)(this["c0_mid"]));
             }
             set {
-                this["Setting"] = value;
+                this["c0_mid"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool c0_cif {
+            get {
+                return ((bool)(this["c0_cif"]));
+            }
+            set {
+                this["c0_cif"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool c0_pod {
+            get {
+                return ((bool)(this["c0_pod"]));
+            }
+            set {
+                this["c0_pod"] = value;
             }
         }
     }

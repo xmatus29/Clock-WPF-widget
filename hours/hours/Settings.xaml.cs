@@ -63,6 +63,15 @@ namespace hours
             w_obr.IsChecked = Properties.Settings.Default.w_obr;
             w_datum.IsChecked = Properties.Settings.Default.w_datum;
 
+            //clock checkers
+            c0_msec.IsChecked = Properties.Settings.Default.c0_msec;
+            c0_sec.IsChecked = Properties.Settings.Default.c0_sec;
+            c0_min.IsChecked = Properties.Settings.Default.c0_min;
+            c0_hour.IsChecked = Properties.Settings.Default.c0_hour;
+            c0_mid.IsChecked = Properties.Settings.Default.c0_mid;
+            c0_cif.IsChecked = Properties.Settings.Default.c0_cif;
+            c0_pod.IsChecked = Properties.Settings.Default.c0_pod;
+
             MainWindow.I.w_reload();
         }
 
@@ -284,7 +293,7 @@ namespace hours
         {
             MainWindow.I.dbg("CLK-ANALOG-> msec on");
             Properties.Settings.Default.c0_msec = true;
-            MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
+            MainWindow.I.sekundaRucickaO.Visibility = Visibility.Visible;
         }
         /*
          * Metoda CLOCK0_MSEC OFF
@@ -293,7 +302,7 @@ namespace hours
         {
             MainWindow.I.dbg("CLK-ANALOG-> msec off");
             Properties.Settings.Default.c0_msec = false;
-            MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
+            MainWindow.I.sekundaRucickaO.Visibility = Visibility.Hidden;
         }
 
 
@@ -304,16 +313,16 @@ namespace hours
         {
             MainWindow.I.dbg("CLK-ANALOG-> sec on");
             Properties.Settings.Default.c0_sec = true;
-            MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
+            MainWindow.I.sekundaRucickaO.Visibility = Visibility.Visible;
         }
         /*
-         * Metoda CLOCK0_MSEC OFF
+         * Metoda CLOCK0_SEC OFF
          */
         private void c0_sec_false(object sender, RoutedEventArgs e)
         {
             MainWindow.I.dbg("CLK-ANALOG-> sec off");
             Properties.Settings.Default.c0_sec = false;
-            MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
+            MainWindow.I.sekundaRucickaO.Visibility = Visibility.Hidden;
         }
 
         /*
@@ -323,16 +332,16 @@ namespace hours
         {
             MainWindow.I.dbg("CLK-ANALOG-> min on");
             Properties.Settings.Default.c0_min = true;
-            MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
+            MainWindow.I.minutaRucickaO.Visibility = Visibility.Visible;
         }
         /*
-         * Metoda CLOCK0_MSEC OFF
+         * Metoda CLOCK0_MIN OFF
          */
         private void c0_min_false(object sender, RoutedEventArgs e)
         {
             MainWindow.I.dbg("CLK-ANALOG-> min off");
             Properties.Settings.Default.c0_min = false;
-            MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
+            MainWindow.I.minutaRucickaO.Visibility = Visibility.Hidden;
         }
 
 
@@ -343,7 +352,7 @@ namespace hours
         {
             MainWindow.I.dbg("CLK-ANALOG-> hour on");
             Properties.Settings.Default.c0_hour = true;
-            MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
+            MainWindow.I.hodinaRucickaO.Visibility = Visibility.Visible;
         }
         /*
          * Metoda CLOCK0_HOUR OFF
@@ -352,7 +361,69 @@ namespace hours
         {
             MainWindow.I.dbg("CLK-ANALOG-> hour off");
             Properties.Settings.Default.c0_hour = false;
-            MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
+            MainWindow.I.hodinaRucickaO.Visibility = Visibility.Hidden;
+        }
+
+
+        
+        /*
+         * Metoda CLOCK0_ MIDDLE ON
+         */
+        private void c0_mid_true(object sender, RoutedEventArgs e)
+        {
+            MainWindow.I.dbg("CLK-ANALOG-> mid on");
+            Properties.Settings.Default.c0_mid = true;
+            MainWindow.I.stredO.Visibility = Visibility.Visible;
+        }
+        /*
+         * Metoda CLOCK0_ MIDDLE OFF
+         */
+        private void c0_mid_false(object sender, RoutedEventArgs e)
+        {
+            MainWindow.I.dbg("CLK-ANALOG-> mid off");
+            Properties.Settings.Default.c0_mid = false;
+            MainWindow.I.stredO.Visibility = Visibility.Hidden;
+        }
+
+
+
+        /*
+         * Metoda CLOCK0_ CIF ON
+         */
+        private void c0_cif_true(object sender, RoutedEventArgs e)
+        {
+            MainWindow.I.dbg("CLK-ANALOG-> cif on");
+            Properties.Settings.Default.c0_cif = true;
+            MainWindow.I.koleckoCifO.Visibility = Visibility.Visible;
+        }
+        /*
+         * Metoda CLOCK0_ CIF OFF
+         */
+        private void c0_cif_false(object sender, RoutedEventArgs e)
+        {
+            MainWindow.I.dbg("CLK-ANALOG-> cif off");
+            Properties.Settings.Default.c0_cif = false;
+            MainWindow.I.koleckoCifO.Visibility = Visibility.Hidden;
+        }
+
+
+        /*
+         * Metoda CLOCK0_ PODKLAD ON
+         */
+        private void c0_pod_true(object sender, RoutedEventArgs e)
+        {
+            MainWindow.I.dbg("CLK-ANALOG-> cif on");
+            Properties.Settings.Default.c0_pod = true;
+            MainWindow.I.koleckoO.Visibility = Visibility.Visible;
+        }
+        /*
+         * Metoda CLOCK0_ PODKLAD OFF
+         */
+        private void c0_pod_false(object sender, RoutedEventArgs e)
+        {
+            MainWindow.I.dbg("CLK-ANALOG-> cif off");
+            Properties.Settings.Default.c0_pod = false;
+            MainWindow.I.koleckoO.Visibility = Visibility.Hidden;
         }
 
 
@@ -594,15 +665,18 @@ namespace hours
             {
                 case 0://analog
                     System.Console.WriteLine("CLC-ANALLOOG");
+                    c_text.Text = "Clock - Analog";
                     connClock0.Visibility = Visibility.Visible;
 
                     break;
                 case 1://digital
                     System.Console.WriteLine("CLC-DIGITAL");
+                    c_text.Text = "Clock - Digital";
                     connClock1.Visibility = Visibility.Visible;
                     break;
                 case 2://binary
                     System.Console.WriteLine("CLC-BINARY");
+                    c_text.Text = "Clock - Binary";
                     connClock2.Visibility = Visibility.Visible;
                     break;
                 default:

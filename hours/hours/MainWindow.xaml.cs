@@ -54,6 +54,7 @@ namespace hours
             InitializeComponent();
 
             koleckoO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\podklad.png"));
+            koleckoCifO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\podklad.png"));//set! -cifernik
             stredO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\kolecko.png"));
             sekundaRucickaO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\sekunda.png"));
             minutaRucickaO.Source = new BitmapImage(new Uri(System.Environment.CurrentDirectory + "\\Skins\\" + "\\minuta.png"));
@@ -244,9 +245,37 @@ namespace hours
 
             //WEATHER RELOAD
             w_reload();
+            c_reload();
 
             //OPEN SETTINGS ON STARTUP
             //RUNSETT.RaiseEvent(new RoutedEventArgs(MenuItem.ClickEvent));
+        }
+
+
+
+        //clock reload
+        public void c_reload()
+        {
+            //if (Properties.Settings.Default.c0_msec){ MainWindow.I.msekundaRucickaO.Visibility = Visibility.Visible;  }//msec
+            //else { MainWindow.I.msekundaRucickaO.Visibility = Visibility.Hidden;  }
+
+            if (Properties.Settings.Default.c0_sec){ MainWindow.I.sekundaRucickaO.Visibility = Visibility.Visible;  }//sec
+            else { MainWindow.I.sekundaRucickaO.Visibility = Visibility.Hidden;  }
+
+            if (Properties.Settings.Default.c0_min) { MainWindow.I.minutaRucickaO.Visibility = Visibility.Visible; }//min
+            else { MainWindow.I.minutaRucickaO.Visibility = Visibility.Hidden; }
+
+            if (Properties.Settings.Default.c0_hour) { MainWindow.I.hodinaRucickaO.Visibility = Visibility.Visible; }//hour
+            else { MainWindow.I.hodinaRucickaO.Visibility = Visibility.Hidden; }
+
+            if (Properties.Settings.Default.c0_mid) { MainWindow.I.stredO.Visibility = Visibility.Visible; }//middle
+            else { MainWindow.I.stredO.Visibility = Visibility.Hidden; }
+
+            if (Properties.Settings.Default.c0_cif) { MainWindow.I.koleckoCifO.Visibility = Visibility.Visible; }//cifernik
+            else { MainWindow.I.koleckoCifO.Visibility = Visibility.Hidden; }
+
+            if (Properties.Settings.Default.c0_pod) { MainWindow.I.koleckoO.Visibility = Visibility.Visible; }//podklad
+            else { MainWindow.I.koleckoO.Visibility = Visibility.Hidden; }
         }
 
         //weather reload
