@@ -27,6 +27,7 @@ namespace hours
         int back = 0;
         string ENV = "";
         string OBJ = "";
+        
 
         public Settings()
         {
@@ -802,6 +803,52 @@ namespace hours
             this.Close();
         }
 
+
+
+
+        public void w_x(string name)
+        {
+            int R, G, B; double O;
+
+            //city
+            name = "w_CI";
+            R = Convert.ToInt32(Properties.Settings.Default[name + "_R"]);
+            G = Convert.ToInt32(Properties.Settings.Default[name + "_G"]);
+            B = Convert.ToInt32(Properties.Settings.Default[name + "_B"]);
+            O = Convert.ToDouble(Properties.Settings.Default[name + "_O"]);
+            MainWindow.I.lokace.Foreground = makeBrush(R,G,B);
+            MainWindow.I.lokace.Opacity = O;
+
+            //city
+            name = "w_TEMP";
+            R = Convert.ToInt32(Properties.Settings.Default[name + "_R"]);
+            G = Convert.ToInt32(Properties.Settings.Default[name + "_G"]);
+            B = Convert.ToInt32(Properties.Settings.Default[name + "_B"]);
+            O = Convert.ToDouble(Properties.Settings.Default[name + "_O"]);
+            MainWindow.I.teplota.Foreground = makeBrush(R, G, B);
+            MainWindow.I.teplota.Opacity = O;
+
+            //city
+            name = "w_INFO";
+            R = Convert.ToInt32(Properties.Settings.Default[name + "_R"]);
+            G = Convert.ToInt32(Properties.Settings.Default[name + "_G"]);
+            B = Convert.ToInt32(Properties.Settings.Default[name + "_B"]);
+            O = Convert.ToDouble(Properties.Settings.Default[name + "_O"]);
+            MainWindow.I.pocasi.Foreground = makeBrush(R, G, B);
+            MainWindow.I.pocasi.Opacity = O;
+
+            //city
+            name = "w_DATUM";
+            R = Convert.ToInt32(Properties.Settings.Default[name + "_R"]);
+            G = Convert.ToInt32(Properties.Settings.Default[name + "_G"]);
+            B = Convert.ToInt32(Properties.Settings.Default[name + "_B"]);
+            O = Convert.ToDouble(Properties.Settings.Default[name + "_O"]);
+            MainWindow.I.datum.Foreground = makeBrush(R, G, B);
+            MainWindow.I.datum.Opacity = O;
+
+
+        }
+
         
 
 
@@ -814,7 +861,9 @@ namespace hours
             e_R.Value = val = Convert.ToInt32(e_R.Value);
             Properties.Settings.Default[path] = val.ToString();
             MainWindow.I.dbg("EDIT->"+ path + ":" + Properties.Settings.Default[path]   );
-            
+
+            w_x(this.OBJ);
+
 
         }
         private void e_G_CH(object sender, RoutedEventArgs e)
@@ -858,6 +907,13 @@ namespace hours
             e_F.Value = val = Convert.ToInt32(e_F.Value);
             Properties.Settings.Default[path] = val.ToString();
             MainWindow.I.dbg("EDIT->" + path + ":" + Properties.Settings.Default[path]);
+        }
+
+
+        public SolidColorBrush  makeBrush(int R,int G,int B)
+        {
+            var brush = new SolidColorBrush(Color.FromArgb(255, (byte)R, (byte)G, (byte)B));
+            return brush;
         }
 
 
