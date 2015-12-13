@@ -263,6 +263,173 @@ namespace hours
         }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+        //checkboxs CLOCK
+
+        /*
+        * Metoda CLOCK0_MSEC ON
+        */
+        private void c0_msec_true(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.c0_msec = true;
+            MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
+        }
+        /*
+         * Metoda CLOCK0_MSEC OFF
+         */
+        private void c0_msec_false(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.c0_msec = false;
+            MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
+        }
+
+
+        /*
+        * Metoda CLOCK0_SEC ON
+        */
+        private void c0_sec_true(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.c0_sec = true;
+            MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
+        }
+        /*
+         * Metoda CLOCK0_MSEC OFF
+         */
+        private void c0_sec_false(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.c0_sec = false;
+            MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
+        }
+
+        /*
+        * Metoda CLOCK0_MIN ON
+        */
+        private void c0_min_true(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.c0_min = true;
+            MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
+        }
+        /*
+         * Metoda CLOCK0_MSEC OFF
+         */
+        private void c0_min_false(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.c0_min = false;
+            MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
+        }
+
+
+        /*
+        * Metoda CLOCK0_HOUR ON
+        */
+        private void c0_hour_true(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.c0_hour = true;
+            MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
+        }
+        /*
+         * Metoda CLOCK0_HOUR OFF
+         */
+        private void c0_hour_false(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.c0_hour = false;
+            MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
+        }
+
+
+
+
+
+        //NOT DEFINED
+        /*
+        * Metoda CLOCK1_MSEC ON
+        */
+        private void c1_msec_true(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.c1_msec = true;
+            MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
+        }
+        /*
+         * Metoda CLOCK0_MSEC OFF
+         */
+        private void c1_msec_false(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.c1_msec = false;
+            MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
+        }
+
+        /*
+        * Metoda CLOCK1_SEC ON
+        */
+        private void c1_sec_true(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.c1_sec = true;
+            MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
+        }
+        /*
+         * Metoda CLOCK0_SEC OFF
+         */
+        private void c1_sec_false(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.c1_sec = false;
+            MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
+        }
+
+        /*
+        * Metoda CLOCK1_MIN ON
+        */
+        private void c1_min_true(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.c1_min = true;
+            MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
+        }
+        /*
+         * Metoda CLOCK0_MIN OFF
+         */
+        private void c1_min_false(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.c1_min = false;
+            MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
+        }
+
+        /*
+        * Metoda CLOCK1_HOUR ON
+        */
+        private void c1_hour_true(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.c1_hour = true;
+            MainWindow.I.sekundaRucicka.Visibility = Visibility.Visible;
+        }
+        /*
+         * Metoda CLOCK0_HOUR OFF
+         */
+        private void c1_hour_false(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.c1_hour = false;
+            MainWindow.I.sekundaRucicka.Visibility = Visibility.Hidden;
+        }
+
+
+
+
+
+
+
+
+
+
+
         /*
          * Metoda pro zapnutí tikání analogových hodin
          */
@@ -401,6 +568,35 @@ namespace hours
         private void toClock(object sender, RoutedEventArgs e)
         {
             System.Console.WriteLine("CLC");
+            connClock0.Visibility = Visibility.Hidden;
+            connClock1.Visibility = Visibility.Hidden;
+            connClock2.Visibility = Visibility.Hidden;
+
+            Label tmp = sender as Label;
+
+            switch (Properties.Settings.Default.mode)
+            {
+                case 0://analog
+                    System.Console.WriteLine("CLC-ANALLOOG");
+                    connClock0.Visibility = Visibility.Visible;
+
+                    break;
+                case 1://digital
+                    System.Console.WriteLine("CLC-DIGITAL");
+                    connClock1.Visibility = Visibility.Visible;
+                    break;
+                case 2://binary
+                    System.Console.WriteLine("CLC-BINARY");
+                    connClock2.Visibility = Visibility.Visible;
+                    break;
+                default:
+                    break;
+            }
+
+
+
+
+            //make visible
             settUnvisible.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             settClock.Visibility = Visibility.Visible;
             settClockLoad.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
