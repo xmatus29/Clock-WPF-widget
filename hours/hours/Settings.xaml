@@ -1196,7 +1196,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="c1_msecx">milisec</Label>
+                        <Label x:Name="c1_msecx" MouseDown="toEdit">milisec</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
@@ -1243,7 +1243,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="c1_secx">seconds</Label>
+                        <Label x:Name="c1_secx" MouseDown="toEdit">seconds</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
@@ -1290,7 +1290,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="c1_minx">minutes</Label>
+                        <Label x:Name="c1_minx" MouseDown="toEdit">minutes</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
@@ -1336,7 +1336,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Viewbox.Triggers>
-                        <Label x:Name="c1_hourx">hours</Label>
+                        <Label x:Name="c1_hourx" MouseDown="toEdit">hours</Label>
                     </Viewbox>
 
                     <Viewbox Grid.Column="0">
@@ -2107,7 +2107,10 @@
                     </Viewbox>
 
 
-                    <Slider x:Name="e_F" Grid.Column="1" ValueChanged="e_F_CH"  VerticalAlignment="Center"/>
+
+                    <ComboBox x:Name="e_F" Grid.Column="1" SelectionChanged="e_F_CH"  VerticalAlignment="Center">
+                    </ComboBox>
+
 
 
                 </Grid>

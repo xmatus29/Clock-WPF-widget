@@ -58,6 +58,10 @@ namespace hours
 
         public void start()
         {
+            e_F.ItemsSource = FontFamily.FamilyNames.ToList();//fill font list
+            
+
+
             opacity.Value = Properties.Settings.Default.all_opacity;
             size.Value = Properties.Settings.Default.all_size; 
             all_top.IsChecked = Properties.Settings.Default.all_top;
@@ -852,17 +856,26 @@ namespace hours
 
         public void c_x(string name)
         {
-            int R, G, B; double O;
+            int R, G, B; double O,S;
 
 
-
-            name = "c1_msecx";
+            name = "c1_secx";
             R = Convert.ToInt32(Properties.Settings.Default[name + "_R"]);
             G = Convert.ToInt32(Properties.Settings.Default[name + "_G"]);
             B = Convert.ToInt32(Properties.Settings.Default[name + "_B"]);
             O = Convert.ToDouble(Properties.Settings.Default[name + "_O"]);
+            S = Convert.ToDouble(Properties.Settings.Default[name + "_S"]);
             MainWindow.I.digitalTime.Foreground = makeBrush(R, G, B);
             MainWindow.I.digitalTime.Opacity = O;
+            //MainWindow.I.digitalTime
+            //MainWindow.I.digitalTime.FontFamily =  ;
+
+
+
+
+            //fonts
+
+            
 
         }
 
@@ -880,6 +893,7 @@ namespace hours
             MainWindow.I.dbg("EDIT->"+ path + ":" + Properties.Settings.Default[path]   );
 
             w_x(this.OBJ);
+            c_x(this.OBJ);
 
 
         }
@@ -892,6 +906,7 @@ namespace hours
             MainWindow.I.dbg("EDIT->" + path + ":" + Properties.Settings.Default[path]);
 
             w_x(this.OBJ);
+            c_x(this.OBJ);
 
         }
         private void e_B_CH(object sender, RoutedEventArgs e)
@@ -903,6 +918,7 @@ namespace hours
             MainWindow.I.dbg("EDIT->" + path + ":" + Properties.Settings.Default[path]);
 
             w_x(this.OBJ);
+            c_x(this.OBJ);
         }
         private void e_O_CH(object sender, RoutedEventArgs e)
         {
@@ -913,6 +929,7 @@ namespace hours
             MainWindow.I.dbg("EDIT->" + path + ":" + Properties.Settings.Default[path]);
 
             w_x(this.OBJ);
+            c_x(this.OBJ);
         }
         private void e_S_CH(object sender, RoutedEventArgs e)
         {
@@ -923,16 +940,18 @@ namespace hours
             MainWindow.I.dbg("EDIT->" + path + ":" + Properties.Settings.Default[path]);
 
             w_x(this.OBJ);
+            c_x(this.OBJ);
         }
         private void e_F_CH(object sender, RoutedEventArgs e)
         {
-            int val = 0;
+            string val;
             string path = this.OBJ + "_" + "F";
-            e_F.Value = val = Convert.ToInt32(e_F.Value);
+            val = e_F.SelectedValue.ToString();
             Properties.Settings.Default[path] = val.ToString();
             MainWindow.I.dbg("EDIT->" + path + ":" + Properties.Settings.Default[path]);
 
             w_x(this.OBJ);
+            c_x(this.OBJ);
         }
 
 
